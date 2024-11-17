@@ -11,10 +11,11 @@
 		A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B92CE8E937003B5322 /* SceneDelegate.swift */; };
 		A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36348C02CE8E938003B5322 /* Assets.xcassets */; };
 		A36348C42CE8E938003B5322 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A36348C32CE8E938003B5322 /* Base */; };
-		A36348CE2CE8E9F8003B5322 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36348CD2CE8E9F8003B5322 /* Colors.xcassets */; };
 		A36348D92CE8EB3F003B5322 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A36348D82CE8EB3F003B5322 /* SnapKit */; };
 		A36348DC2CE8EB46003B5322 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A36348DB2CE8EB46003B5322 /* Then */; };
 		A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348DF2CE8EB85003B5322 /* HomeViewController.swift */; };
+		A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F42CE9CF45003B5322 /* TimeViewController.swift */; };
+		A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		A36348C02CE8E938003B5322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A36348C32CE8E938003B5322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A36348C52CE8E938003B5322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A36348CD2CE8E9F8003B5322 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A36348DF2CE8EB85003B5322 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A36348F42CE9CF45003B5322 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,6 @@
 				A36348CB2CE8E9C8003B5322 /* Application */,
 				A36348CC2CE8E9DC003B5322 /* Resource */,
 				A36348CF2CE8E9FD003B5322 /* Presentation */,
-				A36348D02CE8EA04003B5322 /* Network */,
 			);
 			path = CGV;
 			sourceTree = "<group>";
@@ -80,11 +81,7 @@
 		A36348CC2CE8E9DC003B5322 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				A36348D12CE8EA1B003B5322 /* Extension */,
-				A36348D22CE8EA21003B5322 /* Util */,
-				A36348D32CE8EA2E003B5322 /* Component */,
 				A36348C02CE8E938003B5322 /* Assets.xcassets */,
-				A36348CD2CE8E9F8003B5322 /* Colors.xcassets */,
 				A36348C52CE8E938003B5322 /* Info.plist */,
 				A36348C22CE8E938003B5322 /* LaunchScreen.storyboard */,
 			);
@@ -101,34 +98,6 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		A36348D02CE8EA04003B5322 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		A36348D12CE8EA1B003B5322 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		A36348D22CE8EA21003B5322 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		A36348D32CE8EA2E003B5322 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
 		A36348D42CE8EA3A003B5322 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +109,7 @@
 		A36348D52CE8EA3E003B5322 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				A36348F42CE9CF45003B5322 /* TimeViewController.swift */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -147,6 +117,7 @@
 		A36348D62CE8EA47003B5322 /* Seats */ = {
 			isa = PBXGroup;
 			children = (
+				A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */,
 			);
 			path = Seats;
 			sourceTree = "<group>";
@@ -218,7 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */,
-				A36348CE2CE8E9F8003B5322 /* Colors.xcassets in Resources */,
 				A36348C42CE8E938003B5322 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,8 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
+				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
+				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
