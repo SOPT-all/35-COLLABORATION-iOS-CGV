@@ -4,10 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Malgun-Bold.ttf</string>
-		<string>Malgun-Regular.ttf</string>
-		<string>KoPub-Dotum-Bold.ttf</string>
-		<string>KoPub-Dotum-Medium.ttf</string>
+		<string>MalgunGothicBold.ttf</string>
+		<string>MalgunGothicRegular.ttf</string>
+		<string>KoPubWorldDotumBold.ttf</string>
+		<string>KoPubWorldDotumMedium.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

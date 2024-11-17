@@ -17,10 +17,14 @@
 		A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348DF2CE8EB85003B5322 /* HomeViewController.swift */; };
 		A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F42CE9CF45003B5322 /* TimeViewController.swift */; };
 		A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */; };
-		A36348FB2CEA4898003B5322 /* KoPub-Dotum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36348FA2CEA4898003B5322 /* KoPub-Dotum-Bold.ttf */; };
-		A36348FD2CEA48A0003B5322 /* KoPub-Dotum-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36348FC2CEA48A0003B5322 /* KoPub-Dotum-Medium.ttf */; };
-		A36349002CEA48BE003B5322 /* Malgun-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36348FE2CEA48BE003B5322 /* Malgun-Bold.ttf */; };
-		A36349012CEA48BE003B5322 /* Malgun-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36348FF2CEA48BE003B5322 /* Malgun-Regular.ttf */; };
+		A36349042CEA49D4003B5322 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349032CEA49D4003B5322 /* UIView+.swift */; };
+		A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349052CEA4A70003B5322 /* UIStackView+.swift */; };
+		A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349072CEA4AA0003B5322 /* UIFont+.swift */; };
+		A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363490B2CEA4FFF003B5322 /* UIButton+.swift */; };
+		A363490F2CEA6608003B5322 /* KoPubWorldDotumBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A363490D2CEA6607003B5322 /* KoPubWorldDotumBold.ttf */; };
+		A36349102CEA6608003B5322 /* KoPubWorldDotumMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */; };
+		A36349132CEA6612003B5322 /* MalgunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */; };
+		A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */; };
 		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -35,10 +39,14 @@
 		A36348DF2CE8EB85003B5322 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A36348F42CE9CF45003B5322 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
-		A36348FA2CEA4898003B5322 /* KoPub-Dotum-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub-Dotum-Bold.ttf"; sourceTree = "<group>"; };
-		A36348FC2CEA48A0003B5322 /* KoPub-Dotum-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPub-Dotum-Medium.ttf"; sourceTree = "<group>"; };
-		A36348FE2CEA48BE003B5322 /* Malgun-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Malgun-Bold.ttf"; sourceTree = "<group>"; };
-		A36348FF2CEA48BE003B5322 /* Malgun-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Malgun-Regular.ttf"; sourceTree = "<group>"; };
+		A36349032CEA49D4003B5322 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		A36349052CEA4A70003B5322 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		A36349072CEA4AA0003B5322 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		A363490B2CEA4FFF003B5322 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		A363490D2CEA6607003B5322 /* KoPubWorldDotumBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumBold.ttf; sourceTree = "<group>"; };
+		A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumMedium.ttf; sourceTree = "<group>"; };
+		A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MalgunGothicBold.ttf; sourceTree = "<group>"; };
+		A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MalgunGothicRegular.ttf; sourceTree = "<group>"; };
 		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +102,7 @@
 		A36348CC2CE8E9DC003B5322 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A36349022CEA49C0003B5322 /* Extensions */,
 				A36348F82CEA4857003B5322 /* Fonts */,
 				A36348C02CE8E938003B5322 /* Assets.xcassets */,
 				ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */,
@@ -140,12 +149,23 @@
 		A36348F82CEA4857003B5322 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A36348FA2CEA4898003B5322 /* KoPub-Dotum-Bold.ttf */,
-				A36348FC2CEA48A0003B5322 /* KoPub-Dotum-Medium.ttf */,
-				A36348FE2CEA48BE003B5322 /* Malgun-Bold.ttf */,
-				A36348FF2CEA48BE003B5322 /* Malgun-Regular.ttf */,
+				A363490D2CEA6607003B5322 /* KoPubWorldDotumBold.ttf */,
+				A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */,
+				A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */,
+				A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A36349022CEA49C0003B5322 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A36349032CEA49D4003B5322 /* UIView+.swift */,
+				A36349052CEA4A70003B5322 /* UIStackView+.swift */,
+				A36349072CEA4AA0003B5322 /* UIFont+.swift */,
+				A363490B2CEA4FFF003B5322 /* UIButton+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,13 +235,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */,
-				A36349012CEA48BE003B5322 /* Malgun-Regular.ttf in Resources */,
+				A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */,
 				A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */,
 				00ED4AF12CE9E67900E562FA /* .gitignore in Resources */,
 				A36348C42CE8E938003B5322 /* Base in Resources */,
-				A36348FB2CEA4898003B5322 /* KoPub-Dotum-Bold.ttf in Resources */,
-				A36348FD2CEA48A0003B5322 /* KoPub-Dotum-Medium.ttf in Resources */,
-				A36349002CEA48BE003B5322 /* Malgun-Bold.ttf in Resources */,
+				A363490F2CEA6608003B5322 /* KoPubWorldDotumBold.ttf in Resources */,
+				A36349102CEA6608003B5322 /* KoPubWorldDotumMedium.ttf in Resources */,
+				A36349132CEA6612003B5322 /* MalgunGothicBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */,
+				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
+				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
+				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
