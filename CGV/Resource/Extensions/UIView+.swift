@@ -18,4 +18,9 @@ extension UIView {
             addSubview($0)
         }
     }
+    
+    func setGradient(for style: Gradient) {
+        let gradientLayer = CAGradientLayer.gradientLayer(for: style, in: bounds)
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

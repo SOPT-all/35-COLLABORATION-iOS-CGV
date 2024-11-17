@@ -27,6 +27,8 @@
 		A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */; };
 		A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349152CEA6936003B5322 /* NSAttributedString+.swift */; };
 		A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349172CEA6E87003B5322 /* UILabel+.swift */; };
+		A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349192CEA7253003B5322 /* CAGradientLayer+.swift */; };
+		A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363491B2CEA75E2003B5322 /* UIColor+.swift */; };
 		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MalgunGothicRegular.ttf; sourceTree = "<group>"; };
 		A36349152CEA6936003B5322 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
 		A36349172CEA6E87003B5322 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		A36349192CEA7253003B5322 /* CAGradientLayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+.swift"; sourceTree = "<group>"; };
+		A363491B2CEA75E2003B5322 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +174,8 @@
 				A36349172CEA6E87003B5322 /* UILabel+.swift */,
 				A363490B2CEA4FFF003B5322 /* UIButton+.swift */,
 				A36349152CEA6936003B5322 /* NSAttributedString+.swift */,
+				A363491B2CEA75E2003B5322 /* UIColor+.swift */,
+				A36349192CEA7253003B5322 /* CAGradientLayer+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,7 +274,9 @@
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
+				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
+				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
