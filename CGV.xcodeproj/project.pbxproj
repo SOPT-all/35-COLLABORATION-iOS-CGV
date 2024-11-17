@@ -29,6 +29,11 @@
 		A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349172CEA6E87003B5322 /* UILabel+.swift */; };
 		A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349192CEA7253003B5322 /* CAGradientLayer+.swift */; };
 		A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363491B2CEA75E2003B5322 /* UIColor+.swift */; };
+		A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363491E2CEA7C11003B5322 /* BaseViewController.swift */; };
+		A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349202CEA7C1A003B5322 /* BaseView.swift */; };
+		A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */; };
+		A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */; };
+		A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */; };
 		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,11 @@
 		A36349172CEA6E87003B5322 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		A36349192CEA7253003B5322 /* CAGradientLayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+.swift"; sourceTree = "<group>"; };
 		A363491B2CEA75E2003B5322 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		A363491E2CEA7C11003B5322 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A36349202CEA7C1A003B5322 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifable.swift; sourceTree = "<group>"; };
 		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +120,9 @@
 		A36348CC2CE8E9DC003B5322 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A363491D2CEA7BF1003B5322 /* Base */,
 				A36349022CEA49C0003B5322 /* Extensions */,
+				A36349262CEA7D71003B5322 /* Util */,
 				A36348F82CEA4857003B5322 /* Fonts */,
 				A36348C02CE8E938003B5322 /* Assets.xcassets */,
 				ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */,
@@ -178,6 +190,25 @@
 				A36349192CEA7253003B5322 /* CAGradientLayer+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A363491D2CEA7BF1003B5322 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A36349202CEA7C1A003B5322 /* BaseView.swift */,
+				A363491E2CEA7C11003B5322 /* BaseViewController.swift */,
+				A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */,
+				A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A36349262CEA7D71003B5322 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,12 +300,17 @@
 				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
+				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,
+				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
+				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
+				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
 				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
+				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);
