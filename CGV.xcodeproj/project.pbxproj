@@ -16,6 +16,7 @@
 		A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348DF2CE8EB85003B5322 /* HomeViewController.swift */; };
 		A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F42CE9CF45003B5322 /* TimeViewController.swift */; };
 		A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */; };
+		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A36348DF2CE8EB85003B5322 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A36348F42CE9CF45003B5322 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
+		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				A36348C02CE8E938003B5322 /* Assets.xcassets */,
 				A36348C52CE8E938003B5322 /* Info.plist */,
 				A36348C22CE8E938003B5322 /* LaunchScreen.storyboard */,
+				ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */,
 				A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */,
 				A36348C42CE8E938003B5322 /* Base in Resources */,
 			);
