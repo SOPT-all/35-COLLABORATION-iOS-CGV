@@ -25,6 +25,8 @@
 		A36349102CEA6608003B5322 /* KoPubWorldDotumMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */; };
 		A36349132CEA6612003B5322 /* MalgunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */; };
 		A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */; };
+		A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349152CEA6936003B5322 /* NSAttributedString+.swift */; };
+		A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349172CEA6E87003B5322 /* UILabel+.swift */; };
 		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumMedium.ttf; sourceTree = "<group>"; };
 		A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MalgunGothicBold.ttf; sourceTree = "<group>"; };
 		A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MalgunGothicRegular.ttf; sourceTree = "<group>"; };
+		A36349152CEA6936003B5322 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
+		A36349172CEA6E87003B5322 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +167,9 @@
 				A36349032CEA49D4003B5322 /* UIView+.swift */,
 				A36349052CEA4A70003B5322 /* UIStackView+.swift */,
 				A36349072CEA4AA0003B5322 /* UIFont+.swift */,
+				A36349172CEA6E87003B5322 /* UILabel+.swift */,
 				A363490B2CEA4FFF003B5322 /* UIButton+.swift */,
+				A36349152CEA6936003B5322 /* NSAttributedString+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
+				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
+				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 			);
