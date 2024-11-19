@@ -84,7 +84,7 @@ enum Kopub: FontStyle {
         }
     }
     
-    var baselineOffset: CGFloat { return (lineHeight - size) / 4 }
+    var baselineOffset: CGFloat { return (lineHeight - size * 2) / 4 }
 }
 
 enum Malgun: FontStyle {
@@ -124,5 +124,5 @@ enum Malgun: FontStyle {
         }
     }
     
-    var baselineOffset: CGFloat { return (lineHeight - size) / 4 }
+    var baselineOffset: CGFloat { return (lineHeight - size * 2) / 4 }
 }
