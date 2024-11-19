@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060567E2CEC6C9000482BEC /* HomeView.swift */; };
+		00C774282CEB98830020F5BA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774272CEB98830020F5BA /* HeaderView.swift */; };
+		00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774292CEB99C40020F5BA /* BannerImageCell.swift */; };
+		00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */; };
+		00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */; };
+		00C774302CEBAF7F0020F5BA /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742F2CEBAF7F0020F5BA /* HomeItem.swift */; };
 		00ED4AF12CE9E67900E562FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 00ED4AF02CE9E67900E562FA /* .gitignore */; };
 		A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B72CE8E937003B5322 /* AppDelegate.swift */; };
 		A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B92CE8E937003B5322 /* SceneDelegate.swift */; };
@@ -38,6 +44,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0060567E2CEC6C9000482BEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		00C774272CEB98830020F5BA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		00C774292CEB99C40020F5BA /* BannerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCell.swift; sourceTree = "<group>"; };
+		00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageCell.swift; sourceTree = "<group>"; };
+		00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChartCell.swift; sourceTree = "<group>"; };
+		00C7742F2CEBAF7F0020F5BA /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
 		00ED4AF02CE9E67900E562FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A36348B42CE8E937003B5322 /* CGV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36348B72CE8E937003B5322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +157,13 @@
 		A36348D42CE8EA3A003B5322 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0060567E2CEC6C9000482BEC /* HomeView.swift */,
 				A36348DF2CE8EB85003B5322 /* HomeViewController.swift */,
+				00C7742F2CEBAF7F0020F5BA /* HomeItem.swift */,
+				00C774272CEB98830020F5BA /* HeaderView.swift */,
+				00C774292CEB99C40020F5BA /* BannerImageCell.swift */,
+				00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */,
+				00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -297,21 +315,27 @@
 			files = (
 				A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */,
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
+				00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */,
+				00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */,
 				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
 				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,
 				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
+				00C774302CEBAF7F0020F5BA /* HomeItem.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
+				00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
 				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
 				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
 				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
+				0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */,
+				00C774282CEB98830020F5BA /* HeaderView.swift in Sources */,
 				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
