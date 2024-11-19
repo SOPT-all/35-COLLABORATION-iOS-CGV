@@ -34,6 +34,9 @@
 		A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */; };
 		A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */; };
 		A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */; };
+		AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */; };
+		AD9263F22CEC331800F63581 /* TimeBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */; };
+		AD9263F42CEC588200F63581 /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */; };
 		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifable.swift; sourceTree = "<group>"; };
+		AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBottomSheetView.swift; sourceTree = "<group>"; };
+		AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBottomSheetViewController.swift; sourceTree = "<group>"; };
+		AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
 		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				A36348F42CE9CF45003B5322 /* TimeViewController.swift */,
+				AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */,
+				AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */,
+				AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -299,15 +308,18 @@
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
 				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
+				AD9263F42CEC588200F63581 /* UnderlineSegmentedControl.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
 				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,
 				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
+				AD9263F22CEC331800F63581 /* TimeBottomSheetViewController.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
+				AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */,
 				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
 				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
 				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
