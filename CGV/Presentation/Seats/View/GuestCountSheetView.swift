@@ -28,17 +28,21 @@ final class GuestCountSheetView: BaseView {
     
     private let timeStackView = UIStackView()
     
-//    private let guestCountLabel = UILabel()
-//    
-//    private let maxCountLabel = UILabel()
-//    
-//    private let generalLabel = UILabel()
-//    
-//    private let youthLabel = UILabel()
-//    
-//    private let seniorLabel = UILabel()
-//    
-//    private let discountLable = UILabel()
+    private let guestCountLabel = UILabel()
+    
+    private let maxCountLabel = UILabel()
+    
+    private let generalLabel = UILabel()
+    
+    private let youthLabel = UILabel()
+    
+    private let seniorLabel = UILabel()
+    
+    private let discountLabel = UILabel()
+    
+    private let backButton = UIButton()
+    
+    private let selectButton = UIButton()
     
     override func setStyle() {
         titleLabel.do {
@@ -93,10 +97,56 @@ final class GuestCountSheetView: BaseView {
             $0.isLayoutMarginsRelativeArrangement = true
             $0.layoutMargins = UIEdgeInsets(top: 6, left: 10, bottom: 6, right: 10)
         }
+        
+        guestCountLabel.do {
+            $0.setText("인원선택", style: Kopub.head4, color: .cgvBlack, isSingleLine: true)
+        }
+        
+        maxCountLabel.do {
+            $0.setText("*최대 8명", style: Kopub.body1, color: .cgvG500, isSingleLine: true)
+        }
+        
+        generalLabel.do {
+            $0.setText("일반", style: Kopub.body5, color: .cgvBlack, isSingleLine: true)
+        }
+        
+        youthLabel.do {
+            $0.setText("청소년", style: Kopub.body5, color: .cgvBlack, isSingleLine: true)
+        }
+        
+        seniorLabel.do {
+            $0.setText("경로", style: Kopub.body5, color: .cgvBlack, isSingleLine: true)
+        }
+        
+        discountLabel.do {
+            $0.setText("우대", style: Kopub.body5, color: .cgvBlack, isSingleLine: true)
+        }
+        
+        backButton.do {
+            $0.setTitle("뒤로가기", style: Kopub.head7, color: .cgvR400)
+            $0.setLayer(borderWidth: 1, borderColor: .cgvR400, cornerRadius: 12)
+        }
+        
+        selectButton.do {
+            $0.setTitle("좌석선택", style: Kopub.head7, color: .cgvWhite)
+            $0.backgroundColor = .cgvG500
+            $0.layer.cornerRadius = 12
+        }
     }
     
     override func setUI() {
-        addSubviews(titleLabel, infoStackView)
+        addSubviews(
+            titleLabel,
+            infoStackView,
+            guestCountLabel,
+            maxCountLabel,
+            generalLabel,
+            youthLabel,
+            seniorLabel,
+            discountLabel,
+            backButton,
+            selectButton
+        )
         infoStackView.addArrangedSubviews(dateStackView, theaterStackView, timeStackView)
         dateStackView.addArrangedSubview(dateLabel)
         theaterStackView.addArrangedSubview(theaterLabel)
@@ -112,6 +162,50 @@ final class GuestCountSheetView: BaseView {
         infoStackView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(12)
             $0.centerX.equalToSuperview()
+        }
+        
+        guestCountLabel.snp.makeConstraints {
+            $0.top.equalTo(infoStackView.snp.bottom).offset(15)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        maxCountLabel.snp.makeConstraints {
+            $0.centerY.equalTo(guestCountLabel.snp.centerY)
+            $0.leading.equalTo(guestCountLabel.snp.trailing).offset(8)
+        }
+        
+        generalLabel.snp.makeConstraints {
+            $0.top.equalTo(guestCountLabel.snp.bottom).offset(16)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        youthLabel.snp.makeConstraints {
+            $0.top.equalTo(generalLabel.snp.bottom).offset(26)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        seniorLabel.snp.makeConstraints {
+            $0.top.equalTo(youthLabel.snp.bottom).offset(26)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        discountLabel.snp.makeConstraints {
+            $0.top.equalTo(seniorLabel.snp.bottom).offset(26)
+            $0.leading.equalToSuperview().inset(20)
+        }
+        
+        backButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(36)
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(192)
+            $0.height.equalTo(60)
+        }
+        
+        selectButton.snp.makeConstraints {
+            $0.bottom.equalToSuperview().inset(36)
+            $0.leading.equalToSuperview().inset(192)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(60)
         }
     }
 }

@@ -19,9 +19,12 @@ final class SeatsViewController: BaseViewController, UIAdaptivePresentationContr
         
         let guestCountSheetViewController = GuestCountSheetViewController()
         
-        let fraction = UISheetPresentationController.Detent.custom { _ in 465 }
+        let fraction = UISheetPresentationController.Detent.custom {
+            _ in self.view.frame.height * ((465-32)/812)
+        }
         if let sheet = guestCountSheetViewController.sheetPresentationController {
             sheet.detents = [fraction]
+            sheet.preferredCornerRadius = 20
         }
         self.present(guestCountSheetViewController, animated: true)
     }
