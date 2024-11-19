@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SeatsViewController: BaseViewController, UIAdaptivePresentationControllerDelegate {
+final class SeatsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,12 @@ final class SeatsViewController: BaseViewController, UIAdaptivePresentationContr
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        presentGuestCountSheet()
+    }
+}
+
+extension SeatsViewController: UIAdaptivePresentationControllerDelegate {
+    func presentGuestCountSheet() {
         let guestCountSheetViewController = GuestCountSheetViewController()
         
         let fraction = UISheetPresentationController.Detent.custom {
@@ -26,7 +32,7 @@ final class SeatsViewController: BaseViewController, UIAdaptivePresentationContr
             sheet.detents = [fraction]
             sheet.preferredCornerRadius = 20
         }
+        
         self.present(guestCountSheetViewController, animated: true)
     }
-        
 }
