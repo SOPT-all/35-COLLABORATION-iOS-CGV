@@ -34,6 +34,9 @@
 		A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */; };
 		A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */; };
 		A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */; };
+		A36349322CEC2D6B003B5322 /* SeatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349312CEC2D6B003B5322 /* SeatsView.swift */; };
+		A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */; };
+		A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */; };
 		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifable.swift; sourceTree = "<group>"; };
+		A36349312CEC2D6B003B5322 /* SeatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsView.swift; sourceTree = "<group>"; };
+		A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetView.swift; sourceTree = "<group>"; };
+		A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetViewController.swift; sourceTree = "<group>"; };
 		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,7 +167,8 @@
 		A36348D62CE8EA47003B5322 /* Seats */ = {
 			isa = PBXGroup;
 			children = (
-				A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */,
+				A36349302CEC2D5A003B5322 /* View */,
+				A363492F2CEC2D47003B5322 /* ViewController */,
 			);
 			path = Seats;
 			sourceTree = "<group>";
@@ -209,6 +216,24 @@
 				A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		A363492F2CEC2D47003B5322 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */,
+				A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A36349302CEC2D5A003B5322 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A36349312CEC2D6B003B5322 /* SeatsView.swift */,
+				A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,16 +326,19 @@
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
 				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,
+				A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */,
 				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
+				A36349322CEC2D6B003B5322 /* SeatsView.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
 				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
 				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
 				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
+				A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);
