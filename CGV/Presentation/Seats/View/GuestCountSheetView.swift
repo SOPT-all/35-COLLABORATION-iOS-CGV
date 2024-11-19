@@ -7,8 +7,8 @@
 
 import UIKit
 
-import Then
 import SnapKit
+import Then
 
 final class GuestCountSheetView: BaseView {
     
@@ -182,7 +182,7 @@ final class GuestCountSheetView: BaseView {
         }
         
         maxCountLabel.snp.makeConstraints {
-            $0.centerY.equalTo(guestCountLabel.snp.centerY)
+            $0.centerY.equalTo(guestCountLabel.snp.centerY).offset(2)
             $0.leading.equalTo(guestCountLabel.snp.trailing).offset(8)
         }
         
@@ -237,13 +237,13 @@ final class GuestCountSheetView: BaseView {
         backButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(36)
             $0.leading.equalToSuperview().inset(20)
-            $0.trailing.equalToSuperview().inset(192)
+            $0.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 2) + 10)
             $0.height.equalTo(60)
         }
         
         selectButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(36)
-            $0.leading.equalToSuperview().inset(192)
+            $0.leading.equalToSuperview().inset((UIScreen.main.bounds.width / 2) + 10)
             $0.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(60)
         }
