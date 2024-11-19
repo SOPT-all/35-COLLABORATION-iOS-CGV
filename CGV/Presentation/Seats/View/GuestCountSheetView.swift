@@ -40,6 +40,14 @@ final class GuestCountSheetView: BaseView {
     
     private let discountLabel = UILabel()
     
+    private let generalButton = GuestCountButton(count: 0)
+    
+    private let youthButton = GuestCountButton(count: 0)
+    
+    private let seniorButton = GuestCountButton(count: 0)
+    
+    private let discountButton = GuestCountButton(count: 0)
+    
     private let backButton = UIButton()
     
     private let selectButton = UIButton()
@@ -144,6 +152,10 @@ final class GuestCountSheetView: BaseView {
             youthLabel,
             seniorLabel,
             discountLabel,
+            generalButton,
+            youthButton,
+            seniorButton,
+            discountButton,
             backButton,
             selectButton
         )
@@ -192,6 +204,34 @@ final class GuestCountSheetView: BaseView {
         discountLabel.snp.makeConstraints {
             $0.top.equalTo(seniorLabel.snp.bottom).offset(26)
             $0.leading.equalToSuperview().inset(20)
+        }
+        
+        generalButton.snp.makeConstraints {
+            $0.centerY.equalTo(generalLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(GuestCountButton.defaultWidth)
+            $0.height.equalTo(GuestCountButton.defaultHeight)
+        }
+        
+        youthButton.snp.makeConstraints {
+            $0.centerY.equalTo(youthLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(GuestCountButton.defaultWidth)
+            $0.height.equalTo(GuestCountButton.defaultHeight)
+        }
+        
+        seniorButton.snp.makeConstraints {
+            $0.centerY.equalTo(seniorLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(GuestCountButton.defaultWidth)
+            $0.height.equalTo(GuestCountButton.defaultHeight)
+        }
+        
+        discountButton.snp.makeConstraints {
+            $0.centerY.equalTo(discountLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(GuestCountButton.defaultWidth)
+            $0.height.equalTo(GuestCountButton.defaultHeight)
         }
         
         backButton.snp.makeConstraints {
