@@ -18,6 +18,10 @@ final class GuestCountButton: UIView {
     
     static let defaultHeight: CGFloat = 42
     
+    var currentCount: Int {
+        return Int(countLabel.text ?? "0") ?? 0
+    }
+    
     // MARK: - UIComponent
 
     private let countView = UIView()
