@@ -71,7 +71,7 @@ enum Kopub: FontStyle {
         case .head1: 16
         case .head2: 18
         case .head3: 20
-        case .head4: 24
+        case .head4: 20
         case .head5: 20
         case .head6: 26
         case .head7: 24
