@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0032F4B92CEDC4D500F14451 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4B82CEDC4D500F14451 /* TopView.swift */; };
+		0032F4BB2CEDDB4800F14451 /* TopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */; };
 		0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060567E2CEC6C9000482BEC /* HomeView.swift */; };
 		00C774282CEB98830020F5BA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774272CEB98830020F5BA /* HeaderView.swift */; };
 		00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774292CEB99C40020F5BA /* BannerImageCell.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0032F4B82CEDC4D500F14451 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewCell.swift; sourceTree = "<group>"; };
 		0060567E2CEC6C9000482BEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		00C774272CEB98830020F5BA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		00C774292CEB99C40020F5BA /* BannerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCell.swift; sourceTree = "<group>"; };
@@ -93,6 +97,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0032F4B52CEDC48400F14451 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0060567E2CEC6C9000482BEC /* HomeView.swift */,
+				00C774272CEB98830020F5BA /* HeaderView.swift */,
+				00C774292CEB99C40020F5BA /* BannerImageCell.swift */,
+				00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */,
+				00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */,
+				0032F4B82CEDC4D500F14451 /* TopView.swift */,
+				0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0032F4B62CEDC48F00F14451 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A36348DF2CE8EB85003B5322 /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0032F4B72CEDC4A300F14451 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00C7742F2CEBAF7F0020F5BA /* HomeItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A36348AB2CE8E937003B5322 = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +191,9 @@
 		A36348D42CE8EA3A003B5322 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				0060567E2CEC6C9000482BEC /* HomeView.swift */,
-				A36348DF2CE8EB85003B5322 /* HomeViewController.swift */,
-				00C7742F2CEBAF7F0020F5BA /* HomeItem.swift */,
-				00C774272CEB98830020F5BA /* HeaderView.swift */,
-				00C774292CEB99C40020F5BA /* BannerImageCell.swift */,
-				00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */,
-				00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */,
+				0032F4B72CEDC4A300F14451 /* Model */,
+				0032F4B62CEDC48F00F14451 /* ViewController */,
+				0032F4B52CEDC48400F14451 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -314,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */,
+				0032F4B92CEDC4D500F14451 /* TopView.swift in Sources */,
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
 				00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */,
 				00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */,
@@ -335,6 +366,7 @@
 				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 				0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */,
+				0032F4BB2CEDDB4800F14451 /* TopViewCell.swift in Sources */,
 				00C774282CEB98830020F5BA /* HeaderView.swift in Sources */,
 				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);

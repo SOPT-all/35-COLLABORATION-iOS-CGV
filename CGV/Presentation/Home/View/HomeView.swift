@@ -41,6 +41,10 @@ final class HomeView: UIView {
     func setupCollectionView() {
         collectionView.do {
             $0.register(
+                TopViewCell.self,
+                forCellWithReuseIdentifier:           TopViewCell.reuseIdentifier
+            )
+            $0.register(
                 MovieChartCell.self,
                 forCellWithReuseIdentifier: MovieChartCell.reuseIdentifier
             )

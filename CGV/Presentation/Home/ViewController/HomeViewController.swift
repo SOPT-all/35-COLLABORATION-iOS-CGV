@@ -10,6 +10,7 @@ import UIKit
 final class HomeViewController: BaseViewController {
     
     private let homeView = HomeView()
+    
     private var dataSource: UICollectionViewDiffableDataSource<HomeSectionType, HomeItem>!
     
     // MARK: - LifeCycle
@@ -20,6 +21,7 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         homeView.collectionView.collectionViewLayout = createLayout()
         homeView.setupCollectionView()
         configureDataSource()
@@ -47,6 +49,12 @@ final class HomeViewController: BaseViewController {
             item in
             
             switch item.section {
+            case .topView:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: TopViewCell.reuseIdentifier,
+                    for: indexPath
+                ) as! TopViewCell
+                return cell
             case .banner:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: BannerImageCell.reuseIdentifier,
@@ -100,8 +108,14 @@ final class HomeViewController: BaseViewController {
         
         for section in HomeSectionType.allCases {
             snapshot.appendSections([section])
-            let items = HomeItem.dummyItems.filter { $0.section == section }
-            snapshot.appendItems(items, toSection: section)
+            
+            if section == .topView {
+                let topItem = HomeItem(section: .topView, title: "")
+                snapshot.appendItems([topItem], toSection: .topView)
+            } else {
+                let items = HomeItem.dummyItems.filter { $0.section == section }
+                snapshot.appendItems(items, toSection: section)
+            }
         }
         
         dataSource.apply(snapshot, animatingDifferences: true)
@@ -114,6 +128,8 @@ final class HomeViewController: BaseViewController {
             guard let sectionType = HomeSectionType(rawValue: sectionIndex) else { return nil }
             
             switch sectionType {
+            case .topView:
+                return self.createTopViewSection()
             case .banner:
                 return self.createBannerSection()
             case .movieChart:
@@ -124,6 +140,18 @@ final class HomeViewController: BaseViewController {
                 return self.createTodayCGVSection()
             }
         }
+    }
+    
+    private func createTopViewSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(53)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = itemSize
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return section
     }
     
     private func createBannerSection() -> NSCollectionLayoutSection? {
