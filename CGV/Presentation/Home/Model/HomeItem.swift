@@ -8,7 +8,8 @@
 import UIKit
 
 enum HomeSectionType: Int, CaseIterable {
-    case topView
+    case topHeader
+    case topTapBar
     case banner
     case movieChart
     case special
@@ -47,8 +48,7 @@ struct HomeItem: Hashable {
 extension HomeSectionType {
     var headerTitle: String {
         switch self {
-        case .topView: return ""
-        case .banner: return ""
+        case .topHeader, .topTapBar, .banner: return ""
         case .movieChart: return "무비 차트"
         case .special: return "특별관"
         case .todayCGV: return "오늘의 CGV"

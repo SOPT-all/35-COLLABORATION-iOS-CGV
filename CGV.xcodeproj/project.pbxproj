@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0032F4B92CEDC4D500F14451 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4B82CEDC4D500F14451 /* TopView.swift */; };
+		0032F4B92CEDC4D500F14451 /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4B82CEDC4D500F14451 /* TopHeaderView.swift */; };
 		0032F4BB2CEDDB4800F14451 /* TopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */; };
+		003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */; };
 		0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060567E2CEC6C9000482BEC /* HomeView.swift */; };
-		00C774282CEB98830020F5BA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774272CEB98830020F5BA /* HeaderView.swift */; };
+		00C774282CEB98830020F5BA /* MidHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774272CEB98830020F5BA /* MidHeaderView.swift */; };
 		00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774292CEB99C40020F5BA /* BannerImageCell.swift */; };
 		00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */; };
 		00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */; };
@@ -46,10 +47,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0032F4B82CEDC4D500F14451 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		0032F4B82CEDC4D500F14451 /* TopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderView.swift; sourceTree = "<group>"; };
 		0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewCell.swift; sourceTree = "<group>"; };
+		003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarCell.swift; sourceTree = "<group>"; };
 		0060567E2CEC6C9000482BEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		00C774272CEB98830020F5BA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		00C774272CEB98830020F5BA /* MidHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidHeaderView.swift; sourceTree = "<group>"; };
 		00C774292CEB99C40020F5BA /* BannerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCell.swift; sourceTree = "<group>"; };
 		00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageCell.swift; sourceTree = "<group>"; };
 		00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChartCell.swift; sourceTree = "<group>"; };
@@ -101,12 +103,13 @@
 			isa = PBXGroup;
 			children = (
 				0060567E2CEC6C9000482BEC /* HomeView.swift */,
-				00C774272CEB98830020F5BA /* HeaderView.swift */,
+				00C774272CEB98830020F5BA /* MidHeaderView.swift */,
 				00C774292CEB99C40020F5BA /* BannerImageCell.swift */,
 				00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */,
 				00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */,
-				0032F4B82CEDC4D500F14451 /* TopView.swift */,
+				0032F4B82CEDC4D500F14451 /* TopHeaderView.swift */,
 				0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */,
+				003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,7 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */,
-				0032F4B92CEDC4D500F14451 /* TopView.swift in Sources */,
+				003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */,
+				0032F4B92CEDC4D500F14451 /* TopHeaderView.swift in Sources */,
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
 				00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */,
 				00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */,
@@ -367,7 +371,7 @@
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 				0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */,
 				0032F4BB2CEDDB4800F14451 /* TopViewCell.swift in Sources */,
-				00C774282CEB98830020F5BA /* HeaderView.swift in Sources */,
+				00C774282CEB98830020F5BA /* MidHeaderView.swift in Sources */,
 				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

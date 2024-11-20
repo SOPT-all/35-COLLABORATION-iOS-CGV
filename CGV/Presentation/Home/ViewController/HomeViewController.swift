@@ -49,12 +49,21 @@ final class HomeViewController: BaseViewController {
             item in
             
             switch item.section {
-            case .topView:
+            case .topHeader:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: TopViewCell.reuseIdentifier,
                     for: indexPath
                 ) as! TopViewCell
                 return cell
+                
+            case .topTapBar:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: TopTabBarCell.reuseIdentifier,
+                    for: indexPath
+                ) as! TopTabBarCell
+                cell.configure(action: #selector(self.topTabBarChanged(_:)), target: self)
+                return cell
+                
             case .banner:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: BannerImageCell.reuseIdentifier,
@@ -95,9 +104,9 @@ final class HomeViewController: BaseViewController {
             let section = HomeSectionType(rawValue: indexPath.section)
             let header = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
-                withReuseIdentifier: HeaderView.identifier,
+                withReuseIdentifier: MidHeaderView.identifier,
                 for: indexPath
-            ) as! HeaderView
+            ) as! MidHeaderView
             header.configure(title: section?.headerTitle ?? "")
             return header
         }
@@ -109,17 +118,21 @@ final class HomeViewController: BaseViewController {
         for section in HomeSectionType.allCases {
             snapshot.appendSections([section])
             
-            if section == .topView {
-                let topItem = HomeItem(section: .topView, title: "")
-                snapshot.appendItems([topItem], toSection: .topView)
+            if section == .topHeader {
+                let topItem = HomeItem(section: .topHeader, title: "")
+                snapshot.appendItems([topItem], toSection: .topHeader)
+            } else if section == .topTapBar {
+                let segmentedItem = HomeItem(section: .topTapBar, title: "")
+                snapshot.appendItems([segmentedItem], toSection: .topTapBar)
             } else {
                 let items = HomeItem.dummyItems.filter { $0.section == section }
                 snapshot.appendItems(items, toSection: section)
             }
         }
-        
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+    
+    @objc private func topTabBarChanged(_ sender: UISegmentedControl) { }
     
     // MARK: - Layouts
     
@@ -128,8 +141,10 @@ final class HomeViewController: BaseViewController {
             guard let sectionType = HomeSectionType(rawValue: sectionIndex) else { return nil }
             
             switch sectionType {
-            case .topView:
+            case .topHeader:
                 return self.createTopViewSection()
+            case .topTapBar:
+                return self.createTopTabBarSection()
             case .banner:
                 return self.createBannerSection()
             case .movieChart:
@@ -146,6 +161,18 @@ final class HomeViewController: BaseViewController {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .estimated(53)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = itemSize
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+    }
+    
+    private func createTopTabBarSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(44)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = itemSize

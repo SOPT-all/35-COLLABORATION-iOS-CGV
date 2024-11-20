@@ -45,6 +45,10 @@ final class HomeView: UIView {
                 forCellWithReuseIdentifier:           TopViewCell.reuseIdentifier
             )
             $0.register(
+                TopTabBarCell.self,
+                forCellWithReuseIdentifier:           TopTabBarCell.reuseIdentifier
+            )
+            $0.register(
                 MovieChartCell.self,
                 forCellWithReuseIdentifier: MovieChartCell.reuseIdentifier
             )
@@ -57,9 +61,9 @@ final class HomeView: UIView {
                 forCellWithReuseIdentifier: BigImageCell.reuseIdentifier
             )
             $0.register(
-                HeaderView.self,
+                MidHeaderView.self,
                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                withReuseIdentifier: HeaderView.identifier
+                withReuseIdentifier: MidHeaderView.identifier
             )
         }
     }

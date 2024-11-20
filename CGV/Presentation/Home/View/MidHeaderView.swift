@@ -1,5 +1,5 @@
 //
-//  HeaderCell.swift
+//  MidHeaderView.swift
 //  CGV
 //
 //  Created by 김송희 on 11/19/24.
@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class HeaderView: UICollectionReusableView {
+final class MidHeaderView: UICollectionReusableView {
     
-    static let identifier = "HeaderView"
+    static let identifier = "MidHeaderView"
     private let titleLabel = UILabel()
     private let allViewButton = UIButton()
     private let allViewTextLabel = UILabel()

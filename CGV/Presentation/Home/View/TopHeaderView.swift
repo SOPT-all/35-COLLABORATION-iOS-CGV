@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopView: BaseView {
+class TopHeaderView: BaseView {
     
     private let ticketButton = UIButton()
     private let cgvLogo = UIImageView()
