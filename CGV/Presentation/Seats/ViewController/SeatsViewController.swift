@@ -9,10 +9,7 @@ import UIKit
 
 final class SeatsViewController: BaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+    // MARK: - LifeCycle
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -20,6 +17,8 @@ final class SeatsViewController: BaseViewController {
         presentGuestCountSheet()
     }
 }
+
+// MARK: - UIAdaptivePresentationControllerDelegate
 
 extension SeatsViewController: UIAdaptivePresentationControllerDelegate {
     func presentGuestCountSheet() {
