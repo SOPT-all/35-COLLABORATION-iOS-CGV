@@ -11,21 +11,30 @@ import Then
 import SnapKit
 
 final class GuestCountButton: UIView {
+    
+    // MARK: - Property
+
     static let defaultWidth: CGFloat = 100
+    
     static let defaultHeight: CGFloat = 42
     
+    // MARK: - UIComponent
+
     private let countView = UIView()
     
-    private let minusButton = UIButton()
+    let minusButton = UIButton()
     
-    private let plusButton = UIButton()
+    let plusButton = UIButton()
     
-    private let countLabel = UILabel()
+    let countLabel = UILabel()
+    
+    // MARK: - Initializer
     
     init(count: Int = 0) {
         super.init(frame: .zero)
         
         setCountLabel(count: count)
+        setAction()
         setStyle()
         setUI()
         setLayout()
@@ -34,6 +43,7 @@ final class GuestCountButton: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setAction()
         setStyle()
         setUI()
         setLayout()
@@ -42,11 +52,14 @@ final class GuestCountButton: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
+        setAction()
         setStyle()
         setUI()
         setLayout()
     }
     
+    // MARK: - Function
+
     private func setCountLabel(count: Int) {
         countLabel.setText(
             count.description,
@@ -56,7 +69,38 @@ final class GuestCountButton: UIView {
         )
     }
     
-    private func setStyle() {
+    // MARK: - Action
+    
+    private func setAction() {
+        minusButton.addTarget(self, action: #selector(minusButtonDidTap), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(plusButtonDidTap), for: .touchUpInside)
+    }
+    
+    @objc
+    private func minusButtonDidTap() {
+        guard let countText = countLabel.text else { return }
+        guard let count = Int(countText) else { return }
+        
+        if (count - 1) >= 0 && (count - 1) <= 8 {
+            countLabel.updateText((count - 1).description)
+        }
+    }
+    
+    @objc
+    private func plusButtonDidTap() {
+        guard let countText = countLabel.text else { return }
+        guard let count = Int(countText) else { return }
+        
+        if (count + 1) >= 0 && (count + 1) <= 8 {
+            countLabel.updateText((count + 1).description)
+        }
+    }
+}
+
+// MARK: - UISetting
+
+private extension GuestCountButton {
+    func setStyle() {
         backgroundColor = .cgvG200
         layer.cornerRadius = 8
         
@@ -74,11 +118,11 @@ final class GuestCountButton: UIView {
         }
     }
     
-    private func setUI() {
+    func setUI() {
         addSubviews(countView, countLabel, minusButton, plusButton)
     }
     
-    private func setLayout() {
+    func setLayout() {
         countView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
