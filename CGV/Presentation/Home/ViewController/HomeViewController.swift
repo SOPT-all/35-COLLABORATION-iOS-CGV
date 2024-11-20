@@ -99,16 +99,34 @@ final class HomeViewController: BaseViewController {
         }
         
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
-            guard kind == UICollectionView.elementKindSectionHeader else { return UICollectionReusableView() }
-            
             let section = HomeSectionType(rawValue: indexPath.section)
-            let header = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: MidHeaderView.identifier,
-                for: indexPath
-            ) as! MidHeaderView
-            header.configure(title: section?.headerTitle ?? "")
-            return header
+            
+            if kind == UICollectionView.elementKindSectionHeader {
+                let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: MidHeaderView.identifier,
+                    for: indexPath
+                ) as! MidHeaderView
+                header.configure(title: section?.headerTitle ?? "")
+                return header
+            } else if kind == "TabBarKind" {
+                let tabBar = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: MidTabBarView.identifier,
+                    for: indexPath
+                ) as! MidTabBarView
+                
+                if let tabs = section?.midTabBarTitle {
+                    tabBar.configure(tabs: tabs)
+                }
+                
+                tabBar.didSelectTab = { selectedIndex in
+                    print("Selected Tab Index: \(selectedIndex)")
+                }
+                return tabBar
+            }
+            
+            return UICollectionReusableView()
         }
     }
     
@@ -209,18 +227,30 @@ final class HomeViewController: BaseViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
         
-        section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 18, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 66, leading: 20, bottom: 18, trailing: 20)
         
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(50)
+            heightDimension: .absolute(32)
         )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
+        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-        section.boundarySupplementaryItems = [header]
+        
+        let tabBarSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(44)
+        )
+        let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: tabBarSize,
+            elementKind: "TabBarKind",
+            alignment: .top,
+            absoluteOffset: CGPoint(x: 0, y: 55)
+        )
+        
+        section.boundarySupplementaryItems = [midHeader, tabBar]
         
         return section
     }
@@ -242,22 +272,34 @@ final class HomeViewController: BaseViewController {
         section.orthogonalScrollingBehavior = .groupPaging
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
+            top: 66,
             leading: 20,
-            bottom: 0,
+            bottom: 18,
             trailing: 20
         )
         
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(50)
+            heightDimension: .absolute(32)
         )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
+        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-        section.boundarySupplementaryItems = [header]
+        
+        let tabBarSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(44)
+        )
+        let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: tabBarSize,
+            elementKind: "TabBarKind",
+            alignment: .top,
+            absoluteOffset: CGPoint(x: 0, y: 55)
+        )
+        
+        section.boundarySupplementaryItems = [midHeader, tabBar]
         
         return section
     }
@@ -279,22 +321,34 @@ final class HomeViewController: BaseViewController {
         section.orthogonalScrollingBehavior = .groupPaging
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
+            top: 66,
             leading: 20,
-            bottom: 0,
+            bottom: 18,
             trailing: 20
         )
         
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(50)
+            heightDimension: .absolute(32)
         )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
+        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-        section.boundarySupplementaryItems = [header]
+        
+        let tabBarSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(44)
+        )
+        let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: tabBarSize,
+            elementKind: "TabBarKind",
+            alignment: .top,
+            absoluteOffset: CGPoint(x: 0, y: 55)
+        )
+        
+        section.boundarySupplementaryItems = [midHeader, tabBar]
         
         return section
     }

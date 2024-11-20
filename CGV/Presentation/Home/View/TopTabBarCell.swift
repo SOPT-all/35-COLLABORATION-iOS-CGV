@@ -42,8 +42,8 @@ class TopTabBarCell: BaseCollectionViewCell {
                 $0.setTitleColor(.red, for: .selected)
                 $0.titleLabel?.font = UIFont.setupFont(of: Kopub.head4)
             }
-            buttons.append(button) // 버튼 배열에 추가
-            stackView.addArrangedSubview(button) // StackView에 추가
+            buttons.append(button)
+            stackView.addArrangedSubview(button)
         }
     }
     

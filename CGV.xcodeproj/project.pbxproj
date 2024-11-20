@@ -11,6 +11,8 @@
 		0032F4BB2CEDDB4800F14451 /* TopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */; };
 		003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */; };
 		0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060567E2CEC6C9000482BEC /* HomeView.swift */; };
+		00AE2A862CEE3A530024CE6C /* MidTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */; };
+		00AE2A882CEE3D5A0024CE6C /* MidTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE2A872CEE3D5A0024CE6C /* MidTabBarCell.swift */; };
 		00C774282CEB98830020F5BA /* MidHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774272CEB98830020F5BA /* MidHeaderView.swift */; };
 		00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774292CEB99C40020F5BA /* BannerImageCell.swift */; };
 		00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */; };
@@ -51,6 +53,8 @@
 		0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewCell.swift; sourceTree = "<group>"; };
 		003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarCell.swift; sourceTree = "<group>"; };
 		0060567E2CEC6C9000482BEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidTabBarView.swift; sourceTree = "<group>"; };
+		00AE2A872CEE3D5A0024CE6C /* MidTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidTabBarCell.swift; sourceTree = "<group>"; };
 		00C774272CEB98830020F5BA /* MidHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidHeaderView.swift; sourceTree = "<group>"; };
 		00C774292CEB99C40020F5BA /* BannerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCell.swift; sourceTree = "<group>"; };
 		00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageCell.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				0032F4B82CEDC4D500F14451 /* TopHeaderView.swift */,
 				0032F4BA2CEDDB4800F14451 /* TopViewCell.swift */,
 				003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */,
+				00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */,
+				00AE2A872CEE3D5A0024CE6C /* MidTabBarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -351,8 +357,10 @@
 				0032F4B92CEDC4D500F14451 /* TopHeaderView.swift in Sources */,
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
 				00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */,
+				00AE2A882CEE3D5A0024CE6C /* MidTabBarCell.swift in Sources */,
 				00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */,
 				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
+				00AE2A862CEE3A530024CE6C /* MidTabBarView.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
 				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,

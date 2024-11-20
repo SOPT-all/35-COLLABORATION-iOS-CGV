@@ -49,6 +49,18 @@ final class HomeView: UIView {
                 forCellWithReuseIdentifier:           TopTabBarCell.reuseIdentifier
             )
             $0.register(
+                MidHeaderView.self,
+                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                withReuseIdentifier: MidHeaderView.identifier
+            )
+            
+            $0.register(
+                MidTabBarView.self,
+                forSupplementaryViewOfKind: "TabBarKind",
+                withReuseIdentifier: MidTabBarView.identifier
+            )
+            
+            $0.register(
                 MovieChartCell.self,
                 forCellWithReuseIdentifier: MovieChartCell.reuseIdentifier
             )

@@ -54,6 +54,37 @@ extension HomeSectionType {
         case .todayCGV: return "오늘의 CGV"
         }
     }
+    
+    var midTabBarTitle: [String]? {
+        switch self {
+        case .movieChart: return [
+            "예매차트",
+            "현재상영작",
+            "ICECON",
+            "아트하우스",
+            "CGV Only"
+        ]
+        case .special: return [
+            "IMAX",
+            "SCREENX",
+            "4DX",
+            "ULTRA 4DX",
+            "Gold Class",
+            "Tempur",
+            "씨네드쉐프",
+            "씨네앤포레",
+            "프라이빗박스"
+        ]
+        case .todayCGV: return [
+            "HOT 예고편",
+            "HOT 이벤트",
+            "상영종료예정",
+            "인기 CGV",
+            "오늘의 굿즈"
+        ]
+        default: return nil
+        }
+    }
 }
 
 extension HomeItem {
@@ -130,7 +161,7 @@ extension HomeItem {
             dDay: "D-1",
             image: UIImage(resource: .imgHomePoster9)
         ),
-
+        
         // Special section items
         HomeItem(
             section: .special,

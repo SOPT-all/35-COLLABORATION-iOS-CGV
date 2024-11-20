@@ -39,7 +39,6 @@ final class MovieChartCell: BaseCollectionViewCell {
         
         titleLabel.do {
             $0.setText(style: Kopub.head4, color: .black, isSingleLine: true)
-            // $0.backgroundColor = .red
         }
         
         ageLimitImageView.do {
@@ -136,8 +135,7 @@ final class MovieChartCell: BaseCollectionViewCell {
         dDay: String
     ) {
         posterImageView.image = poster
-        // titleLabel.text = title
-        titleLabel.setText(title, style: Kopub.head4, color: .cgvBlack)
+        titleLabel.setText(title, style: Kopub.head4, color: .cgvBlack, isSingleLine: true)
         ageLimitImageView.image = ageLimit
         preEggStatLabel.setText(preEgg, style: Kopub.head3, color: .cgvG800)
         dDayLabel.setText(dDay, style: Kopub.head3, color: .cgvR400)
