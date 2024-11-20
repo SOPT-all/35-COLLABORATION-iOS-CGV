@@ -31,6 +31,7 @@ extension SeatsViewController: UIAdaptivePresentationControllerDelegate {
             sheet.detents = [fraction]
             sheet.preferredCornerRadius = 20
         }
+        guestCountSheetViewController.isModalInPresentation = true
         
         self.present(guestCountSheetViewController, animated: true)
     }
