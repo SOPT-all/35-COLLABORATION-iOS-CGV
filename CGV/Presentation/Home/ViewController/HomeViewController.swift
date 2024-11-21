@@ -102,17 +102,17 @@ final class HomeViewController: BaseViewController {
                 cell.configure(image: item.image)
                 return cell
             
-            case .reserveRate:
-                let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: ReserveRateCell.reuseIdentifier,
-                    for: indexPath
-                ) as! ReserveRateCell
-                cell.configure(
-                    title: item.title,
-                    rate: item.rate ?? "",
-                    image: item.image
-                )
-                return cell
+//            case .reserveRate:
+//                let cell = collectionView.dequeueReusableCell(
+//                    withReuseIdentifier: ReserveRateCell.reuseIdentifier,
+//                    for: indexPath
+//                ) as! ReserveRateCell
+//                cell.configure(
+//                    title: item.title,
+//                    rate: item.rate ?? "",
+//                    image: item.image
+//                )
+//                return cell
             }
             
         }
@@ -189,9 +189,9 @@ final class HomeViewController: BaseViewController {
                 return self.createSpecialSection()
             case .todayCGV:
                 return self.createTodayCGVSection()
-            case .reserveRate:
-                return nil
-                // return self.createReserveRateSection()
+//            case .reserveRate:
+//                return nil
+//                // return self.createReserveRateSection()
             }
         }
     }
