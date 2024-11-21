@@ -12,6 +12,8 @@ import Then
 
 final class GuestCountSheetView: BaseView {
     
+    // MARK: - UIComponent
+    
     private let titleLabel = UILabel()
     
     private let dateLabel = UILabel()
@@ -40,17 +42,19 @@ final class GuestCountSheetView: BaseView {
     
     private let discountLabel = UILabel()
     
-    private let generalButton = GuestCountButton(count: 0)
+    let generalButton = GuestCountButton(count: 0)
     
-    private let youthButton = GuestCountButton(count: 0)
+    let youthButton = GuestCountButton(count: 0)
     
-    private let seniorButton = GuestCountButton(count: 0)
+    let seniorButton = GuestCountButton(count: 0)
     
-    private let discountButton = GuestCountButton(count: 0)
+    let discountButton = GuestCountButton(count: 0)
     
-    private let backButton = UIButton()
+    let backButton = UIButton()
     
-    private let selectButton = UIButton()
+    let selectButton = UIButton()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         titleLabel.do {
@@ -139,6 +143,7 @@ final class GuestCountSheetView: BaseView {
             $0.setTitle("좌석선택", style: Kopub.head7, color: .cgvWhite)
             $0.backgroundColor = .cgvG500
             $0.layer.cornerRadius = 12
+            $0.isEnabled = false
         }
     }
     
