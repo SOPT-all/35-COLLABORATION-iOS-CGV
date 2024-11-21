@@ -11,10 +11,23 @@ final class SeatsViewController: BaseViewController {
     
     // MARK: - LifeCycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .cgvG850
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         presentGuestCountSheet()
+    }
+    
+    // MARK: - Function
+
+    override func setupView() {
+        setupNavigationBarTitle(with: "[IMAX LASER 2D]", backgroundColor: .cgvG850)
+        setupNavigationBarBackButton()
     }
 }
 
