@@ -76,6 +76,10 @@ final class HomeView: UIView {
                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                 withReuseIdentifier: MidHeaderView.identifier
             )
+            $0.register(
+                ReserveRateCell.self,
+                forCellWithReuseIdentifier: ReserveRateCell.reuseIdentifier
+            )
         }
     }
 }

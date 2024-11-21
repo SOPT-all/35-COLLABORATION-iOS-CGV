@@ -37,8 +37,9 @@ class ReserveRateCell: BaseCollectionViewCell {
         }
         
         reserveButton.do {
-            $0.setTitle("예매", for: .normal)
+            $0.setTitle("예매", style: Kopub.body3, color: .white)
             $0.backgroundColor = .cgvR200
+            $0.layer.cornerRadius = 4
         }
     }
     
@@ -71,6 +72,7 @@ class ReserveRateCell: BaseCollectionViewCell {
         
         reserveButton.snp.makeConstraints{
             $0.trailing.equalToSuperview().inset(8)
+            $0.centerY.equalTo(posterImageView.snp.centerY)
             $0.width.equalTo(32)
             $0.height.equalTo(24)
         }

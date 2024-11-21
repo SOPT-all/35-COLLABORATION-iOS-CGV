@@ -23,7 +23,7 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         homeView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             $0.leading.trailing.bottom.equalToSuperview()
@@ -63,7 +63,7 @@ final class HomeViewController: BaseViewController {
                 ) as! TopHeaderViewCell
                 return cell
                 
-            case .topTapBar:
+            case .topTabBar:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: TopTabBarCell.reuseIdentifier,
                     for: indexPath
@@ -101,18 +101,18 @@ final class HomeViewController: BaseViewController {
                 ) as! BigImageCell
                 cell.configure(image: item.image)
                 return cell
-            
-//            case .reserveRate:
-//                let cell = collectionView.dequeueReusableCell(
-//                    withReuseIdentifier: ReserveRateCell.reuseIdentifier,
-//                    for: indexPath
-//                ) as! ReserveRateCell
-//                cell.configure(
-//                    title: item.title,
-//                    rate: item.rate ?? "",
-//                    image: item.image
-//                )
-//                return cell
+                
+            case .specialRate, .todayRate:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: ReserveRateCell.reuseIdentifier,
+                    for: indexPath
+                ) as! ReserveRateCell
+                cell.configure(
+                    title: item.title,
+                    rate: item.rate ?? "",
+                    image: item.image
+                )
+                return cell
             }
             
         }
@@ -154,13 +154,16 @@ final class HomeViewController: BaseViewController {
         for section in HomeSectionType.allCases {
             snapshot.appendSections([section])
             
-            if section == .topHeader {
+            switch section {
+            case .topHeader:
                 let topItem = HomeItem(section: .topHeader, title: "")
                 snapshot.appendItems([topItem], toSection: .topHeader)
-            } else if section == .topTapBar {
-                let segmentedItem = HomeItem(section: .topTapBar, title: "")
-                snapshot.appendItems([segmentedItem], toSection: .topTapBar)
-            } else {
+                
+            case .topTabBar:
+                let segmentedItem = HomeItem(section: .topTabBar, title: "")
+                snapshot.appendItems([segmentedItem], toSection: .topTabBar)
+                
+            default:
                 let items = HomeItem.dummyItems.filter { $0.section == section }
                 snapshot.appendItems(items, toSection: section)
             }
@@ -179,7 +182,7 @@ final class HomeViewController: BaseViewController {
             switch sectionType {
             case .topHeader:
                 return self.createTopViewSection()
-            case .topTapBar:
+            case .topTabBar:
                 return self.createTopTabBarSection()
             case .banner:
                 return self.createBannerSection()
@@ -189,9 +192,8 @@ final class HomeViewController: BaseViewController {
                 return self.createSpecialSection()
             case .todayCGV:
                 return self.createTodayCGVSection()
-//            case .reserveRate:
-//                return nil
-//                // return self.createReserveRateSection()
+            case .specialRate, .todayRate:
+                return self.createRateSection()
             }
         }
     }
@@ -396,6 +398,36 @@ final class HomeViewController: BaseViewController {
         )
         
         section.boundarySupplementaryItems = [midHeader, tabBar]
+        
+        return section
+    }
+    
+    private func createRateSection() -> NSCollectionLayoutSection? {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(335),
+            heightDimension: .absolute(58)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(343),
+            heightDimension: .absolute(58 * 3 + 10 * 2)
+        )
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: groupSize,
+            repeatingSubitem: item,
+            count: 3
+        )
+        group.interItemSpacing = .fixed(10)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 36,
+            leading: 20,
+            bottom: 14,
+            trailing: 20
+        )
         
         return section
     }
