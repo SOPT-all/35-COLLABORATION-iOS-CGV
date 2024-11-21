@@ -22,6 +22,7 @@ final class MidHeaderView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setStyle()
         setUI()
         setLayout()
@@ -53,7 +54,7 @@ final class MidHeaderView: UICollectionReusableView {
     }
     
     private func setUI() {
-        self.addSubviews(titleLabel, allViewButton)
+        addSubviews(titleLabel, allViewButton)
         allViewButton.addSubviews(allViewTextLabel, chevronImageView)
     }
     

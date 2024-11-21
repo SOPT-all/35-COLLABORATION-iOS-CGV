@@ -78,7 +78,7 @@ final class MovieChartCell: BaseCollectionViewCell {
     }
     
     override func setUI() {
-        self.addSubviews(
+        addSubviews(
             posterImageView,
             firstStackView,
             secondStackView,

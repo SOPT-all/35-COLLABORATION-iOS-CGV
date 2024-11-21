@@ -20,6 +20,7 @@ final class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupView()
         setupConstraints()
     }
@@ -33,8 +34,8 @@ final class HomeView: UIView {
     }
     
     private func setupConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
     
@@ -42,24 +43,22 @@ final class HomeView: UIView {
         collectionView.do {
             $0.register(
                 TopHeaderViewCell.self,
-                forCellWithReuseIdentifier:           TopHeaderViewCell.reuseIdentifier
+                forCellWithReuseIdentifier: TopHeaderViewCell.reuseIdentifier
             )
             $0.register(
                 TopTabBarCell.self,
-                forCellWithReuseIdentifier:           TopTabBarCell.reuseIdentifier
+                forCellWithReuseIdentifier: TopTabBarCell.reuseIdentifier
             )
             $0.register(
                 MidHeaderView.self,
                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                 withReuseIdentifier: MidHeaderView.identifier
             )
-            
             $0.register(
                 MidTabBarView.self,
                 forSupplementaryViewOfKind: "TabBarKind",
                 withReuseIdentifier: MidTabBarView.identifier
             )
-            
             $0.register(
                 MovieChartCell.self,
                 forCellWithReuseIdentifier: MovieChartCell.reuseIdentifier

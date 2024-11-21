@@ -33,6 +33,7 @@ class MidTabBarView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setStyle()
         setUI()
         setLayout()
@@ -73,22 +74,38 @@ class MidTabBarView: UICollectionReusableView {
 }
 
 extension MidTabBarView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return tabs.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MidTabBarCell.reuseIdentifier, for: indexPath) as! MidTabBarCell
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: MidTabBarCell.reuseIdentifier,
+            for: indexPath
+        ) as? MidTabBarCell else { return UICollectionViewCell() }
         cell.configure(title: tabs[indexPath.row], isSelected: indexPath.row == selectedIndex)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
         selectedIndex = indexPath.row
         didSelectTab?(selectedIndex)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let title = tabs[indexPath.row]
         let font = UIFont.setupFont(of: Kopub.body3)
         let attributes: [NSAttributedString.Key: Any] = [.font: font]
