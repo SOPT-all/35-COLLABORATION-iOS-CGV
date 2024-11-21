@@ -16,11 +16,18 @@ final class HomeViewController: BaseViewController {
     // MARK: - LifeCycle
     
     override func loadView() {
-        view = homeView
+        let rootView = UIView()
+        rootView.addSubviews(homeView)
+        view = rootView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            
+        homeView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
         
         homeView.collectionView.collectionViewLayout = createLayout()
         homeView.setupCollectionView()
@@ -51,9 +58,9 @@ final class HomeViewController: BaseViewController {
             switch item.section {
             case .topHeader:
                 let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: TopViewCell.reuseIdentifier,
+                    withReuseIdentifier: TopHeaderViewCell.reuseIdentifier,
                     for: indexPath
-                ) as! TopViewCell
+                ) as! TopHeaderViewCell
                 return cell
                 
             case .topTapBar:

@@ -1,5 +1,5 @@
 //
-//  TopView.swift
+//  TopHeaderView.swift
 //  CGV
 //
 //  Created by 김송희 on 11/20/24.

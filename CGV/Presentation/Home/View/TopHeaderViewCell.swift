@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class TopViewCell: BaseCollectionViewCell {
+class TopHeaderViewCell: BaseCollectionViewCell {
     
     private let topView = TopHeaderView()
     

@@ -41,8 +41,8 @@ final class HomeView: UIView {
     func setupCollectionView() {
         collectionView.do {
             $0.register(
-                TopViewCell.self,
-                forCellWithReuseIdentifier:           TopViewCell.reuseIdentifier
+                TopHeaderViewCell.self,
+                forCellWithReuseIdentifier:           TopHeaderViewCell.reuseIdentifier
             )
             $0.register(
                 TopTabBarCell.self,
