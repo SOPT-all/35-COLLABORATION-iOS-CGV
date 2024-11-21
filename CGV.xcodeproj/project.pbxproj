@@ -20,6 +20,8 @@
 		00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */; };
 		00C774302CEBAF7F0020F5BA /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7742F2CEBAF7F0020F5BA /* HomeItem.swift */; };
 		00ED4AF12CE9E67900E562FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 00ED4AF02CE9E67900E562FA /* .gitignore */; };
+		A300A4752CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */; };
+		A300A4792CEF3EF90063DFF4 /* SeatsTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300A4782CEF3EF90063DFF4 /* SeatsTimeModel.swift */; };
 		A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B72CE8E937003B5322 /* AppDelegate.swift */; };
 		A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B92CE8E937003B5322 /* SceneDelegate.swift */; };
 		A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36348C02CE8E938003B5322 /* Assets.xcassets */; };
@@ -75,6 +77,8 @@
 		00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChartCell.swift; sourceTree = "<group>"; };
 		00C7742F2CEBAF7F0020F5BA /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
 		00ED4AF02CE9E67900E562FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A300A4782CEF3EF90063DFF4 /* SeatsTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsTimeModel.swift; sourceTree = "<group>"; };
 		A36348B42CE8E937003B5322 /* CGV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36348B72CE8E937003B5322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36348B92CE8E937003B5322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A300A4772CEF3EE30063DFF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A300A4782CEF3EF90063DFF4 /* SeatsTimeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0032F4B52CEDC48400F14451 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +263,7 @@
 		A36348D62CE8EA47003B5322 /* Seats */ = {
 			isa = PBXGroup;
 			children = (
+				A300A4772CEF3EE30063DFF4 /* Model */,
 				A36349302CEC2D5A003B5322 /* View */,
 				A363492F2CEC2D47003B5322 /* ViewController */,
 			);
@@ -334,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				A36349312CEC2D6B003B5322 /* SeatsView.swift */,
+				A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */,
 				A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */,
 			);
 			path = View;
@@ -432,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */,
+				A300A4792CEF3EF90063DFF4 /* SeatsTimeModel.swift in Sources */,
 				003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */,
 				0032F4B92CEDC4D500F14451 /* TopHeaderView.swift in Sources */,
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
@@ -473,6 +488,7 @@
 				AD9BE8122CEDBC1C00650769 /* TheaterButton.swift in Sources */,
 				A36349392CEC971B003B5322 /* GuestCountButton.swift in Sources */,
 				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
+				A300A4752CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
