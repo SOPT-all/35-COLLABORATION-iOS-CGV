@@ -34,6 +34,14 @@
 		A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */; };
 		A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */; };
 		A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */; };
+		AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */; };
+		AD9263F22CEC331800F63581 /* TimeBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */; };
+		AD9263F42CEC588200F63581 /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */; };
+		AD9263F62CEC838600F63581 /* RegionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F52CEC838600F63581 /* RegionType.swift */; };
+		AD9263F82CEC868D00F63581 /* RegionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F72CEC868D00F63581 /* RegionInfo.swift */; };
+		AD9263FA2CEC86CA00F63581 /* TheaterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F92CEC86CA00F63581 /* TheaterInfo.swift */; };
+		AD9BE8122CEDBC1C00650769 /* TheaterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BE8112CEDBC1C00650769 /* TheaterButton.swift */; };
+		AD9BE8142CEDD60800650769 /* TheaterChipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BE8132CEDD60800650769 /* TheaterChipButton.swift */; };
 		A36349322CEC2D6B003B5322 /* SeatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349312CEC2D6B003B5322 /* SeatsView.swift */; };
 		A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */; };
 		A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */; };
@@ -69,6 +77,14 @@
 		A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifable.swift; sourceTree = "<group>"; };
+		AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBottomSheetView.swift; sourceTree = "<group>"; };
+		AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBottomSheetViewController.swift; sourceTree = "<group>"; };
+		AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
+		AD9263F52CEC838600F63581 /* RegionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionType.swift; sourceTree = "<group>"; };
+		AD9263F72CEC868D00F63581 /* RegionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionInfo.swift; sourceTree = "<group>"; };
+		AD9263F92CEC86CA00F63581 /* TheaterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterInfo.swift; sourceTree = "<group>"; };
+		AD9BE8112CEDBC1C00650769 /* TheaterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterButton.swift; sourceTree = "<group>"; };
+		AD9BE8132CEDD60800650769 /* TheaterChipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterChipButton.swift; sourceTree = "<group>"; };
 		A36349312CEC2D6B003B5322 /* SeatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsView.swift; sourceTree = "<group>"; };
 		A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetView.swift; sourceTree = "<group>"; };
 		A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +178,12 @@
 		A36348D52CE8EA3E003B5322 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				AD9BE8102CEDA21300650769 /* Component */,
+				AD9CFFE52CEC88E30010BDFD /* TimeBottomSheet */,
 				A36348F42CE9CF45003B5322 /* TimeViewController.swift */,
+				AD9263F52CEC838600F63581 /* RegionType.swift */,
+				AD9263F72CEC868D00F63581 /* RegionInfo.swift */,
+				AD9263F92CEC86CA00F63581 /* TheaterInfo.swift */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -219,6 +240,25 @@
 				A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		AD9BE8102CEDA21300650769 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				AD9BE8112CEDBC1C00650769 /* TheaterButton.swift */,
+				AD9BE8132CEDD60800650769 /* TheaterChipButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		AD9CFFE52CEC88E30010BDFD /* TimeBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */,
+				AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */,
+				AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */,
+			);
+			path = TimeBottomSheet;
 			sourceTree = "<group>";
 		};
 		A363492F2CEC2D47003B5322 /* ViewController */ = {
@@ -335,22 +375,30 @@
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
 				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
+				AD9263F42CEC588200F63581 /* UnderlineSegmentedControl.swift in Sources */,
+				AD9263FA2CEC86CA00F63581 /* TheaterInfo.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
 				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,
 				A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */,
 				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
+				AD9BE8142CEDD60800650769 /* TheaterChipButton.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
+				AD9263F22CEC331800F63581 /* TimeBottomSheetViewController.swift in Sources */,
 				A36349322CEC2D6B003B5322 /* SeatsView.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
+				AD9263F62CEC838600F63581 /* RegionType.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
+				AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */,
 				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
 				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
+				AD9263F82CEC868D00F63581 /* RegionInfo.swift in Sources */,
 				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
 				A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
+				AD9BE8122CEDBC1C00650769 /* TheaterButton.swift in Sources */,
 				A36349392CEC971B003B5322 /* GuestCountButton.swift in Sources */,
 				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);
