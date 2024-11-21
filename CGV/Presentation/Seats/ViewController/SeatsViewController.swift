@@ -46,6 +46,14 @@ final class SeatsViewController: BaseViewController {
         setupNavigationBarBackButton()
     }
     
+    override func setupAction() {
+        rootView.seatsImage.addTarget(
+            self,
+            action: #selector(seatsImageDidTap),
+            for: .touchUpInside
+        )
+    }
+    
     override func setupDelegate() {
         rootView.seatsCollectionView.delegate = self
         rootView.seatsCollectionView.dataSource = self
@@ -56,6 +64,13 @@ final class SeatsViewController: BaseViewController {
             SeatsCollectionViewCell.self,
             forCellWithReuseIdentifier: SeatsCollectionViewCell.reuseIdentifier
         )
+    }
+    
+    @objc
+    private func seatsImageDidTap() {
+        rootView.seatsImage.isSelected.toggle()
+        let image = rootView.seatsImage.isSelected ? UIImage.imgSeatsSelected : UIImage.imgSeatsUnselected
+        rootView.seatsImage.setImage(image, for: .normal)
     }
 }
 

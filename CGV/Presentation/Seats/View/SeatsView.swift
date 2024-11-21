@@ -20,6 +20,8 @@ final class SeatsView: BaseView {
         $0.scrollDirection = .horizontal
     })
     
+    let seatsImage = UIButton()
+    
     // MARK: - UISetting
     
     override func setStyle() {
@@ -29,10 +31,14 @@ final class SeatsView: BaseView {
             $0.showsHorizontalScrollIndicator = false
             $0.contentInsetAdjustmentBehavior = .never
         }
+        
+        seatsImage.do {
+            $0.setImage(.imgSeatsUnselected, for: .normal)
+        }
     }
     
     override func setUI() {
-        addSubviews(seatsCollectionView)
+        addSubviews(seatsCollectionView, seatsImage)
     }
     
     override func setLayout() {
@@ -40,6 +46,12 @@ final class SeatsView: BaseView {
             $0.top.equalToSuperview().inset(90)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(80)
+        }
+        
+        seatsImage.snp.makeConstraints {
+            $0.top.equalTo(seatsCollectionView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(UIScreen.main.bounds.width * (641/375))
         }
     }
 }
