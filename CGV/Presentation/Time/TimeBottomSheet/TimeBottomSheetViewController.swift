@@ -16,14 +16,8 @@ final class TimeBottomSheetViewController: BaseViewController {
     override func loadView() {
         view = rootView
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
     override func setupAction() {
-        super.setupAction()
-        
         for button in rootView.theatersButtons {
             button.addTarget(
                 self,
@@ -41,6 +35,13 @@ final class TimeBottomSheetViewController: BaseViewController {
 }
 
 extension TimeBottomSheetViewController {
+    private func checkValid() {
+        isValid = selectedTheaters.isEmpty
+        
+        rootView.selectButton.backgroundColor = isValid ? .cgvG500 : .cgvR400
+        rootView.selectButton.isEnabled = isValid ? false : true
+    }
+    
     @objc
     private func theaterButtonDidTap(_ sender: TheaterButton) {
         guard let theater = sender.theater else { return }
@@ -63,15 +64,4 @@ extension TimeBottomSheetViewController {
     private func selectButtonDidTap() {
         dismiss(animated: true)
     }
-    
-    private func checkValid() {
-        isValid = selectedTheaters.isEmpty
-        
-        rootView.selectButton.backgroundColor = isValid ? .cgvG500 : .cgvR400
-        rootView.selectButton.isEnabled = isValid ? false : true
-    }
-}
-
-#Preview {
-    TimeViewController()
 }

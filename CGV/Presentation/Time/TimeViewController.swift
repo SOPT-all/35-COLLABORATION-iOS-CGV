@@ -9,11 +9,6 @@ import UIKit
 
 final class TimeViewController: BaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -34,8 +29,4 @@ extension TimeViewController: UIAdaptivePresentationControllerDelegate {
         }
         self.present(timeBottomSheetViewController, animated: true)
     }
-}
-
-#Preview {
-    TimeViewController()
 }

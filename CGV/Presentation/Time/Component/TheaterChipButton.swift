@@ -63,7 +63,7 @@ class TheaterChipButton: UIButton {
     private func setUI() {
         stackView.addArrangedSubviews(theaterNameLabel, closeImageView)
         
-        addSubviews(stackView)
+        addSubview(stackView)
     }
     
     private func setLayout() {
@@ -79,8 +79,4 @@ class TheaterChipButton: UIButton {
     private func setTheaterNameLabel(title: String) {
         theaterNameLabel.setText(title, style: Kopub.head4, color: .cgvG850, isSingleLine: true)
     }
-}
-
-#Preview {
-    TheaterChipButton(title: "아이파크몰")
 }

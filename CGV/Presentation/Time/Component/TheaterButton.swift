@@ -52,20 +52,12 @@ final class TheaterButton: UIButton {
     }
     
     private func setStyle() {
-        if isSelected {
-            backgroundColor = .cgvG300
-        } else {
-            backgroundColor = .cgvWhite
-        }
+        backgroundColor = isSelected ? .cgvG300 : .cgvWhite
         
         clickImageView.do {
             $0.image = .icTimeModalCheck
             $0.contentMode = .scaleAspectFit
-            if isSelected {
-                $0.isHidden = false
-            } else {
-                $0.isHidden = true
-            }
+            $0.isHidden = isSelected ? false : true
         }
     }
     

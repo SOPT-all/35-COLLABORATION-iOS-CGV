@@ -286,7 +286,3 @@ extension TimeBottomSheetView {
         }
     }
 }
-
-#Preview {
-    TimeViewController()
-}
