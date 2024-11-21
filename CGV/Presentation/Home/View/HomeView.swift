@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class HomeView: UIView {
+final class HomeView: BaseView {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewLayout()
@@ -18,29 +18,20 @@ final class HomeView: UIView {
         return collectionView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupView()
-        setupConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupView() {
+    override func setUI() {
         addSubview(collectionView)
     }
     
-    private func setupConstraints() {
+    override func setLayout() {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
     
-    func setupCollectionView() {
+    func setCollectionView() {
         collectionView.do {
+            $0.showsVerticalScrollIndicator = false
+            
             $0.register(
                 TopHeaderViewCell.self,
                 forCellWithReuseIdentifier: TopHeaderViewCell.reuseIdentifier
@@ -79,6 +70,10 @@ final class HomeView: UIView {
             $0.register(
                 ReserveRateCell.self,
                 forCellWithReuseIdentifier: ReserveRateCell.reuseIdentifier
+            )
+            $0.register(
+                MyCGVCell.self,
+                forCellWithReuseIdentifier: MyCGVCell.reuseIdentifier
             )
         }
     }

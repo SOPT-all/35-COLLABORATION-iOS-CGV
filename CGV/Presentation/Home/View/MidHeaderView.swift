@@ -15,7 +15,7 @@ final class MidHeaderView: UICollectionReusableView {
     static let identifier = "MidHeaderView"
     private let titleLabel = UILabel()
     private let allViewButton = UIButton()
-    private let allViewTextLabel = UILabel()
+    private let subtitleLabel = UILabel()
     private let chevronImageView = UIImageView()
     
     // MARK: - Initializer
@@ -43,7 +43,7 @@ final class MidHeaderView: UICollectionReusableView {
             $0.backgroundColor = .clear
         }
         
-        allViewTextLabel.do {
+        subtitleLabel.do {
             $0.setText("전체보기", style: Kopub.body3, color: .cgvG700)
         }
         
@@ -55,7 +55,7 @@ final class MidHeaderView: UICollectionReusableView {
     
     private func setUI() {
         addSubviews(titleLabel, allViewButton)
-        allViewButton.addSubviews(allViewTextLabel, chevronImageView)
+        allViewButton.addSubviews(subtitleLabel, chevronImageView)
     }
     
     private func setLayout() {
@@ -67,13 +67,13 @@ final class MidHeaderView: UICollectionReusableView {
         allViewButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
             $0.trailing.equalToSuperview()
-            $0.width.equalTo(58)
+            $0.width.equalTo(72)
             $0.height.equalTo(18)
         }
         
-        allViewTextLabel.snp.makeConstraints{
+        subtitleLabel.snp.makeConstraints{
             $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
+            $0.trailing.equalTo(chevronImageView.snp.leading).offset(-5)
         }
         
         chevronImageView.snp.makeConstraints {
@@ -84,8 +84,9 @@ final class MidHeaderView: UICollectionReusableView {
         }
     }
     
-    func configure(title: String) {
+    func configure(title: String, subtitle: String) {
         titleLabel.setText(title, style: Kopub.head7, color: .cgvBlack)
+        subtitleLabel.setText(subtitle, style: Kopub.body3, color: .cgvG700)
     }
 }
 

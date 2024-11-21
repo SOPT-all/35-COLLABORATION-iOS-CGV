@@ -14,6 +14,7 @@ enum HomeSectionType: Int, CaseIterable {
     case movieChart
     case special
     case specialRate
+    case myCGV
     case todayCGV
     case todayRate
 }
@@ -56,7 +57,15 @@ extension HomeSectionType {
         case .topHeader, .topTabBar, .banner, .specialRate, .todayRate: return ""
         case .movieChart: return "무비 차트"
         case .special: return "특별관"
+        case .myCGV: return "나의 CGV"
         case .todayCGV: return "오늘의 CGV"
+        }
+    }
+    
+    var headerSubtitle: String {
+        switch self {
+        case .myCGV: return "자세히 보기"
+        default: return "전체보기"
         }
     }
     
@@ -205,6 +214,26 @@ extension HomeItem {
             title: "베놈 : 라스트 댄스",
             image: UIImage(resource: .imgHomeSmallposter3),
             rate: "예매율 1.3%"
+        ),
+        
+        // My CGV section items
+        HomeItem(
+            section: .myCGV,
+            title: "내가 본 영화",
+            image: UIImage(resource: .icHomeMovie),
+            rate: "9편"
+        ),
+        HomeItem(
+            section: .myCGV,
+            title: "기대되는 영화",
+            image: UIImage(resource: .icHomeLike),
+            rate: "2편"
+        ),
+        HomeItem(
+            section: .myCGV,
+            title: "내가 쓴 리뷰",
+            image: UIImage(resource: .icHomePen),
+            rate: "1편"
         ),
         
         // Today CGV section items

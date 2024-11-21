@@ -12,6 +12,7 @@
 		003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */; };
 		0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060567E2CEC6C9000482BEC /* HomeView.swift */; };
 		00805C6C2CEF242D0016C6F7 /* ReserveRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805C6B2CEF242D0016C6F7 /* ReserveRateCell.swift */; };
+		00805C702CEFAEC90016C6F7 /* MyCGVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805C6F2CEFAEC90016C6F7 /* MyCGVCell.swift */; };
 		00AE2A862CEE3A530024CE6C /* MidTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */; };
 		00AE2A882CEE3D5A0024CE6C /* MidTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE2A872CEE3D5A0024CE6C /* MidTabBarCell.swift */; };
 		00C774282CEB98830020F5BA /* MidHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C774272CEB98830020F5BA /* MidHeaderView.swift */; };
@@ -69,6 +70,7 @@
 		003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarCell.swift; sourceTree = "<group>"; };
 		0060567E2CEC6C9000482BEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		00805C6B2CEF242D0016C6F7 /* ReserveRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveRateCell.swift; sourceTree = "<group>"; };
+		00805C6F2CEFAEC90016C6F7 /* MyCGVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCGVCell.swift; sourceTree = "<group>"; };
 		00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidTabBarView.swift; sourceTree = "<group>"; };
 		00AE2A872CEE3D5A0024CE6C /* MidTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidTabBarCell.swift; sourceTree = "<group>"; };
 		00C774272CEB98830020F5BA /* MidHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidHeaderView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				00C7742D2CEB9BA10020F5BA /* MovieChartCell.swift */,
 				00C7742B2CEB9A5E0020F5BA /* BigImageCell.swift */,
 				00805C6B2CEF242D0016C6F7 /* ReserveRateCell.swift */,
+				00805C6F2CEFAEC90016C6F7 /* MyCGVCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */,
 				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
+				00805C702CEFAEC90016C6F7 /* MyCGVCell.swift in Sources */,
 				00805C6C2CEF242D0016C6F7 /* ReserveRateCell.swift in Sources */,
 				00C774302CEBAF7F0020F5BA /* HomeItem.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,

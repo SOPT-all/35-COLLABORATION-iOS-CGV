@@ -30,7 +30,7 @@ final class HomeViewController: BaseViewController {
         }
         
         homeView.collectionView.collectionViewLayout = createLayout()
-        homeView.setupCollectionView()
+        homeView.setCollectionView()
         configureDataSource()
         applyInitialSnapshots()
     }
@@ -102,6 +102,18 @@ final class HomeViewController: BaseViewController {
                 cell.configure(image: item.image)
                 return cell
                 
+            case .myCGV:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: MyCGVCell.reuseIdentifier,
+                    for: indexPath
+                ) as! MyCGVCell
+                cell.configure(
+                    title: item.title,
+                    rate: item.rate ?? "",
+                    image: item.image
+                )
+                return cell
+                
             case .specialRate, .todayRate:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: ReserveRateCell.reuseIdentifier,
@@ -117,7 +129,10 @@ final class HomeViewController: BaseViewController {
             
         }
         
-        dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
+        dataSource.supplementaryViewProvider = {
+            collectionView,
+            kind,
+            indexPath in
             let section = HomeSectionType(rawValue: indexPath.section)
             
             if kind == UICollectionView.elementKindSectionHeader {
@@ -126,7 +141,10 @@ final class HomeViewController: BaseViewController {
                     withReuseIdentifier: MidHeaderView.identifier,
                     for: indexPath
                 ) as! MidHeaderView
-                header.configure(title: section?.headerTitle ?? "")
+                header.configure(
+                    title: section?.headerTitle ?? "",
+                    subtitle: section?.headerSubtitle ?? ""
+                )
                 return header
             } else if kind == "TabBarKind" {
                 let tabBar = collectionView.dequeueReusableSupplementaryView(
@@ -190,6 +208,8 @@ final class HomeViewController: BaseViewController {
                 return self.createMovieChartSection()
             case .special:
                 return self.createSpecialSection()
+            case .myCGV:
+                return self.createMyCGVSection()
             case .todayCGV:
                 return self.createTodayCGVSection()
             case .specialRate, .todayRate:
@@ -346,6 +366,47 @@ final class HomeViewController: BaseViewController {
         )
         
         section.boundarySupplementaryItems = [midHeader, tabBar]
+        
+        return section
+    }
+    
+    private func createMyCGVSection() -> NSCollectionLayoutSection? {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(335),
+            heightDimension: .absolute(50)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(343),
+            heightDimension: .absolute(50 * 3 + 6 * 2)
+        )
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: groupSize,
+            repeatingSubitem: item,
+            count: 3
+        )
+        group.interItemSpacing = .fixed(6)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 34,
+            leading: 20,
+            bottom: 26,
+            trailing: 20
+        )
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(32)
+        )
+        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        section.boundarySupplementaryItems = [midHeader]
         
         return section
     }
