@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_seats_door.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

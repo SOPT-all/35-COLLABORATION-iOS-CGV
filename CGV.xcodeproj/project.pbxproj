@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00ED4AF12CE9E67900E562FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 00ED4AF02CE9E67900E562FA /* .gitignore */; };
 		A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B72CE8E937003B5322 /* AppDelegate.swift */; };
 		A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B92CE8E937003B5322 /* SceneDelegate.swift */; };
 		A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36348C02CE8E938003B5322 /* Assets.xcassets */; };
@@ -16,9 +17,28 @@
 		A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348DF2CE8EB85003B5322 /* HomeViewController.swift */; };
 		A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F42CE9CF45003B5322 /* TimeViewController.swift */; };
 		A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */; };
+		A36349042CEA49D4003B5322 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349032CEA49D4003B5322 /* UIView+.swift */; };
+		A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349052CEA4A70003B5322 /* UIStackView+.swift */; };
+		A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349072CEA4AA0003B5322 /* UIFont+.swift */; };
+		A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363490B2CEA4FFF003B5322 /* UIButton+.swift */; };
+		A363490F2CEA6608003B5322 /* KoPubWorldDotumBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A363490D2CEA6607003B5322 /* KoPubWorldDotumBold.ttf */; };
+		A36349102CEA6608003B5322 /* KoPubWorldDotumMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */; };
+		A36349132CEA6612003B5322 /* MalgunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */; };
+		A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */; };
+		A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349152CEA6936003B5322 /* NSAttributedString+.swift */; };
+		A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349172CEA6E87003B5322 /* UILabel+.swift */; };
+		A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349192CEA7253003B5322 /* CAGradientLayer+.swift */; };
+		A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363491B2CEA75E2003B5322 /* UIColor+.swift */; };
+		A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A363491E2CEA7C11003B5322 /* BaseViewController.swift */; };
+		A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349202CEA7C1A003B5322 /* BaseView.swift */; };
+		A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */; };
+		A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */; };
+		A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */; };
+		ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00ED4AF02CE9E67900E562FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A36348B42CE8E937003B5322 /* CGV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36348B72CE8E937003B5322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36348B92CE8E937003B5322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +48,24 @@
 		A36348DF2CE8EB85003B5322 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A36348F42CE9CF45003B5322 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
+		A36349032CEA49D4003B5322 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		A36349052CEA4A70003B5322 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		A36349072CEA4AA0003B5322 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		A363490B2CEA4FFF003B5322 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		A363490D2CEA6607003B5322 /* KoPubWorldDotumBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumBold.ttf; sourceTree = "<group>"; };
+		A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumMedium.ttf; sourceTree = "<group>"; };
+		A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MalgunGothicBold.ttf; sourceTree = "<group>"; };
+		A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MalgunGothicRegular.ttf; sourceTree = "<group>"; };
+		A36349152CEA6936003B5322 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
+		A36349172CEA6E87003B5322 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		A36349192CEA7253003B5322 /* CAGradientLayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+.swift"; sourceTree = "<group>"; };
+		A363491B2CEA75E2003B5322 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		A363491E2CEA7C11003B5322 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A36349202CEA7C1A003B5322 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifable.swift; sourceTree = "<group>"; };
+		ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +84,7 @@
 		A36348AB2CE8E937003B5322 = {
 			isa = PBXGroup;
 			children = (
+				00ED4AF02CE9E67900E562FA /* .gitignore */,
 				A36348B62CE8E937003B5322 /* CGV */,
 				A36348B52CE8E937003B5322 /* Products */,
 			);
@@ -81,7 +120,12 @@
 		A36348CC2CE8E9DC003B5322 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A363491D2CEA7BF1003B5322 /* Base */,
+				A36349022CEA49C0003B5322 /* Extensions */,
+				A36349262CEA7D71003B5322 /* Util */,
+				A36348F82CEA4857003B5322 /* Fonts */,
 				A36348C02CE8E938003B5322 /* Assets.xcassets */,
+				ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */,
 				A36348C52CE8E938003B5322 /* Info.plist */,
 				A36348C22CE8E938003B5322 /* LaunchScreen.storyboard */,
 			);
@@ -120,6 +164,51 @@
 				A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */,
 			);
 			path = Seats;
+			sourceTree = "<group>";
+		};
+		A36348F82CEA4857003B5322 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A363490D2CEA6607003B5322 /* KoPubWorldDotumBold.ttf */,
+				A363490E2CEA6608003B5322 /* KoPubWorldDotumMedium.ttf */,
+				A36349112CEA6612003B5322 /* MalgunGothicBold.ttf */,
+				A36349122CEA6612003B5322 /* MalgunGothicRegular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A36349022CEA49C0003B5322 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A36349032CEA49D4003B5322 /* UIView+.swift */,
+				A36349052CEA4A70003B5322 /* UIStackView+.swift */,
+				A36349072CEA4AA0003B5322 /* UIFont+.swift */,
+				A36349172CEA6E87003B5322 /* UILabel+.swift */,
+				A363490B2CEA4FFF003B5322 /* UIButton+.swift */,
+				A36349152CEA6936003B5322 /* NSAttributedString+.swift */,
+				A363491B2CEA75E2003B5322 /* UIColor+.swift */,
+				A36349192CEA7253003B5322 /* CAGradientLayer+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A363491D2CEA7BF1003B5322 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A36349202CEA7C1A003B5322 /* BaseView.swift */,
+				A363491E2CEA7C11003B5322 /* BaseViewController.swift */,
+				A36349242CEA7D34003B5322 /* BaseTableViewCell.swift */,
+				A36349222CEA7D06003B5322 /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A36349262CEA7D71003B5322 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A36349272CEA7D89003B5322 /* ReuseIdentifable.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +277,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB60EE32CEA1A8B005C6EAC /* Colors.xcassets in Resources */,
+				A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */,
 				A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */,
+				00ED4AF12CE9E67900E562FA /* .gitignore in Resources */,
 				A36348C42CE8E938003B5322 /* Base in Resources */,
+				A363490F2CEA6608003B5322 /* KoPubWorldDotumBold.ttf in Resources */,
+				A36349102CEA6608003B5322 /* KoPubWorldDotumMedium.ttf in Resources */,
+				A36349132CEA6612003B5322 /* MalgunGothicBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,11 +295,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */,
+				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
+				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
+				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
+				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,
+				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
+				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
+				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
+				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
+				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
+				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
+				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
+				A363491A2CEA7253003B5322 /* CAGradientLayer+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
