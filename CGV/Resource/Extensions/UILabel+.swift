@@ -23,4 +23,12 @@ extension UILabel {
             numberOfLines = 0
         }
     }
+    
+    func updateText(_ text: String?) {
+        guard let currentAttributes = attributedText?.attributes(at: 0, effectiveRange: nil) else {
+            self.text = text
+            return
+        }
+        attributedText = NSAttributedString(string: text ?? " ", attributes: currentAttributes)
+    }
 }
