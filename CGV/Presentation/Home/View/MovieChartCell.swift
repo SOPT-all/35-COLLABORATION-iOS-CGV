@@ -78,10 +78,23 @@ final class MovieChartCell: BaseCollectionViewCell {
     }
     
     override func setUI() {
-        self.addSubviews(posterImageView, firstStackView, secondStackView, reserveButton)
+        self.addSubviews(
+            posterImageView,
+            firstStackView,
+            secondStackView,
+            reserveButton
+        )
         
-        firstStackView.addArrangedSubviews(titleLabel, ageLimitImageView)
-        secondStackView.addArrangedSubviews(preEggLogoImageView, preEggStatLabel, divider, dDayLabel)
+        firstStackView.addArrangedSubviews(
+            titleLabel,
+            ageLimitImageView
+        )
+        secondStackView.addArrangedSubviews(
+            preEggLogoImageView,
+            preEggStatLabel,
+            divider,
+            dDayLabel
+        )
     }
     
     override func setLayout() {

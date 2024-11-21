@@ -46,7 +46,10 @@ class MidTabBarView: UICollectionReusableView {
         collectionView.do {
             $0.delegate = self
             $0.dataSource = self
-            $0.register(MidTabBarCell.self, forCellWithReuseIdentifier: MidTabBarCell.reuseIdentifier)
+            $0.register(
+                MidTabBarCell.self,
+                forCellWithReuseIdentifier: MidTabBarCell.reuseIdentifier
+            )
             $0.showsHorizontalScrollIndicator = false
             $0.backgroundColor = .clear
         }

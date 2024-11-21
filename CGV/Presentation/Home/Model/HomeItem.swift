@@ -14,6 +14,7 @@ enum HomeSectionType: Int, CaseIterable {
     case movieChart
     case special
     case todayCGV
+    case reserveRate
 }
 
 struct HomeItem: Hashable {
@@ -24,13 +25,15 @@ struct HomeItem: Hashable {
     let preEgg: String?
     let dDay: String?
     let image: UIImage?
+    let rate: String?
     
     init(section: HomeSectionType,
          title: String,
          ageLimit: UIImage? = nil,
          preEgg: String? = nil,
          dDay: String? = nil,
-         image: UIImage? = nil
+         image: UIImage? = nil,
+         rate: String? = nil
     ) {
         self.section = section
         self.title = title
@@ -38,6 +41,7 @@ struct HomeItem: Hashable {
         self.preEgg = preEgg
         self.dDay = dDay
         self.image = image
+        self.rate = rate
     }
     
     func hash(into hasher: inout Hasher) {
@@ -48,7 +52,7 @@ struct HomeItem: Hashable {
 extension HomeSectionType {
     var headerTitle: String {
         switch self {
-        case .topHeader, .topTapBar, .banner: return ""
+        case .topHeader, .topTapBar, .banner, .reserveRate: return ""
         case .movieChart: return "무비 차트"
         case .special: return "특별관"
         case .todayCGV: return "오늘의 CGV"
@@ -183,6 +187,24 @@ extension HomeItem {
             title: "",
             image: UIImage(resource: .imgHomeImax4)
         ),
+        HomeItem(
+            section: .reserveRate,
+            title: "글래디에이터 II",
+            image: UIImage(resource: .imgHomeSmallposter1),
+            rate: "예매율 17.3%"
+        ),
+        HomeItem(
+            section: .reserveRate,
+            title: "위키드",
+            image: UIImage(resource: .imgHomeSmallposter2),
+            rate: "예매율 16.5%"
+        ),
+        HomeItem(
+            section: .reserveRate,
+            title: "베놈 : 라스트 댄스",
+            image: UIImage(resource: .imgHomeSmallposter3),
+            rate: "예매율 1.3%"
+        ),
         
         // Today CGV section items
         HomeItem(
@@ -204,7 +226,25 @@ extension HomeItem {
             section: .todayCGV,
             title: "",
             image: UIImage(resource: .imgHomeHot4)
-        )
+        ),
+        HomeItem(
+            section: .reserveRate,
+            title: "아마존 활명수",
+            image: UIImage(resource: .imgHomeSmallposter4),
+            rate: "예매율 1.2%"
+        ),
+        HomeItem(
+            section: .reserveRate,
+            title: "위키드",
+            image: UIImage(resource: .imgHomeSmallposter2),
+            rate: "예매율 18.5%"
+        ),
+        HomeItem(
+            section: .reserveRate,
+            title: "아메바 소녀들과 학교 괴담",
+            image: UIImage(resource: .imgHomeSmallposter5),
+            rate: "예매율 1.1%"
+        ),
     ]
 }
 

@@ -101,6 +101,18 @@ final class HomeViewController: BaseViewController {
                 ) as! BigImageCell
                 cell.configure(image: item.image)
                 return cell
+            
+            case .reserveRate:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: ReserveRateCell.reuseIdentifier,
+                    for: indexPath
+                ) as! ReserveRateCell
+                cell.configure(
+                    title: item.title,
+                    rate: item.rate ?? "",
+                    image: item.image
+                )
+                return cell
             }
             
         }
@@ -132,7 +144,6 @@ final class HomeViewController: BaseViewController {
                 }
                 return tabBar
             }
-            
             return UICollectionReusableView()
         }
     }
@@ -178,6 +189,9 @@ final class HomeViewController: BaseViewController {
                 return self.createSpecialSection()
             case .todayCGV:
                 return self.createTodayCGVSection()
+            case .reserveRate:
+                return nil
+                // return self.createReserveRateSection()
             }
         }
     }
@@ -189,7 +203,10 @@ final class HomeViewController: BaseViewController {
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = itemSize
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
@@ -201,7 +218,10 @@ final class HomeViewController: BaseViewController {
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = itemSize
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
@@ -225,16 +245,30 @@ final class HomeViewController: BaseViewController {
     }
     
     private func createMovieChartSection() -> NSCollectionLayoutSection? {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(160), heightDimension: .absolute(332))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(160),
+            heightDimension: .absolute(332)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(168), heightDimension: .absolute(332))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(168),
+            heightDimension: .absolute(332)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
         
-        section.contentInsets = NSDirectionalEdgeInsets(top: 66, leading: 20, bottom: 18, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 66,
+            leading: 20,
+            bottom: 18,
+            trailing: 20
+        )
         
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -273,7 +307,10 @@ final class HomeViewController: BaseViewController {
             widthDimension: .absolute(343),
             heightDimension: .absolute(335)
         )
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
@@ -322,7 +359,10 @@ final class HomeViewController: BaseViewController {
             widthDimension: .absolute(343),
             heightDimension: .absolute(335)
         )
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
