@@ -72,7 +72,7 @@ class TheaterChipButton: UIButton {
         }
         
         stackView.snp.makeConstraints {
-            $0.horizontalEdges.verticalEdges.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
     }
     
