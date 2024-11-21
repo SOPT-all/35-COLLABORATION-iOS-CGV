@@ -103,7 +103,7 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         }
         
         remainSeatsLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(-6)
+            $0.top.equalToSuperview().inset(-6)
         }
     }
 }
