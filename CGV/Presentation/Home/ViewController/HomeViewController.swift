@@ -125,6 +125,17 @@ final class HomeViewController: BaseViewController {
                     image: item.image
                 )
                 return cell
+            
+            case .bottomfooter:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: BottomFooterCell.reuseIdentifier,
+                    for: indexPath
+                ) as! BottomFooterCell
+                cell.configure(
+                    title: item.title,
+                    image: item.image ?? UIImage()
+                )
+                return cell
             }
             
         }
@@ -214,6 +225,8 @@ final class HomeViewController: BaseViewController {
                 return self.createTodayCGVSection()
             case .specialRate, .todayRate:
                 return self.createRateSection()
+            case .bottomfooter:
+                return self.createBottomFooter()
             }
         }
     }
@@ -488,6 +501,34 @@ final class HomeViewController: BaseViewController {
             leading: 20,
             bottom: 14,
             trailing: 20
+        )
+        
+        return section
+    }
+    
+    private func createBottomFooter() -> NSCollectionLayoutSection? {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(375),
+            heightDimension: .absolute(166)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(375),
+            heightDimension: .absolute(166)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 33,
+            leading: 0,
+            bottom: 0,
+            trailing: 0
         )
         
         return section

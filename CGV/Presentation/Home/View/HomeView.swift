@@ -75,6 +75,10 @@ final class HomeView: BaseView {
                 MyCGVCell.self,
                 forCellWithReuseIdentifier: MyCGVCell.reuseIdentifier
             )
+            $0.register(
+                BottomFooterCell.self,
+                forCellWithReuseIdentifier: BottomFooterCell.reuseIdentifier
+            )
         }
     }
 }

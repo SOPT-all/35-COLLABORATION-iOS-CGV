@@ -17,6 +17,7 @@ enum HomeSectionType: Int, CaseIterable {
     case myCGV
     case todayCGV
     case todayRate
+    case bottomfooter
 }
 
 struct HomeItem: Hashable {
@@ -54,7 +55,7 @@ struct HomeItem: Hashable {
 extension HomeSectionType {
     var headerTitle: String {
         switch self {
-        case .topHeader, .topTabBar, .banner, .specialRate, .todayRate: return ""
+        case .topHeader, .topTabBar, .banner, .specialRate, .todayRate, .bottomfooter: return ""
         case .movieChart: return "무비 차트"
         case .special: return "특별관"
         case .myCGV: return "나의 CGV"
@@ -275,6 +276,14 @@ extension HomeItem {
             image: UIImage(resource: .imgHomeSmallposter5),
             rate: "예매율 1.1%"
         ),
+        
+        
+        // BottomFooter Section Items
+        HomeItem(
+            section: .bottomfooter,
+            title: "CJ CGV (주)",
+            image: UIImage(resource: .icHomeArrowDown)
+        )
     ]
 }
 
