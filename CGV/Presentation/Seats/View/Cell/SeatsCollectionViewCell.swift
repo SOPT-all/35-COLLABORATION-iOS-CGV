@@ -98,12 +98,13 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         }
         
         seatsStackView.snp.makeConstraints {
-            $0.centerY.equalTo(seatsView.snp.centerY)
+            $0.centerY.equalTo(seatsView.snp.centerY).offset(-4)
             $0.centerX.equalTo(seatsView.snp.centerX)
+            $0.height.equalTo(20)
         }
         
         remainSeatsLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(-6)
+            $0.top.equalToSuperview()
         }
     }
 }
