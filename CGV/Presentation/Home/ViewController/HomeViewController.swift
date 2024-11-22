@@ -10,6 +10,8 @@ import UIKit
 final class HomeViewController: BaseViewController {
     
     private let homeView = HomeView()
+    private var currentSpecialPage: Int = 0
+    private var currentTodayCGVPage: Int = 0
     
     private var dataSource: UICollectionViewDiffableDataSource<HomeSectionType, HomeItem>!
     
@@ -114,6 +116,22 @@ final class HomeViewController: BaseViewController {
                 )
                 return cell
                 
+            case .specialProgress:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: ProgressShareCell.reuseIdentifier,
+                    for: indexPath
+                ) as! ProgressShareCell
+                cell.configure(to: self.currentSpecialPage)
+                return cell
+                
+            case .todayProgress:
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: ProgressShareCell.reuseIdentifier,
+                    for: indexPath
+                ) as! ProgressShareCell
+                cell.configure(to: self.currentTodayCGVPage)
+                return cell
+                
             case .specialRate, .todayRate:
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: ReserveRateCell.reuseIdentifier,
@@ -202,6 +220,21 @@ final class HomeViewController: BaseViewController {
     
     @objc private func topTabBarChanged(_ sender: UISegmentedControl) { }
     
+    private func updateSpecialProgress(for index: Int) {
+        let indexPath = IndexPath(item: 0, section: HomeSectionType.specialProgress.rawValue)
+        if let cell = homeView.collectionView.cellForItem(at: indexPath) as? ProgressShareCell {
+            cell.configure(to: index)
+        }
+    }
+    
+    private func updateTodayCGVProgress(for index: Int) {
+        let indexPath = IndexPath(item: 0, section: HomeSectionType.todayProgress.rawValue)
+        if let cell = homeView.collectionView.cellForItem(at: indexPath) as? ProgressShareCell {
+            cell.configure(to: index)
+        }
+    }
+
+    
     // MARK: - Layouts
     
     private func createLayout() -> UICollectionViewLayout {
@@ -223,6 +256,8 @@ final class HomeViewController: BaseViewController {
                 return self.createMyCGVSection()
             case .todayCGV:
                 return self.createTodayCGVSection()
+            case .specialProgress, .todayProgress:
+                return self.createProgressShareSection()
             case .specialRate, .todayRate:
                 return self.createRateSection()
             case .bottomfooter:
@@ -350,10 +385,16 @@ final class HomeViewController: BaseViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         
+        section.visibleItemsInvalidationHandler = { [weak self] visibleItems, point, environment in
+            let groupWidth = 343.0
+            let pageIndex = Int((point.x + groupWidth / 2) / groupWidth)
+            self?.updateSpecialProgress(for: pageIndex)
+        }
+        
         section.contentInsets = NSDirectionalEdgeInsets(
             top: 66,
             leading: 20,
-            bottom: 18,
+            bottom: 24,
             trailing: 20
         )
         
@@ -443,6 +484,12 @@ final class HomeViewController: BaseViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         
+        section.visibleItemsInvalidationHandler = { [weak self] visibleItems, point, environment in
+            let groupWidth = 343.0
+            let pageIndex = Int((point.x + groupWidth / 2) / groupWidth)
+            self?.updateTodayCGVProgress(for: pageIndex)
+        }
+        
         section.contentInsets = NSDirectionalEdgeInsets(
             top: 66,
             leading: 20,
@@ -497,7 +544,7 @@ final class HomeViewController: BaseViewController {
         let section = NSCollectionLayoutSection(group: group)
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 36,
+            top: 24,
             leading: 20,
             bottom: 14,
             trailing: 20
@@ -533,4 +580,33 @@ final class HomeViewController: BaseViewController {
         
         return section
     }
+    
+    private func createProgressShareSection() -> NSCollectionLayoutSection? {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(375),
+            heightDimension: .absolute(40)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(375),
+            heightDimension: .absolute(40)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: 0,
+            bottom: 0,
+            trailing: 0
+        )
+        
+        return section
+    }
 }
+

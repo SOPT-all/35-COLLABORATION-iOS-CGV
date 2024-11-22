@@ -13,9 +13,11 @@ enum HomeSectionType: Int, CaseIterable {
     case banner
     case movieChart
     case special
+    case specialProgress
     case specialRate
     case myCGV
     case todayCGV
+    case todayProgress
     case todayRate
     case bottomfooter
 }
@@ -55,7 +57,7 @@ struct HomeItem: Hashable {
 extension HomeSectionType {
     var headerTitle: String {
         switch self {
-        case .topHeader, .topTabBar, .banner, .specialRate, .todayRate, .bottomfooter: return ""
+        case .topHeader, .topTabBar, .banner, .specialRate, .todayRate, .bottomfooter, .specialProgress, .todayProgress: return ""
         case .movieChart: return "무비 차트"
         case .special: return "특별관"
         case .myCGV: return "나의 CGV"
@@ -199,6 +201,10 @@ extension HomeItem {
             image: UIImage(resource: .imgHomeImax4)
         ),
         HomeItem(
+            section: .specialProgress,
+            title: ""
+        ),
+        HomeItem(
             section: .specialRate,
             title: "글래디에이터 II",
             image: UIImage(resource: .imgHomeSmallposter1),
@@ -257,6 +263,10 @@ extension HomeItem {
             section: .todayCGV,
             title: "",
             image: UIImage(resource: .imgHomeHot4)
+        ),
+        HomeItem(
+            section: .todayProgress,
+            title: ""
         ),
         HomeItem(
             section: .todayRate,

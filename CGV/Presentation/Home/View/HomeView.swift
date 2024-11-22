@@ -79,6 +79,10 @@ final class HomeView: BaseView {
                 BottomFooterCell.self,
                 forCellWithReuseIdentifier: BottomFooterCell.reuseIdentifier
             )
+            $0.register(
+                ProgressShareCell.self,
+                forCellWithReuseIdentifier: ProgressShareCell.reuseIdentifier
+            )
         }
     }
 }
