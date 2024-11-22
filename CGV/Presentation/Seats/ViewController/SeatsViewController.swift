@@ -133,7 +133,7 @@ extension SeatsViewController: UICollectionViewDataSource {
 
 // MARK: - UIAdaptivePresentationControllerDelegate
 
-extension SeatsViewController: UIAdaptivePresentationControllerDelegate {
+extension SeatsViewController: UIAdaptivePresentationControllerDelegate, BookingSheetDelegate {
     func presentGuestCountSheet() {
         let guestCountSheetViewController = GuestCountSheetViewController()
         
@@ -151,6 +151,7 @@ extension SeatsViewController: UIAdaptivePresentationControllerDelegate {
     
     func presentBookingSheet() {
         let bookingSheetViewController = BookingSheetViewController()
+        bookingSheetViewController.delegate = self
         
         let fraction = UISheetPresentationController.Detent.custom {
             _ in self.view.frame.height * ((280-32)/812)

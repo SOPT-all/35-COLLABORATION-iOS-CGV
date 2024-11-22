@@ -32,15 +32,15 @@ final class BookingSheetView: BaseView {
     
     private let guestCountLabel = UILabel()
     
-    private let editCountButton = UIButton()
-    
     private let priceStackView = UIStackView()
     
     private let priceLabel = UILabel()
     
     private let priceUnitLabel = UILabel()
     
-    private let bookingButton = UIButton()
+    let editCountButton = UIButton()
+    
+    let bookingButton = UIButton()
     
     // MARK: - UISetting
     
