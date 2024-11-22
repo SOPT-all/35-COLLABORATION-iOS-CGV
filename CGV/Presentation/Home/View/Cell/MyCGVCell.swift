@@ -9,10 +9,14 @@ import UIKit
 
 class MyCGVCell: BaseCollectionViewCell {
     
+    // MARK: - Property
+    
     private let underView = UIView()
     private let iconView = UIImageView()
     private let titleLabel = UILabel()
     private let rateLabel = UILabel()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         underView.do {
@@ -60,6 +64,8 @@ class MyCGVCell: BaseCollectionViewCell {
             $0.centerY.equalTo(iconView.snp.centerY)
         }
     }
+    
+    // MARK: - Configure
     
     func configure(title: String, rate: String, image: UIImage?) {
         titleLabel.setText(title, style: Kopub.head4, color: .cgvG850)

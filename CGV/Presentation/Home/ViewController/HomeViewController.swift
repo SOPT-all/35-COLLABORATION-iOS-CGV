@@ -9,6 +9,8 @@ import UIKit
 
 final class HomeViewController: BaseViewController {
     
+    // MARK: - Property
+    
     private let homeView = HomeView()
     private var currentSpecialPage: Int = 0
     private var currentTodayCGVPage: Int = 0
@@ -46,6 +48,9 @@ final class HomeViewController: BaseViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+}
+
+extension HomeViewController {
     
     // MARK: - DataSource
     
@@ -217,6 +222,11 @@ final class HomeViewController: BaseViewController {
         }
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+}
+
+extension HomeViewController {
+    
+    // MARK: - Helper Methods
     
     @objc private func topTabBarChanged(_ sender: UISegmentedControl) { }
     
@@ -233,7 +243,9 @@ final class HomeViewController: BaseViewController {
             cell.configure(to: index)
         }
     }
+}
 
+extension HomeViewController {
     
     // MARK: - Layouts
     
@@ -609,4 +621,3 @@ final class HomeViewController: BaseViewController {
         return section
     }
 }
-

@@ -12,6 +12,8 @@ import Then
 
 final class MidHeaderView: UICollectionReusableView {
     
+    // MARK: - Property
+    
     static let identifier = "MidHeaderView"
     private let titleLabel = UILabel()
     private let allViewButton = UIButton()
@@ -32,7 +34,7 @@ final class MidHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Setup Methods
+    // MARK: - UISetting
     
     private func setStyle() {
         titleLabel.do {
@@ -83,6 +85,8 @@ final class MidHeaderView: UICollectionReusableView {
             $0.height.equalTo(18)
         }
     }
+    
+    // MARK: - Configure
     
     func configure(title: String, subtitle: String) {
         titleLabel.setText(title, style: Kopub.head7, color: .cgvBlack)

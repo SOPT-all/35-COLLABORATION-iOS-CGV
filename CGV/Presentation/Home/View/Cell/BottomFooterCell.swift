@@ -9,6 +9,8 @@ import UIKit
 
 class BottomFooterCell: BaseCollectionViewCell {
     
+    // MARK: - Property
+    
     private let titleLabel = UILabel()
     private let iconImageView = UIImageView()
     private let buttonStackView = UIStackView()
@@ -19,6 +21,8 @@ class BottomFooterCell: BaseCollectionViewCell {
     private let firstDivider = UILabel()
     private let secondDivider = UILabel()
     private let thirdDivider = UILabel()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         self.backgroundColor = UIColor(resource: .cgvG100)
@@ -132,6 +136,8 @@ class BottomFooterCell: BaseCollectionViewCell {
             $0.centerY.equalToSuperview()
         }
     }
+    
+    // MARK: - Configure
     
     func configure(title: String, image: UIImage) {
         titleLabel.setText(title, style: Malgun.head1, color: .cgvBlack)

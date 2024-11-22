@@ -12,11 +12,15 @@ import Then
 
 class ReserveRateCell: BaseCollectionViewCell {
     
+    // MARK: - Property
+    
     private let underView = UIView()
     private let posterImageView = UIImageView()
     private let titleLabel = UILabel()
     private let rateLabel = UILabel()
     private let reserveButton = UIButton()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         underView.do {
@@ -77,6 +81,8 @@ class ReserveRateCell: BaseCollectionViewCell {
             $0.height.equalTo(24)
         }
     }
+    
+    // MARK: - Configure
     
     func configure(title: String, rate: String, image: UIImage?) {
         titleLabel.setText(title, style: Kopub.head3, color: .cgvG800)

@@ -12,8 +12,12 @@ import Then
 
 class MidTabBarCell: BaseCollectionViewCell {
     
+    // MARK: - Property
+    
     private let tabNameLabel = UILabel()
     private let underlineView = UIView()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         tabNameLabel.do {
@@ -43,6 +47,8 @@ class MidTabBarCell: BaseCollectionViewCell {
             $0.leading.equalToSuperview()
         }
     }
+    
+    // MARK: - Configure
     
     func configure(title: String, isSelected: Bool) {
         tabNameLabel.setText(title, style: Kopub.body3, color: isSelected ? .cgvG900 : .cgvG600)

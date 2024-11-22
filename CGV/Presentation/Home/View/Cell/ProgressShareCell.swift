@@ -9,12 +9,16 @@ import UIKit
 
 class ProgressShareCell: BaseCollectionViewCell {
     
+    // MARK: - Property
+    
     private let progressStackView = UIStackView()
     private let firstLabel = UILabel()
     private let secondLabel = UILabel()
     private let thirdLabel = UILabel()
     private let fourthLabel = UILabel()
     private let shareButton = UIButton()
+    
+    // MARK: - UISetting
     
     override func setStyle() {        
         [firstLabel, secondLabel, thirdLabel, fourthLabel].forEach { label in
@@ -55,6 +59,8 @@ class ProgressShareCell: BaseCollectionViewCell {
             $0.centerY.equalToSuperview()
         }
     }
+    
+    // MARK: - Configure
     
     func configure(to index: Int) {
         [firstLabel, secondLabel, thirdLabel, fourthLabel].forEach {

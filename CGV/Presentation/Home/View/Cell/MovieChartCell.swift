@@ -11,6 +11,9 @@ import SnapKit
 import Then
 
 final class MovieChartCell: BaseCollectionViewCell {
+    
+    // MARK: - Property
+    
     private let posterImageView = UIImageView()
     
     private let firstStackView = UIStackView()
@@ -24,6 +27,8 @@ final class MovieChartCell: BaseCollectionViewCell {
     private let dDayLabel = UILabel()
     
     private let reserveButton = UIButton()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         posterImageView.do {
@@ -139,6 +144,8 @@ final class MovieChartCell: BaseCollectionViewCell {
             $0.height.equalTo(40)
         }
     }
+    
+    // MARK: - Configure
     
     func configure(
         poster: UIImage?,

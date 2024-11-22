@@ -12,11 +12,15 @@ import Then
 
 final class HomeView: BaseView {
     
+    // MARK: - Property
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
+    
+    // MARK: - UISetting
     
     override func setUI() {
         addSubview(collectionView)
@@ -27,6 +31,8 @@ final class HomeView: BaseView {
             $0.edges.equalToSuperview()
         }
     }
+    
+    // MARK: - Register
     
     func setCollectionView() {
         collectionView.do {

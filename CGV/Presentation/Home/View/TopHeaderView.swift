@@ -9,10 +9,14 @@ import UIKit
 
 class TopHeaderView: BaseView {
     
+    // MARK: - Property
+    
     private let ticketButton = UIButton()
     private let cgvLogo = UIImageView()
     private let searchButton = UIButton()
     private let menuButton = UIButton()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         ticketButton.do {

@@ -12,7 +12,11 @@ import Then
 
 class TopHeaderViewCell: BaseCollectionViewCell {
     
+    // MARK: - Property
+    
     private let topView = TopHeaderView()
+    
+    // MARK: - UISetting
     
     override func setUI() {
         contentView.addSubview(topView)

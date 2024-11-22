@@ -12,6 +12,8 @@ import Then
 
 class MidTabBarView: UICollectionReusableView {
     
+    // MARK: - Property
+    
     static let identifier = "TabBarKind"
     
     private var tabs: [String] = []
@@ -31,6 +33,8 @@ class MidTabBarView: UICollectionReusableView {
         }
     )
     
+    // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -42,6 +46,8 @@ class MidTabBarView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UISetting
     
     private func setStyle() {
         collectionView.do {
@@ -66,6 +72,8 @@ class MidTabBarView: UICollectionReusableView {
         }
     }
     
+    // MARK: - Configure
+    
     func configure(tabs: [String], selectedIndex: Int = 0) {
         self.tabs = tabs
         self.selectedIndex = selectedIndex
@@ -73,7 +81,9 @@ class MidTabBarView: UICollectionReusableView {
     }
 }
 
-extension MidTabBarView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+// MARK: - UICollectionViewDataSource
+
+extension MidTabBarView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -92,7 +102,11 @@ extension MidTabBarView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         cell.configure(title: tabs[indexPath.row], isSelected: indexPath.row == selectedIndex)
         return cell
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension MidTabBarView: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
@@ -112,7 +126,7 @@ extension MidTabBarView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         let width = title.size(withAttributes: attributes).width + 14
         return CGSize(width: ceil(width), height: 26)
     }
-
 }
+
 
 

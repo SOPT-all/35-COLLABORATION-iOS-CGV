@@ -8,11 +8,12 @@
 import UIKit
 
 class TopTabBarCell: BaseCollectionViewCell {
-        
+    
+    // MARK: - Property
+    
     private let gradientView = UIView()
     private let stackView = UIStackView()
     private let underlineView = UIView()
-    
     private let titles = ["홈", "이벤트", "패스트오더", "기프트샵", "@CGV"]
     private var buttons: [UIButton] = []
     
@@ -21,6 +22,8 @@ class TopTabBarCell: BaseCollectionViewCell {
             updateButtonStyles()
         }
     }
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         stackView.do {
@@ -76,20 +79,22 @@ class TopTabBarCell: BaseCollectionViewCell {
         gradientView.setGradient(for: .cgv)
     }
     
+    // MARK: - Configure
+    
     func configure(action: Selector, target: Any) {
         buttons.forEach { button in
             button.addTarget(target, action: action, for: .touchUpInside)
         }
-    }
-    
-    @objc private func buttonTapped(_ sender: UIButton) {
-        guard let index = buttons.firstIndex(of: sender) else { return }
-        selectedIndex = index
     }
 
     private func updateButtonStyles() {
         for (index, button) in buttons.enumerated() {
             button.isSelected = index == selectedIndex
         }
+    }
+    
+    @objc private func buttonTapped(_ sender: UIButton) {
+        guard let index = buttons.firstIndex(of: sender) else { return }
+        selectedIndex = index
     }
 }
