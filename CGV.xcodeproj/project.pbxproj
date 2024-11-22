@@ -211,6 +211,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A300A47E2CF020F40063DFF4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A36348AB2CE8E937003B5322 = {
 			isa = PBXGroup;
 			children = (
@@ -360,8 +368,8 @@
 		A36349302CEC2D5A003B5322 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A300A47E2CF020F40063DFF4 /* Cell */,
 				A36349312CEC2D6B003B5322 /* SeatsView.swift */,
-				A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */,
 				A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */,
 			);
 			path = View;
