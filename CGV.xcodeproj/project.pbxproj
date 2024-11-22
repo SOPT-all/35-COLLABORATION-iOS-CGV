@@ -22,6 +22,8 @@
 		00ED4AF12CE9E67900E562FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 00ED4AF02CE9E67900E562FA /* .gitignore */; };
 		A300A4752CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */; };
 		A300A4792CEF3EF90063DFF4 /* SeatsTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300A4782CEF3EF90063DFF4 /* SeatsTimeModel.swift */; };
+		A300A4802CF021360063DFF4 /* BookingSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300A47F2CF021360063DFF4 /* BookingSheetViewController.swift */; };
+		A300A4822CF021410063DFF4 /* BookingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300A4812CF021410063DFF4 /* BookingSheetView.swift */; };
 		A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B72CE8E937003B5322 /* AppDelegate.swift */; };
 		A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36348B92CE8E937003B5322 /* SceneDelegate.swift */; };
 		A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36348C02CE8E938003B5322 /* Assets.xcassets */; };
@@ -79,6 +81,8 @@
 		00ED4AF02CE9E67900E562FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A300A4782CEF3EF90063DFF4 /* SeatsTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsTimeModel.swift; sourceTree = "<group>"; };
+		A300A47F2CF021360063DFF4 /* BookingSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSheetViewController.swift; sourceTree = "<group>"; };
+		A300A4812CF021410063DFF4 /* BookingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSheetView.swift; sourceTree = "<group>"; };
 		A36348B42CE8E937003B5322 /* CGV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36348B72CE8E937003B5322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36348B92CE8E937003B5322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +213,14 @@
 				AD9263F92CEC86CA00F63581 /* TheaterInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A300A47E2CF020F40063DFF4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A36348AB2CE8E937003B5322 = {
@@ -353,6 +365,7 @@
 			children = (
 				A36348F62CE9CF5B003B5322 /* SeatsViewController.swift */,
 				A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */,
+				A300A47F2CF021360063DFF4 /* BookingSheetViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -360,9 +373,10 @@
 		A36349302CEC2D5A003B5322 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A300A47E2CF020F40063DFF4 /* Cell */,
 				A36349312CEC2D6B003B5322 /* SeatsView.swift */,
-				A300A4742CEF3E5C0063DFF4 /* SeatsCollectionViewCell.swift */,
 				A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */,
+				A300A4812CF021410063DFF4 /* BookingSheetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -499,7 +513,9 @@
 				A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 				0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */,
+				A300A4802CF021360063DFF4 /* BookingSheetViewController.swift in Sources */,
 				0032F4BB2CEDDB4800F14451 /* TopHeaderViewCell.swift in Sources */,
+				A300A4822CF021410063DFF4 /* BookingSheetView.swift in Sources */,
 				00C774282CEB98830020F5BA /* MidHeaderView.swift in Sources */,
 				AD9BE8122CEDBC1C00650769 /* TheaterButton.swift in Sources */,
 				A36349392CEC971B003B5322 /* GuestCountButton.swift in Sources */,

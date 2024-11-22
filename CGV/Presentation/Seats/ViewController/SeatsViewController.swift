@@ -71,6 +71,10 @@ final class SeatsViewController: BaseViewController {
         rootView.seatsImage.isSelected.toggle()
         let image = rootView.seatsImage.isSelected ? UIImage.imgSeatsSelected : UIImage.imgSeatsUnselected
         rootView.seatsImage.setImage(image, for: .normal)
+        
+        if rootView.seatsImage.isSelected {
+            presentBookingSheet()
+        }
     }
 }
 
@@ -129,7 +133,7 @@ extension SeatsViewController: UICollectionViewDataSource {
 
 // MARK: - UIAdaptivePresentationControllerDelegate
 
-extension SeatsViewController: UIAdaptivePresentationControllerDelegate {
+extension SeatsViewController: UIAdaptivePresentationControllerDelegate, BookingSheetDelegate {
     func presentGuestCountSheet() {
         let guestCountSheetViewController = GuestCountSheetViewController()
         
@@ -143,5 +147,21 @@ extension SeatsViewController: UIAdaptivePresentationControllerDelegate {
         guestCountSheetViewController.isModalInPresentation = true
         
         self.present(guestCountSheetViewController, animated: true)
+    }
+    
+    func presentBookingSheet() {
+        let bookingSheetViewController = BookingSheetViewController()
+        bookingSheetViewController.delegate = self
+        
+        let fraction = UISheetPresentationController.Detent.custom {
+            _ in self.view.frame.height * ((280-32)/812)
+        }
+        if let sheet = bookingSheetViewController.sheetPresentationController {
+            sheet.detents = [fraction]
+            sheet.preferredCornerRadius = 20
+            sheet.prefersGrabberVisible = true
+        }
+        
+        self.present(bookingSheetViewController, animated: true)
     }
 }
