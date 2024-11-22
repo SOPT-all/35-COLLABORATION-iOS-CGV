@@ -37,7 +37,6 @@ final class BookingSheetViewController: BaseViewController {
     
     @objc
     private func editCountButtonDidTap() {
-        //        dismiss(animated: true, completion: nil)
         dismiss(animated: true) { [weak self] in
             self?.delegate?.presentGuestCountSheet()
         }
