@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MidTabBarCell: BaseCollectionViewCell {
+final class MidTabBarCell: BaseCollectionViewCell {
     
     // MARK: - Property
     

@@ -10,11 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
-final class MidHeaderView: UICollectionReusableView {
+final class MidHeaderView: UICollectionReusableView, ReuseIdentifiable {
     
     // MARK: - Property
     
-    static let identifier = "MidHeaderView"
     private let titleLabel = UILabel()
     private let allViewButton = UIButton()
     private let subtitleLabel = UILabel()
@@ -89,8 +88,8 @@ final class MidHeaderView: UICollectionReusableView {
     // MARK: - Configure
     
     func configure(title: String, subtitle: String) {
-        titleLabel.setText(title, style: Kopub.head7, color: .cgvBlack)
-        subtitleLabel.setText(subtitle, style: Kopub.body3, color: .cgvG700)
+        titleLabel.updateText(title)
+        subtitleLabel.updateText(subtitle)
     }
 }
 

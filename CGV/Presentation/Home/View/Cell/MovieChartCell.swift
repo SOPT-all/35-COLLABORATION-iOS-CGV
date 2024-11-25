@@ -155,9 +155,9 @@ final class MovieChartCell: BaseCollectionViewCell {
         dDay: String
     ) {
         posterImageView.image = poster
-        titleLabel.setText(title, style: Kopub.head4, color: .cgvBlack, isSingleLine: true)
+        titleLabel.updateText(title)
         ageLimitImageView.image = ageLimit
-        preEggStatLabel.setText(preEgg, style: Kopub.head3, color: .cgvG800)
-        dDayLabel.setText(dDay, style: Kopub.head3, color: .cgvR400)
+        preEggStatLabel.updateText(preEgg)
+        dDayLabel.updateText(dDay)
     }
 }

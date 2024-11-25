@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopTabBarCell: BaseCollectionViewCell {
+final class TopTabBarCell: BaseCollectionViewCell {
     
     // MARK: - Property
     
@@ -93,7 +93,7 @@ class TopTabBarCell: BaseCollectionViewCell {
         }
     }
     
-    @objc private func buttonTapped(_ sender: UIButton) {
+    @objc private func buttonDidTap(_ sender: UIButton) {
         guard let index = buttons.firstIndex(of: sender) else { return }
         selectedIndex = index
     }

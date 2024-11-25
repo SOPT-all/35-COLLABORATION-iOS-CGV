@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0030771B2CF4CB5B008F7BDF /* MidTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0030771A2CF4CB5B008F7BDF /* MidTabBarViewController.swift */; };
 		0032F4B92CEDC4D500F14451 /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4B82CEDC4D500F14451 /* TopHeaderView.swift */; };
 		0032F4BB2CEDDB4800F14451 /* TopHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4BA2CEDDB4800F14451 /* TopHeaderViewCell.swift */; };
 		003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0030771A2CF4CB5B008F7BDF /* MidTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidTabBarViewController.swift; sourceTree = "<group>"; };
 		0032F4B82CEDC4D500F14451 /* TopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderView.swift; sourceTree = "<group>"; };
 		0032F4BA2CEDDB4800F14451 /* TopHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderViewCell.swift; sourceTree = "<group>"; };
 		003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarCell.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				A36348DF2CE8EB85003B5322 /* HomeViewController.swift */,
+				0030771A2CF4CB5B008F7BDF /* MidTabBarViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				A36349322CEC2D6B003B5322 /* SeatsView.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
 				00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */,
+				0030771B2CF4CB5B008F7BDF /* MidTabBarViewController.swift in Sources */,
 				00BF992C2CF0B69D000920A8 /* ProgressShareCell.swift in Sources */,
 				AD9263F62CEC838600F63581 /* RegionType.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopHeaderView: BaseView {
+final class TopHeaderView: BaseView {
     
     // MARK: - Property
     

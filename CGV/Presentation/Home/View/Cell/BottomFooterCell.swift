@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BottomFooterCell: BaseCollectionViewCell {
+final class BottomFooterCell: BaseCollectionViewCell {
     
     // MARK: - Property
     
@@ -77,7 +77,15 @@ class BottomFooterCell: BaseCollectionViewCell {
     
     override func setUI() {
         addSubviews(titleLabel, iconImageView, buttonStackView)
-        buttonStackView.addArrangedSubviews(userRuleButton, firstDivider, dataRuleButton, secondDivider, locationRuleButton, thirdDivider, lawRuleButton)
+        buttonStackView.addArrangedSubviews(
+            userRuleButton,
+            firstDivider,
+            dataRuleButton,
+            secondDivider,
+            locationRuleButton,
+            thirdDivider,
+            lawRuleButton
+        )
     }
     
     override func setLayout() {
@@ -98,25 +106,25 @@ class BottomFooterCell: BaseCollectionViewCell {
             $0.height.equalTo(16)
         }
         
-        userRuleButton.snp.makeConstraints{
-            $0.width.equalTo(35)
-            $0.height.equalTo(16)
-        }
-        
-        dataRuleButton.snp.makeConstraints{
-            $0.width.equalTo(73)
-            $0.height.equalTo(16)
-        }
-        
-        locationRuleButton.snp.makeConstraints{
-            $0.width.equalTo(99)
-            $0.height.equalTo(16)
-        }
-        
-        lawRuleButton.snp.makeConstraints{
-            $0.width.equalTo(35)
-            $0.height.equalTo(16)
-        }
+//        userRuleButton.snp.makeConstraints{
+//            $0.width.equalTo(35)
+//            $0.height.equalTo(16)
+//        }
+//        
+//        dataRuleButton.snp.makeConstraints{
+//            $0.width.equalTo(73)
+//            $0.height.equalTo(16)
+//        }
+//        
+//        locationRuleButton.snp.makeConstraints{
+//            $0.width.equalTo(99)
+//            $0.height.equalTo(16)
+//        }
+//        
+//        lawRuleButton.snp.makeConstraints{
+//            $0.width.equalTo(35)
+//            $0.height.equalTo(16)
+//        }
         
         firstDivider.snp.makeConstraints{
             $0.width.equalTo(1)
@@ -140,7 +148,7 @@ class BottomFooterCell: BaseCollectionViewCell {
     // MARK: - Configure
     
     func configure(title: String, image: UIImage) {
-        titleLabel.setText(title, style: Malgun.head1, color: .cgvBlack)
+        titleLabel.updateText(title)
         iconImageView.image = image
     }
     

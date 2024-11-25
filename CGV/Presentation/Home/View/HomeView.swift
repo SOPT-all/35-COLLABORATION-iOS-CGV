@@ -14,16 +14,19 @@ final class HomeView: BaseView {
     
     // MARK: - Property
     
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        return collectionView
-    }()
+    let collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
     
     // MARK: - UISetting
     
     override func setUI() {
         addSubview(collectionView)
+        
+        collectionView.do {
+            $0.showsVerticalScrollIndicator = false
+        }
     }
     
     override func setLayout() {
@@ -34,10 +37,8 @@ final class HomeView: BaseView {
     
     // MARK: - Register
     
-    func setCollectionView() {
+    func setRegister() {
         collectionView.do {
-            $0.showsVerticalScrollIndicator = false
-            
             $0.register(
                 TopHeaderViewCell.self,
                 forCellWithReuseIdentifier: TopHeaderViewCell.reuseIdentifier
@@ -49,12 +50,12 @@ final class HomeView: BaseView {
             $0.register(
                 MidHeaderView.self,
                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                withReuseIdentifier: MidHeaderView.identifier
+                withReuseIdentifier: MidHeaderView.reuseIdentifier
             )
             $0.register(
                 MidTabBarView.self,
-                forSupplementaryViewOfKind: "TabBarKind",
-                withReuseIdentifier: MidTabBarView.identifier
+                forSupplementaryViewOfKind: "MidTabBar",
+                withReuseIdentifier: MidTabBarView.reuseIdentifier
             )
             $0.register(
                 MovieChartCell.self,
@@ -67,11 +68,6 @@ final class HomeView: BaseView {
             $0.register(
                 BigImageCell.self,
                 forCellWithReuseIdentifier: BigImageCell.reuseIdentifier
-            )
-            $0.register(
-                MidHeaderView.self,
-                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                withReuseIdentifier: MidHeaderView.identifier
             )
             $0.register(
                 ReserveRateCell.self,

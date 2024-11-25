@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProgressShareCell: BaseCollectionViewCell {
+final class ProgressShareCell: BaseCollectionViewCell {
     
     // MARK: - Property
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyCGVCell: BaseCollectionViewCell {
+final class MyCGVCell: BaseCollectionViewCell {
     
     // MARK: - Property
     
@@ -68,8 +68,8 @@ class MyCGVCell: BaseCollectionViewCell {
     // MARK: - Configure
     
     func configure(title: String, rate: String, image: UIImage?) {
-        titleLabel.setText(title, style: Kopub.head4, color: .cgvG850)
-        rateLabel.setText(rate, style: Kopub.head4, color: .cgvG850)
+        titleLabel.updateText(title)
+        rateLabel.updateText(rate)
         iconView.image = image
     }
 }

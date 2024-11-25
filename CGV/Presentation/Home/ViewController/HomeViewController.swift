@@ -21,22 +21,18 @@ final class HomeViewController: BaseViewController {
     
     override func loadView() {
         let rootView = UIView()
-        rootView.addSubviews(homeView)
+        rootView.addSubview(homeView)
         view = rootView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        homeView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
-        
         homeView.collectionView.collectionViewLayout = createLayout()
-        homeView.setCollectionView()
+        homeView.setRegister()
         configureDataSource()
         applyInitialSnapshots()
+        setLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +43,13 @@ final class HomeViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    private func setLayout() {
+        homeView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
     }
 }
 
@@ -64,139 +67,182 @@ extension HomeViewController {
             
             switch item.section {
             case .topHeader:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: TopHeaderViewCell.reuseIdentifier,
                     for: indexPath
-                ) as! TopHeaderViewCell
-                return cell
+                ) as? TopHeaderViewCell {
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
             case .topTabBar:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: TopTabBarCell.reuseIdentifier,
                     for: indexPath
-                ) as! TopTabBarCell
-                cell.configure(action: #selector(self.topTabBarChanged(_:)), target: self)
-                return cell
+                ) as? TopTabBarCell {
+                    cell.configure(action: #selector(self.topTabBarChanged(_:)), target: self)
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
             case .banner:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: BannerImageCell.reuseIdentifier,
                     for: indexPath
-                ) as! BannerImageCell
-                cell.configure(image: item.image)
-                return cell
+                ) as? BannerImageCell {
+                    cell.configure(image: item.image)
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
             case .movieChart:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: MovieChartCell.reuseIdentifier,
                     for: indexPath
-                ) as! MovieChartCell
-                cell.configure(
-                    poster: item.image,
-                    title: item.title,
-                    ageLimit: item.ageLimit,
-                    preEgg: item.preEgg ?? "",
-                    dDay: item.dDay ?? ""
-                )
-                return cell
+                ) as? MovieChartCell {
+                    cell.configure(
+                        poster: item.image,
+                        title: item.title,
+                        ageLimit: item.ageLimit,
+                        preEgg: item.preEgg ?? "",
+                        dDay: item.dDay ?? ""
+                    )
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
-            case .special,
-                    .todayCGV:
-                let cell = collectionView.dequeueReusableCell(
+            case .special, .todayCGV:
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: BigImageCell.reuseIdentifier,
                     for: indexPath
-                ) as! BigImageCell
-                cell.configure(image: item.image)
-                return cell
+                ) as? BigImageCell {
+                    cell.configure(image: item.image)
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
             case .myCGV:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: MyCGVCell.reuseIdentifier,
                     for: indexPath
-                ) as! MyCGVCell
-                cell.configure(
-                    title: item.title,
-                    rate: item.rate ?? "",
-                    image: item.image
-                )
-                return cell
+                ) as? MyCGVCell {
+                    cell.configure(
+                        title: item.title,
+                        rate: item.rate ?? "",
+                        image: item.image
+                    )
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
             case .specialProgress:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: ProgressShareCell.reuseIdentifier,
                     for: indexPath
-                ) as! ProgressShareCell
-                cell.configure(to: self.currentSpecialPage)
-                return cell
+                ) as? ProgressShareCell {
+                    cell.configure(to: self.currentSpecialPage)
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
             case .todayProgress:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: ProgressShareCell.reuseIdentifier,
                     for: indexPath
-                ) as! ProgressShareCell
-                cell.configure(to: self.currentTodayCGVPage)
-                return cell
+                ) as? ProgressShareCell {
+                    cell.configure(to: self.currentTodayCGVPage)
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
                 
             case .specialRate, .todayRate:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: ReserveRateCell.reuseIdentifier,
                     for: indexPath
-                ) as! ReserveRateCell
-                cell.configure(
-                    title: item.title,
-                    rate: item.rate ?? "",
-                    image: item.image
-                )
-                return cell
-            
+                ) as? ReserveRateCell {
+                    cell.configure(
+                        title: item.title,
+                        rate: item.rate ?? "",
+                        image: item.image
+                    )
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
+                
             case .bottomfooter:
-                let cell = collectionView.dequeueReusableCell(
+                if let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: BottomFooterCell.reuseIdentifier,
                     for: indexPath
-                ) as! BottomFooterCell
-                cell.configure(
-                    title: item.title,
-                    image: item.image ?? UIImage()
-                )
-                return cell
+                ) as? BottomFooterCell {
+                    cell.configure(
+                        title: item.title,
+                        image: item.image ?? UIImage()
+                    )
+                    return cell
+                } else {
+                    return UICollectionViewCell()
+                }
             }
             
         }
         
         dataSource.supplementaryViewProvider = {
-            collectionView,
-            kind,
-            indexPath in
+            (collectionView: UICollectionView,
+             kind: String,
+             indexPath: IndexPath) in
             let section = HomeSectionType(rawValue: indexPath.section)
             
-            if kind == UICollectionView.elementKindSectionHeader {
-                let header = collectionView.dequeueReusableSupplementaryView(
+            switch kind  {
+            case UICollectionView.elementKindSectionHeader:
+                if let header = collectionView.dequeueReusableSupplementaryView(
                     ofKind: kind,
-                    withReuseIdentifier: MidHeaderView.identifier,
+                    withReuseIdentifier: MidHeaderView.reuseIdentifier,
                     for: indexPath
-                ) as! MidHeaderView
-                header.configure(
-                    title: section?.headerTitle ?? "",
-                    subtitle: section?.headerSubtitle ?? ""
-                )
-                return header
-            } else if kind == "TabBarKind" {
-                let tabBar = collectionView.dequeueReusableSupplementaryView(
-                    ofKind: kind,
-                    withReuseIdentifier: MidTabBarView.identifier,
-                    for: indexPath
-                ) as! MidTabBarView
-                
-                if let tabs = section?.midTabBarTitle {
-                    tabBar.configure(tabs: tabs)
+                ) as? MidHeaderView {
+                    header.configure(
+                        title: section?.headerTitle ?? "",
+                        subtitle: section?.headerSubtitle ?? ""
+                    )
+                    return header
+                } else {
+                    return UICollectionReusableView()
                 }
                 
-                tabBar.didSelectTab = { selectedIndex in
-                    print("Selected Tab Index: \(selectedIndex)")
+            case "MidTabBar":
+                if let tabBar = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: MidTabBarView.reuseIdentifier,
+                    for: indexPath
+                ) as? MidTabBarView {
+                    
+                    let tabBarController = MidTabBarViewController()
+                    self.addChild(tabBarController)
+                    tabBar.addSubview(tabBarController.view)
+                    tabBarController.view.frame = tabBar.bounds
+                    tabBarController.didMove(toParent: self)
+                    
+                    if let tabs = section?.midTabBarTitle {
+                        tabBarController.configure(tabs: tabs)
+                        tabBarController.onTabSelected = { selectedIndex in
+                            print("Tab selected: \(selectedIndex) in section \(indexPath.section)")
+                        }
+                    }
+                    return tabBar
+                } else {
+                    return UICollectionReusableView()
                 }
-                return tabBar
+            default:
+                return nil
             }
-            return UICollectionReusableView()
         }
     }
     
@@ -368,7 +414,7 @@ extension HomeViewController {
         )
         let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: tabBarSize,
-            elementKind: "TabBarKind",
+            elementKind: "MidTabBar",
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: 55)
         )
@@ -426,7 +472,7 @@ extension HomeViewController {
         )
         let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: tabBarSize,
-            elementKind: "TabBarKind",
+            elementKind: "MidTabBar",
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: 55)
         )
@@ -525,7 +571,7 @@ extension HomeViewController {
         )
         let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: tabBarSize,
-            elementKind: "TabBarKind",
+            elementKind: "MidTabBar",
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: 55)
         )

@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class ReserveRateCell: BaseCollectionViewCell {
+final class ReserveRateCell: BaseCollectionViewCell {
     
     // MARK: - Property
     
@@ -85,8 +85,8 @@ class ReserveRateCell: BaseCollectionViewCell {
     // MARK: - Configure
     
     func configure(title: String, rate: String, image: UIImage?) {
-        titleLabel.setText(title, style: Kopub.head3, color: .cgvG800)
-        rateLabel.setText(rate, style: Kopub.body2, color: .cgvG700)
+        titleLabel.updateText(title)
+        rateLabel.updateText(rate)
         posterImageView.image = image
     }
 }
