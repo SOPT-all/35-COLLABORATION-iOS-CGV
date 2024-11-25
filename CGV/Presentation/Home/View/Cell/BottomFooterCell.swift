@@ -39,7 +39,7 @@ final class BottomFooterCell: BaseCollectionViewCell {
             $0.axis = .horizontal
             $0.distribution = .equalSpacing
             $0.spacing = 7
-            $0.alignment = .center
+            $0.alignment = .top
         }
         
         userRuleButton.do {
@@ -106,42 +106,37 @@ final class BottomFooterCell: BaseCollectionViewCell {
             $0.height.equalTo(16)
         }
         
-//        userRuleButton.snp.makeConstraints{
-//            $0.width.equalTo(35)
-//            $0.height.equalTo(16)
-//        }
-//        
-//        dataRuleButton.snp.makeConstraints{
-//            $0.width.equalTo(73)
-//            $0.height.equalTo(16)
-//        }
-//        
-//        locationRuleButton.snp.makeConstraints{
-//            $0.width.equalTo(99)
-//            $0.height.equalTo(16)
-//        }
-//        
-//        lawRuleButton.snp.makeConstraints{
-//            $0.width.equalTo(35)
-//            $0.height.equalTo(16)
-//        }
-        
         firstDivider.snp.makeConstraints{
             $0.width.equalTo(1)
             $0.height.equalTo(8)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().inset(3)
+            $0.bottom.equalToSuperview().inset(5)
         }
         
         secondDivider.snp.makeConstraints{
             $0.width.equalTo(1)
             $0.height.equalTo(8)
-            $0.centerY.equalToSuperview()
         }
         
         thirdDivider.snp.makeConstraints{
             $0.width.equalTo(1)
             $0.height.equalTo(8)
-            $0.centerY.equalToSuperview()
+        }
+        
+        userRuleButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview().offset(-1)
+        }
+        
+        dataRuleButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview().offset(-2)
+        }
+        
+        locationRuleButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview().offset(-1)
+        }
+        
+        lawRuleButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview().offset(-1)
         }
     }
     
@@ -151,5 +146,4 @@ final class BottomFooterCell: BaseCollectionViewCell {
         titleLabel.updateText(title)
         iconImageView.image = image
     }
-    
 }
