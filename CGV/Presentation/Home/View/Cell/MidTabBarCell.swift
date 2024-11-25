@@ -51,7 +51,11 @@ final class MidTabBarCell: BaseCollectionViewCell {
     // MARK: - Configure
     
     func configure(title: String, isSelected: Bool) {
-        tabNameLabel.setText(title, style: Kopub.body3, color: isSelected ? .cgvG900 : .cgvG600)
+        tabNameLabel.setText(
+            title,
+            style: Kopub.body3,
+            color: isSelected ? .cgvG900 : .cgvG600
+        )
         underlineView.backgroundColor = isSelected ? .black : .clear
     }
 }

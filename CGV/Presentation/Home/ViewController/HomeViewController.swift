@@ -418,6 +418,7 @@ extension HomeViewController {
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: 55)
         )
+        tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
         section.boundarySupplementaryItems = [midHeader, tabBar]
         
@@ -476,6 +477,7 @@ extension HomeViewController {
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: 55)
         )
+        tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
         section.boundarySupplementaryItems = [midHeader, tabBar]
         
@@ -575,6 +577,7 @@ extension HomeViewController {
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: 55)
         )
+        tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
         section.boundarySupplementaryItems = [midHeader, tabBar]
         
