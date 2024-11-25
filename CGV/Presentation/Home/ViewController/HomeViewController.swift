@@ -21,13 +21,13 @@ final class HomeViewController: BaseViewController {
     
     override func loadView() {
         let rootView = UIView()
-        rootView.addSubview(homeView)
+        rootView.addSubviews(homeView)
         view = rootView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         homeView.collectionView.collectionViewLayout = createLayout()
         homeView.setRegister()
         configureDataSource()
@@ -202,7 +202,7 @@ extension HomeViewController {
             let section = HomeSectionType(rawValue: indexPath.section)
             
             switch kind  {
-            case UICollectionView.elementKindSectionHeader:
+            case "MidHeader":
                 if let header = collectionView.dequeueReusableSupplementaryView(
                     ofKind: kind,
                     withReuseIdentifier: MidHeaderView.reuseIdentifier,
@@ -240,6 +240,18 @@ extension HomeViewController {
                 } else {
                     return UICollectionReusableView()
                 }
+                
+            case "MidGray":
+                if let divider = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: MidGrayView.reuseIdentifier,
+                    for: indexPath
+                ) as? MidGrayView {
+                    return divider
+                } else {
+                    return UICollectionReusableView()
+                }
+                
             default:
                 return nil
             }
@@ -316,8 +328,10 @@ extension HomeViewController {
                 return self.createTodayCGVSection()
             case .specialProgress, .todayProgress:
                 return self.createProgressShareSection()
-            case .specialRate, .todayRate:
-                return self.createRateSection()
+            case .specialRate:
+                return self.createSpecialRateSection()
+            case .todayRate:
+                return self.createTodayRateSection()
             case .bottomfooter:
                 return self.createBottomFooter()
             }
@@ -402,9 +416,9 @@ extension HomeViewController {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(32)
         )
-        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
+            elementKind: "MidHeader",
             alignment: .top
         )
         
@@ -420,7 +434,19 @@ extension HomeViewController {
         )
         tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
-        section.boundarySupplementaryItems = [midHeader, tabBar]
+        let dividerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(10)
+        )
+        let divider = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: dividerSize,
+            elementKind: "MidGray",
+            alignment: .top,
+            absoluteOffset: CGPoint(x: -20, y: 424)
+        )
+        divider.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -40)
+        
+        section.boundarySupplementaryItems = [header, tabBar, divider]
         
         return section
     }
@@ -461,9 +487,9 @@ extension HomeViewController {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(32)
         )
-        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
+            elementKind: "MidHeader",
             alignment: .top
         )
         
@@ -479,7 +505,7 @@ extension HomeViewController {
         )
         tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
-        section.boundarySupplementaryItems = [midHeader, tabBar]
+        section.boundarySupplementaryItems = [header, tabBar]
         
         return section
     }
@@ -514,13 +540,25 @@ extension HomeViewController {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(32)
         )
-        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
+            elementKind: "MidHeader",
             alignment: .top
         )
         
-        section.boundarySupplementaryItems = [midHeader]
+        let dividerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(10)
+        )
+        let divider = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: dividerSize,
+            elementKind: "MidGray",
+            alignment: .top,
+            absoluteOffset: CGPoint(x: -20, y: 234)
+        )
+        divider.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -40)
+        
+        section.boundarySupplementaryItems = [header, divider]
         
         return section
     }
@@ -561,9 +599,9 @@ extension HomeViewController {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(32)
         )
-        let midHeader = NSCollectionLayoutBoundarySupplementaryItem(
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
+            elementKind: "MidHeader",
             alignment: .top
         )
         
@@ -579,12 +617,56 @@ extension HomeViewController {
         )
         tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
-        section.boundarySupplementaryItems = [midHeader, tabBar]
+        section.boundarySupplementaryItems = [header, tabBar]
         
         return section
     }
     
-    private func createRateSection() -> NSCollectionLayoutSection? {
+    private func createSpecialRateSection() -> NSCollectionLayoutSection? {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(335),
+            heightDimension: .absolute(58)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(343),
+            heightDimension: .absolute(58 * 3 + 10 * 2)
+        )
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: groupSize,
+            repeatingSubitem: item,
+            count: 3
+        )
+        group.interItemSpacing = .fixed(10)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 24,
+            leading: 20,
+            bottom: 14,
+            trailing: 20
+        )
+        
+        let dividerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(10)
+        )
+        let divider = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: dividerSize,
+            elementKind: "MidGray",
+            alignment: .top,
+            absoluteOffset: CGPoint(x: -20, y: 253)
+        )
+        divider.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -40)
+        
+        section.boundarySupplementaryItems = [divider]
+        
+        return section
+    }
+    
+    private func createTodayRateSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .absolute(335),
             heightDimension: .absolute(58)
@@ -670,3 +752,4 @@ extension HomeViewController {
         return section
     }
 }
+

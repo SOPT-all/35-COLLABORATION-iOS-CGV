@@ -49,7 +49,7 @@ final class HomeView: BaseView {
             )
             $0.register(
                 MidHeaderView.self,
-                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                forSupplementaryViewOfKind: "MidHeader",
                 withReuseIdentifier: MidHeaderView.reuseIdentifier
             )
             $0.register(
@@ -84,6 +84,11 @@ final class HomeView: BaseView {
             $0.register(
                 ProgressShareCell.self,
                 forCellWithReuseIdentifier: ProgressShareCell.reuseIdentifier
+            )
+            $0.register(
+                MidGrayView.self,
+                forSupplementaryViewOfKind: "MidGray",
+                withReuseIdentifier: MidGrayView.reuseIdentifier
             )
         }
     }
