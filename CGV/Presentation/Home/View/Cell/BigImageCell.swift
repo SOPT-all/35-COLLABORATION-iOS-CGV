@@ -11,7 +11,12 @@ import SnapKit
 import Then
 
 final class BigImageCell: BaseCollectionViewCell {
+    
+    // MARK: - Property
+    
     private let bigImageView = UIImageView()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         bigImageView.do {
@@ -31,6 +36,8 @@ final class BigImageCell: BaseCollectionViewCell {
             $0.width.equalToSuperview()
         }
     }
+    
+    // MARK: - Configure
     
     func configure(image: UIImage?) {
         bigImageView.image = image

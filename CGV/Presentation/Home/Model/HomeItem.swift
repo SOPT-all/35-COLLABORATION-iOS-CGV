@@ -9,12 +9,17 @@ import UIKit
 
 enum HomeSectionType: Int, CaseIterable {
     case topHeader
-    case topTapBar
+    case topTabBar
     case banner
     case movieChart
     case special
+    case specialProgress
+    case specialRate
+    case myCGV
     case todayCGV
-//    case reserveRate
+    case todayProgress
+    case todayRate
+    case bottomfooter
 }
 
 struct HomeItem: Hashable {
@@ -25,15 +30,15 @@ struct HomeItem: Hashable {
     let preEgg: String?
     let dDay: String?
     let image: UIImage?
-//    let rate: String?
+    let rate: String?
     
     init(section: HomeSectionType,
          title: String,
          ageLimit: UIImage? = nil,
          preEgg: String? = nil,
          dDay: String? = nil,
-         image: UIImage? = nil
-//         rate: String? = nil
+         image: UIImage? = nil,
+         rate: String? = nil
     ) {
         self.section = section
         self.title = title
@@ -41,7 +46,7 @@ struct HomeItem: Hashable {
         self.preEgg = preEgg
         self.dDay = dDay
         self.image = image
-//        self.rate = rate
+        self.rate = rate
     }
     
     func hash(into hasher: inout Hasher) {
@@ -52,10 +57,25 @@ struct HomeItem: Hashable {
 extension HomeSectionType {
     var headerTitle: String {
         switch self {
-        case .topHeader, .topTapBar, .banner: return ""
+        case .topHeader,
+             .topTabBar,
+             .banner,
+             .specialRate,
+             .todayRate,
+             .bottomfooter,
+             .specialProgress,
+             .todayProgress: return ""
         case .movieChart: return "무비 차트"
         case .special: return "특별관"
+        case .myCGV: return "나의 CGV"
         case .todayCGV: return "오늘의 CGV"
+        }
+    }
+    
+    var headerSubtitle: String {
+        switch self {
+        case .myCGV: return "자세히 보기"
+        default: return "전체보기"
         }
     }
     
@@ -187,24 +207,48 @@ extension HomeItem {
             title: "",
             image: UIImage(resource: .imgHomeImax4)
         ),
-//        HomeItem(
-//            section: .reserveRate,
-//            title: "글래디에이터 II",
-//            image: UIImage(resource: .imgHomeSmallposter1),
-//            rate: "예매율 17.3%"
-//        ),
-//        HomeItem(
-//            section: .reserveRate,
-//            title: "위키드",
-//            image: UIImage(resource: .imgHomeSmallposter2),
-//            rate: "예매율 16.5%"
-//        ),
-//        HomeItem(
-//            section: .reserveRate,
-//            title: "베놈 : 라스트 댄스",
-//            image: UIImage(resource: .imgHomeSmallposter3),
-//            rate: "예매율 1.3%"
-//        ),
+        HomeItem(
+            section: .specialProgress,
+            title: ""
+        ),
+        HomeItem(
+            section: .specialRate,
+            title: "글래디에이터 II",
+            image: UIImage(resource: .imgHomeSmallposter1),
+            rate: "예매율 17.3%"
+        ),
+        HomeItem(
+            section: .specialRate,
+            title: "위키드",
+            image: UIImage(resource: .imgHomeSmallposter2),
+            rate: "예매율 16.5%"
+        ),
+        HomeItem(
+            section: .specialRate,
+            title: "베놈 : 라스트 댄스",
+            image: UIImage(resource: .imgHomeSmallposter3),
+            rate: "예매율 1.3%"
+        ),
+        
+        // My CGV section items
+        HomeItem(
+            section: .myCGV,
+            title: "내가 본 영화",
+            image: UIImage(resource: .icHomeMovie),
+            rate: "9편"
+        ),
+        HomeItem(
+            section: .myCGV,
+            title: "기대되는 영화",
+            image: UIImage(resource: .icHomeLike),
+            rate: "2편"
+        ),
+        HomeItem(
+            section: .myCGV,
+            title: "내가 쓴 리뷰",
+            image: UIImage(resource: .icHomePen),
+            rate: "1편"
+        ),
         
         // Today CGV section items
         HomeItem(
@@ -227,24 +271,36 @@ extension HomeItem {
             title: "",
             image: UIImage(resource: .imgHomeHot4)
         ),
-//        HomeItem(
-//            section: .reserveRate,
-//            title: "아마존 활명수",
-//            image: UIImage(resource: .imgHomeSmallposter4),
-//            rate: "예매율 1.2%"
-//        ),
-//        HomeItem(
-//            section: .reserveRate,
-//            title: "위키드",
-//            image: UIImage(resource: .imgHomeSmallposter2),
-//            rate: "예매율 18.5%"
-//        ),
-//        HomeItem(
-//            section: .reserveRate,
-//            title: "아메바 소녀들과 학교 괴담",
-//            image: UIImage(resource: .imgHomeSmallposter5),
-//            rate: "예매율 1.1%"
-//        ),
+        HomeItem(
+            section: .todayProgress,
+            title: ""
+        ),
+        HomeItem(
+            section: .todayRate,
+            title: "아마존 활명수",
+            image: UIImage(resource: .imgHomeSmallposter4),
+            rate: "예매율 1.2%"
+        ),
+        HomeItem(
+            section: .todayRate,
+            title: "위키드",
+            image: UIImage(resource: .imgHomeSmallposter2),
+            rate: "예매율 18.5%"
+        ),
+        HomeItem(
+            section: .todayRate,
+            title: "아메바 소녀들과 학교 괴담",
+            image: UIImage(resource: .imgHomeSmallposter5),
+            rate: "예매율 1.1%"
+        ),
+        
+        
+        // BottomFooter Section Items
+        HomeItem(
+            section: .bottomfooter,
+            title: "CJ CGV (주)",
+            image: UIImage(resource: .icHomeArrowDown)
+        )
     ]
 }
 

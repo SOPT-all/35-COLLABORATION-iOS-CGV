@@ -10,10 +10,14 @@ import UIKit
 import SnapKit
 import Then
 
-class MidTabBarCell: BaseCollectionViewCell {
+final class MidTabBarCell: BaseCollectionViewCell {
+    
+    // MARK: - Property
     
     private let tabNameLabel = UILabel()
     private let underlineView = UIView()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         tabNameLabel.do {
@@ -44,8 +48,14 @@ class MidTabBarCell: BaseCollectionViewCell {
         }
     }
     
+    // MARK: - Configure
+    
     func configure(title: String, isSelected: Bool) {
-        tabNameLabel.setText(title, style: Kopub.body3, color: isSelected ? .cgvG900 : .cgvG600)
+        tabNameLabel.setText(
+            title,
+            style: Kopub.body3,
+            color: isSelected ? .cgvG900 : .cgvG600
+        )
         underlineView.backgroundColor = isSelected ? .black : .clear
     }
 }

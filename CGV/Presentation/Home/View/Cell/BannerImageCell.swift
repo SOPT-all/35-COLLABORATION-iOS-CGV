@@ -11,8 +11,13 @@ import SnapKit
 import Then
 
 final class BannerImageCell: BaseCollectionViewCell {
+    
+    // MARK: - Property
+    
     private let bannerImageView = UIImageView()
     private let countLabel = UILabel()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         bannerImageView.do {
@@ -45,6 +50,8 @@ final class BannerImageCell: BaseCollectionViewCell {
             $0.height.equalTo(18)
         }
     }
+    
+    // MARK: - Configure
     
     func configure(image: UIImage?) {
         bannerImageView.image = image

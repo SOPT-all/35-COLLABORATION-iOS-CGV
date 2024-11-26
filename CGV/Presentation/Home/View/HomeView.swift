@@ -10,36 +10,34 @@ import UIKit
 import SnapKit
 import Then
 
-final class HomeView: UIView {
+final class HomeView: BaseView {
     
-    let collectionView: UICollectionView = {
-        let layout = UICollectionViewLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        return collectionView
-    }()
+    // MARK: - Property
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupView()
-        setupConstraints()
-    }
+    let collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    // MARK: - UISetting
     
-    private func setupView() {
+    override func setUI() {
         addSubview(collectionView)
+        
+        collectionView.do {
+            $0.showsVerticalScrollIndicator = false
+        }
     }
     
-    private func setupConstraints() {
+    override func setLayout() {
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
     
-    func setupCollectionView() {
+    // MARK: - Register
+    
+    func setRegister() {
         collectionView.do {
             $0.register(
                 TopHeaderViewCell.self,
@@ -51,13 +49,13 @@ final class HomeView: UIView {
             )
             $0.register(
                 MidHeaderView.self,
-                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                withReuseIdentifier: MidHeaderView.identifier
+                forSupplementaryViewOfKind: "MidHeader",
+                withReuseIdentifier: MidHeaderView.reuseIdentifier
             )
             $0.register(
                 MidTabBarView.self,
-                forSupplementaryViewOfKind: "TabBarKind",
-                withReuseIdentifier: MidTabBarView.identifier
+                forSupplementaryViewOfKind: "MidTabBar",
+                withReuseIdentifier: MidTabBarView.reuseIdentifier
             )
             $0.register(
                 MovieChartCell.self,
@@ -72,9 +70,25 @@ final class HomeView: UIView {
                 forCellWithReuseIdentifier: BigImageCell.reuseIdentifier
             )
             $0.register(
-                MidHeaderView.self,
-                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                withReuseIdentifier: MidHeaderView.identifier
+                ReserveRateCell.self,
+                forCellWithReuseIdentifier: ReserveRateCell.reuseIdentifier
+            )
+            $0.register(
+                MyCGVCell.self,
+                forCellWithReuseIdentifier: MyCGVCell.reuseIdentifier
+            )
+            $0.register(
+                BottomFooterCell.self,
+                forCellWithReuseIdentifier: BottomFooterCell.reuseIdentifier
+            )
+            $0.register(
+                ProgressShareCell.self,
+                forCellWithReuseIdentifier: ProgressShareCell.reuseIdentifier
+            )
+            $0.register(
+                MidGrayView.self,
+                forSupplementaryViewOfKind: "MidGray",
+                withReuseIdentifier: MidGrayView.reuseIdentifier
             )
         }
     }
