@@ -8,10 +8,15 @@
 import UIKit
 
 final class TimeBottomSheetViewController: BaseViewController {
+    
+    // MARK: - Property
+    
     private let rootView = TimeBottomSheetView()
     
-    private var selectedTheaters: [TheaterInfo] = []
+    var selectedTheaters: [TheaterInfo] = []
     private var isValid: Bool = false
+    
+    // MARK: - LifeCycle
     
     override func loadView() {
         view = rootView
@@ -33,6 +38,8 @@ final class TimeBottomSheetViewController: BaseViewController {
         )
     }
 }
+
+// MARK: - Function
 
 extension TimeBottomSheetViewController {
     private func checkValid() {
