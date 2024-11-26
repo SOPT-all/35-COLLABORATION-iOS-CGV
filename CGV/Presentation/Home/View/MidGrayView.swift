@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MidGrayView: UICollectionReusableView, ReuseIdentifiable {
+final class MidGrayView: UICollectionReusableView, ReuseIdentifiable {
 
     private let grayView = UIView()
     

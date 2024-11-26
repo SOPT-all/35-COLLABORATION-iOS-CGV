@@ -14,7 +14,7 @@ final class MidTabBarView: UICollectionReusableView, ReuseIdentifiable {
     
     // MARK: - Property
     
-    lazy var collectionView = UICollectionView(
+    let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout().then {
             $0.scrollDirection = .horizontal

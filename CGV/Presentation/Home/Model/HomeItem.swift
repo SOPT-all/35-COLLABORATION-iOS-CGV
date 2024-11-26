@@ -57,7 +57,14 @@ struct HomeItem: Hashable {
 extension HomeSectionType {
     var headerTitle: String {
         switch self {
-        case .topHeader, .topTabBar, .banner, .specialRate, .todayRate, .bottomfooter, .specialProgress, .todayProgress: return ""
+        case .topHeader,
+             .topTabBar,
+             .banner,
+             .specialRate,
+             .todayRate,
+             .bottomfooter,
+             .specialProgress,
+             .todayProgress: return ""
         case .movieChart: return "무비 차트"
         case .special: return "특별관"
         case .myCGV: return "나의 CGV"
