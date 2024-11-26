@@ -15,10 +15,10 @@ final class SeatsViewController: BaseViewController {
     
     private let timeList = SeatsTimeModel.mockTimeData()
     
-    final let cellWidth: CGFloat = 90
-    final let cellHeight: CGFloat = 63
+    final let cellWidth: CGFloat = Screen.width(90)
+    final let cellHeight: CGFloat = Screen.height(63)
     final let contentInterSpacing: CGFloat = 4
-    final let contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    final let contentInset = UIEdgeInsets(top: 0, left: Screen.width(20), bottom: 0, right: Screen.width(20))
     
     // MARK: - LifeCycle
     
