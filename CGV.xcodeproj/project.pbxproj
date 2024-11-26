@@ -54,6 +54,16 @@
 		A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */; };
 		A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */; };
 		A36349392CEC971B003B5322 /* GuestCountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349382CEC971B003B5322 /* GuestCountButton.swift */; };
+		AD1712462CF4A11500BEF3ED /* TimeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */; };
+		AD1712482CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */; };
+		AD17124A2CF4E1F700BEF3ED /* TheaterTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */; };
+		AD17124C2CF5B88C00BEF3ED /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD17124B2CF5B88C00BEF3ED /* GradientBackgroundView.swift */; };
+		AD17124E2CF5B8D600BEF3ED /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD17124D2CF5B8D600BEF3ED /* DateCell.swift */; };
+		AD1712512CF5B92D00BEF3ED /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712502CF5B92D00BEF3ED /* Color+.swift */; };
+		AD1712532CF5B94100BEF3ED /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712522CF5B94100BEF3ED /* Font+.swift */; };
+		AD1712592CF5DD1B00BEF3ED /* TimeCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712582CF5DD1B00BEF3ED /* TimeCellButton.swift */; };
+		AD5DE9B52CF0D9FB00CA7F3E /* DateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5DE9B42CF0D9FB00CA7F3E /* DateInfo.swift */; };
+		AD5DE9B72CF0DA1B00CA7F3E /* MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5DE9B62CF0DA1B00CA7F3E /* MoviePoster.swift */; };
 		AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */; };
 		AD9263F22CEC331800F63581 /* TimeBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */; };
 		AD9263F42CEC588200F63581 /* UnderlineSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */; };
@@ -113,6 +123,16 @@
 		A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetView.swift; sourceTree = "<group>"; };
 		A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetViewController.swift; sourceTree = "<group>"; };
 		A36349382CEC971B003B5322 /* GuestCountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountButton.swift; sourceTree = "<group>"; };
+		AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSwiftUIView.swift; sourceTree = "<group>"; };
+		AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSwiftUIViewModel.swift; sourceTree = "<group>"; };
+		AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterTimeTable.swift; sourceTree = "<group>"; };
+		AD17124B2CF5B88C00BEF3ED /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
+		AD17124D2CF5B8D600BEF3ED /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		AD1712502CF5B92D00BEF3ED /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		AD1712522CF5B94100BEF3ED /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		AD1712582CF5DD1B00BEF3ED /* TimeCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellButton.swift; sourceTree = "<group>"; };
+		AD5DE9B42CF0D9FB00CA7F3E /* DateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfo.swift; sourceTree = "<group>"; };
+		AD5DE9B62CF0DA1B00CA7F3E /* MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePoster.swift; sourceTree = "<group>"; };
 		AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBottomSheetView.swift; sourceTree = "<group>"; };
 		AD9263F12CEC331800F63581 /* TimeBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBottomSheetViewController.swift; sourceTree = "<group>"; };
 		AD9263F32CEC588200F63581 /* UnderlineSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineSegmentedControl.swift; sourceTree = "<group>"; };
@@ -200,7 +220,9 @@
 		A300A47C2CEF98570063DFF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD5DE9BC2CF0DA7400CA7F3E /* Component */,
 				AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */,
+				AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +233,10 @@
 				AD9263F52CEC838600F63581 /* RegionType.swift */,
 				AD9263F72CEC868D00F63581 /* RegionInfo.swift */,
 				AD9263F92CEC86CA00F63581 /* TheaterInfo.swift */,
+				AD5DE9B42CF0D9FB00CA7F3E /* DateInfo.swift */,
+				AD5DE9B62CF0DA1B00CA7F3E /* MoviePoster.swift */,
+				AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */,
+				AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +324,7 @@
 		A36348D52CE8EA3E003B5322 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				AD17124F2CF5B92300BEF3ED /* Extenstions */,
 				A300A47D2CEF985C0063DFF4 /* Model */,
 				A300A47C2CEF98570063DFF4 /* View */,
 				A300A47B2CEF98500063DFF4 /* ViewController */,
@@ -389,6 +416,25 @@
 				AD9BE8132CEDD60800650769 /* TheaterChipButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AD17124F2CF5B92300BEF3ED /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				AD1712522CF5B94100BEF3ED /* Font+.swift */,
+				AD1712502CF5B92D00BEF3ED /* Color+.swift */,
+			);
+			path = Extenstions;
+			sourceTree = "<group>";
+		};
+		AD5DE9BC2CF0DA7400CA7F3E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				AD17124D2CF5B8D600BEF3ED /* DateCell.swift */,
+				AD17124B2CF5B88C00BEF3ED /* GradientBackgroundView.swift */,
+				AD1712582CF5DD1B00BEF3ED /* TimeCellButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,11 +534,13 @@
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
 				AD9263F42CEC588200F63581 /* UnderlineSegmentedControl.swift in Sources */,
 				AD9263FA2CEC86CA00F63581 /* TheaterInfo.swift in Sources */,
+				AD17124A2CF4E1F700BEF3ED /* TheaterTimeTable.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
 				A363491F2CEA7C12003B5322 /* BaseViewController.swift in Sources */,
 				A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */,
 				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
+				AD5DE9B52CF0D9FB00CA7F3E /* DateInfo.swift in Sources */,
 				00805C6C2CEF242D0016C6F7 /* ReserveRateCell.swift in Sources */,
 				00C774302CEBAF7F0020F5BA /* HomeItem.swift in Sources */,
 				A36348F52CE9CF45003B5322 /* TimeViewController.swift in Sources */,
@@ -502,15 +550,23 @@
 				A36349322CEC2D6B003B5322 /* SeatsView.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
 				00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */,
+				AD5DE9B72CF0DA1B00CA7F3E /* MoviePoster.swift in Sources */,
+				AD1712482CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift in Sources */,
 				AD9263F62CEC838600F63581 /* RegionType.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
+				AD1712592CF5DD1B00BEF3ED /* TimeCellButton.swift in Sources */,
+				AD1712532CF5B94100BEF3ED /* Font+.swift in Sources */,
 				AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */,
+				AD17124E2CF5B8D600BEF3ED /* DateCell.swift in Sources */,
 				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
 				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
 				AD9263F82CEC868D00F63581 /* RegionInfo.swift in Sources */,
+				AD1712462CF4A11500BEF3ED /* TimeSwiftUIView.swift in Sources */,
 				A36349212CEA7C1A003B5322 /* BaseView.swift in Sources */,
+				AD17124C2CF5B88C00BEF3ED /* GradientBackgroundView.swift in Sources */,
 				A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */,
+				AD1712512CF5B92D00BEF3ED /* Color+.swift in Sources */,
 				A36348F72CE9CF5B003B5322 /* SeatsViewController.swift in Sources */,
 				0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */,
 				A300A4802CF021360063DFF4 /* BookingSheetViewController.swift in Sources */,
