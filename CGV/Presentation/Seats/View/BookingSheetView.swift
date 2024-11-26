@@ -162,14 +162,14 @@ final class BookingSheetView: BaseView {
         }
         
         editCountButton.snp.makeConstraints {
-            $0.centerY.equalTo(guestCountLabel.snp.centerY)
+            $0.centerY.equalTo(guestCountLabel.snp.centerY).offset(Screen.height(2))
             $0.leading.equalTo(guestCountLabel.snp.trailing).offset(Screen.width(8))
             $0.width.equalTo(Screen.width(66))
             $0.height.equalTo(Screen.height(26))
         }
         
         priceStackView.snp.makeConstraints {
-            $0.centerY.equalTo(guestCountLabel.snp.centerY)
+            $0.centerY.equalTo(guestCountLabel.snp.centerY).offset(Screen.height(2))
             $0.trailing.equalToSuperview().inset(Screen.width(20))
         }
         
