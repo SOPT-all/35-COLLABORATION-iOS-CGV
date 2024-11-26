@@ -14,9 +14,9 @@ final class GuestCountButton: UIView {
     
     // MARK: - Property
 
-    static let defaultWidth: CGFloat = 100
+    static let defaultWidth: CGFloat = Screen.width(100)
     
-    static let defaultHeight: CGFloat = 42
+    static let defaultHeight: CGFloat = Screen.height(42)
     
     var currentCount: Int {
         return Int(countLabel.text ?? "0") ?? 0
@@ -130,7 +130,8 @@ private extension GuestCountButton {
         countView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
-            $0.size.equalTo(34)
+            $0.width.equalTo(Screen.width(34))
+            $0.height.equalTo(Screen.height(34))
         }
         
         countLabel.snp.makeConstraints {
@@ -140,14 +141,16 @@ private extension GuestCountButton {
         
         minusButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().inset(8)
-            $0.size.equalTo(20)
+            $0.leading.equalToSuperview().inset(Screen.width(8))
+            $0.width.equalTo(Screen.width(20))
+            $0.height.equalTo(Screen.height(20))
         }
         
         plusButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(8)
-            $0.size.equalTo(20)
+            $0.trailing.equalToSuperview().inset(Screen.width(8))
+            $0.width.equalTo(Screen.width(20))
+            $0.height.equalTo(Screen.height(20))
         }
     }
 }

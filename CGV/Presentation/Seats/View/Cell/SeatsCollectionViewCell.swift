@@ -88,7 +88,7 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         }
         
         seatsView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(40)
+            $0.top.equalToSuperview().inset(Screen.height(40))
             $0.leading.trailing.bottom.equalToSuperview()
         }
         
@@ -98,9 +98,9 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         }
         
         seatsStackView.snp.makeConstraints {
-            $0.centerY.equalTo(seatsView.snp.centerY).offset(-4)
+            $0.centerY.equalTo(seatsView.snp.centerY).offset(-Screen.height(4))
             $0.centerX.equalTo(seatsView.snp.centerX)
-            $0.height.equalTo(20)
+            $0.height.equalTo(Screen.height(20))
         }
         
         remainSeatsLabel.snp.makeConstraints {
