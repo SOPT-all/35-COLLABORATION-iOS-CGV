@@ -36,6 +36,8 @@ extension UIFont {
 }
 
 enum Kopub: FontStyle {
+    private static let scaleRatio: CGFloat = max(Screen.height(1), Screen.width(1))
+    
     case head1, head2, head3, head4, head5, head6, head7, head8
     case body1, body2, body3, body4, body5
     
@@ -49,6 +51,10 @@ enum Kopub: FontStyle {
     }
     
     var size: CGFloat {
+        return defaultSize * Kopub.scaleRatio
+    }
+    
+    var defaultSize: CGFloat {
         switch self {
         case .head1: 10
         case .head2: 12
@@ -88,6 +94,8 @@ enum Kopub: FontStyle {
 }
 
 enum Malgun: FontStyle {
+    private static let scaleRatio: CGFloat = max(Screen.height(1), Screen.width(1))
+    
     case head1, head2, head3
     case body1, body2, body3, body4
     
@@ -101,6 +109,10 @@ enum Malgun: FontStyle {
     }
     
     var size: CGFloat {
+        return defaultSize * Malgun.scaleRatio
+    }
+    
+    var defaultSize: CGFloat {
         switch self {
         case .head1: 12
         case .head2: 16

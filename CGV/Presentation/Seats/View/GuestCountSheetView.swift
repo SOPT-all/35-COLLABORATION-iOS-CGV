@@ -62,7 +62,7 @@ final class GuestCountSheetView: BaseView {
         }
         
         dateLabel.do {
-            $0.setText("2024.11.9 (토)", style: Kopub.head4, color: .cgvG700, isSingleLine: true)
+            $0.setText("2024.11.05 (월)", style: Kopub.head4, color: .cgvG700, isSingleLine: true)
         }
         
         theaterLabel.do {
@@ -172,85 +172,85 @@ final class GuestCountSheetView: BaseView {
     
     override func setLayout() {
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(40)
+            $0.top.equalToSuperview().inset(Screen.height(40))
             $0.centerX.equalToSuperview()
         }
         
         infoStackView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(12)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Screen.height(16))
             $0.centerX.equalToSuperview()
         }
         
         guestCountLabel.snp.makeConstraints {
-            $0.top.equalTo(infoStackView.snp.bottom).offset(15)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(infoStackView.snp.bottom).offset(Screen.height(18))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
         }
         
         maxCountLabel.snp.makeConstraints {
-            $0.centerY.equalTo(guestCountLabel.snp.centerY).offset(2)
-            $0.leading.equalTo(guestCountLabel.snp.trailing).offset(8)
+            $0.centerY.equalTo(guestCountLabel.snp.centerY).offset(Screen.height(2))
+            $0.leading.equalTo(guestCountLabel.snp.trailing).offset(Screen.width(8))
         }
         
         generalLabel.snp.makeConstraints {
-            $0.top.equalTo(guestCountLabel.snp.bottom).offset(16)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(guestCountLabel.snp.bottom).offset(Screen.height(20))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
         }
         
         youthLabel.snp.makeConstraints {
-            $0.top.equalTo(generalLabel.snp.bottom).offset(26)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(generalLabel.snp.bottom).offset(Screen.height(26))
+            $0.leading.equalToSuperview().inset(Screen.height(20))
         }
         
         seniorLabel.snp.makeConstraints {
-            $0.top.equalTo(youthLabel.snp.bottom).offset(26)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(youthLabel.snp.bottom).offset(Screen.height(26))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
         }
         
         discountLabel.snp.makeConstraints {
-            $0.top.equalTo(seniorLabel.snp.bottom).offset(26)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(seniorLabel.snp.bottom).offset(Screen.height(26))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
         }
         
         generalButton.snp.makeConstraints {
             $0.centerY.equalTo(generalLabel.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
             $0.width.equalTo(GuestCountButton.defaultWidth)
             $0.height.equalTo(GuestCountButton.defaultHeight)
         }
         
         youthButton.snp.makeConstraints {
             $0.centerY.equalTo(youthLabel.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
             $0.width.equalTo(GuestCountButton.defaultWidth)
             $0.height.equalTo(GuestCountButton.defaultHeight)
         }
         
         seniorButton.snp.makeConstraints {
             $0.centerY.equalTo(seniorLabel.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
             $0.width.equalTo(GuestCountButton.defaultWidth)
             $0.height.equalTo(GuestCountButton.defaultHeight)
         }
         
         discountButton.snp.makeConstraints {
             $0.centerY.equalTo(discountLabel.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
             $0.width.equalTo(GuestCountButton.defaultWidth)
             $0.height.equalTo(GuestCountButton.defaultHeight)
         }
         
         backButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(36)
-            $0.leading.equalToSuperview().inset(20)
-            $0.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 2) + 10)
-            $0.height.equalTo(60)
+            $0.bottom.equalToSuperview().inset(Screen.height(36))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
+            $0.width.equalTo(Screen.width(162))
+            $0.height.equalTo(Screen.height(60))
         }
         
         selectButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(36)
-            $0.leading.equalToSuperview().inset((UIScreen.main.bounds.width / 2) + 10)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
+            $0.bottom.equalToSuperview().inset(Screen.height(36))
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
+            $0.width.equalTo(Screen.width(162))
+            $0.height.equalTo(Screen.height(60))
         }
     }
 }

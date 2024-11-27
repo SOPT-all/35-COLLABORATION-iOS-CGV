@@ -10,13 +10,17 @@ import UIKit
 import SnapKit
 import Then
 
-class ReserveRateCell: BaseCollectionViewCell {
+final class ReserveRateCell: BaseCollectionViewCell {
+    
+    // MARK: - Property
     
     private let underView = UIView()
     private let posterImageView = UIImageView()
     private let titleLabel = UILabel()
     private let rateLabel = UILabel()
     private let reserveButton = UIButton()
+    
+    // MARK: - UISetting
     
     override func setStyle() {
         underView.do {
@@ -37,8 +41,9 @@ class ReserveRateCell: BaseCollectionViewCell {
         }
         
         reserveButton.do {
-            $0.setTitle("예매", for: .normal)
+            $0.setTitle("예매", style: Kopub.body3, color: .white)
             $0.backgroundColor = .cgvR200
+            $0.layer.cornerRadius = 4
         }
     }
     
@@ -71,14 +76,17 @@ class ReserveRateCell: BaseCollectionViewCell {
         
         reserveButton.snp.makeConstraints{
             $0.trailing.equalToSuperview().inset(8)
+            $0.centerY.equalTo(posterImageView.snp.centerY)
             $0.width.equalTo(32)
             $0.height.equalTo(24)
         }
     }
     
+    // MARK: - Configure
+    
     func configure(title: String, rate: String, image: UIImage?) {
-        titleLabel.setText(title, style: Kopub.head3, color: .cgvG800)
-        rateLabel.setText(rate, style: Kopub.body2, color: .cgvG700)
+        titleLabel.updateText(title)
+        rateLabel.updateText(rate)
         posterImageView.image = image
     }
 }

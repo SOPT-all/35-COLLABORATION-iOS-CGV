@@ -50,7 +50,7 @@ final class BookingSheetView: BaseView {
         }
         
         dateLabel.do {
-            $0.setText("2024.11.9 (토)", style: Kopub.head4, color: .cgvG700, isSingleLine: true)
+            $0.setText("2024.11.05 (월)", style: Kopub.head4, color: .cgvG700, isSingleLine: true)
         }
         
         theaterLabel.do {
@@ -147,36 +147,36 @@ final class BookingSheetView: BaseView {
     
     override func setLayout() {
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(40)
+            $0.top.equalToSuperview().inset(Screen.height(40))
             $0.centerX.equalToSuperview()
         }
         
         infoStackView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(12)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Screen.height(16))
             $0.centerX.equalToSuperview()
         }
         
         guestCountLabel.snp.makeConstraints {
-            $0.top.equalTo(infoStackView.snp.bottom).offset(20)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(infoStackView.snp.bottom).offset(Screen.height(20))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
         }
         
         editCountButton.snp.makeConstraints {
-            $0.centerY.equalTo(guestCountLabel.snp.centerY)
-            $0.leading.equalTo(guestCountLabel.snp.trailing).offset(8)
-            $0.width.equalTo(66)
-            $0.height.equalTo(26)
+            $0.centerY.equalTo(guestCountLabel.snp.centerY).offset(Screen.height(2))
+            $0.leading.equalTo(guestCountLabel.snp.trailing).offset(Screen.width(8))
+            $0.width.equalTo(Screen.width(66))
+            $0.height.equalTo(Screen.height(26))
         }
         
         priceStackView.snp.makeConstraints {
-            $0.centerY.equalTo(guestCountLabel.snp.centerY)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.centerY.equalTo(guestCountLabel.snp.centerY).offset(Screen.height(2))
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
         }
         
         bookingButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(36)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
+            $0.bottom.equalToSuperview().inset(Screen.height(36))
+            $0.leading.trailing.equalToSuperview().inset(Screen.width(20))
+            $0.height.equalTo(Screen.height(60))
         }
     }
 }

@@ -10,9 +10,13 @@ import UIKit
 import SnapKit
 import Then
 
-class TopHeaderViewCell: BaseCollectionViewCell {
+final class TopHeaderViewCell: BaseCollectionViewCell {
+    
+    // MARK: - Property
     
     private let topView = TopHeaderView()
+    
+    // MARK: - UISetting
     
     override func setUI() {
         contentView.addSubview(topView)
