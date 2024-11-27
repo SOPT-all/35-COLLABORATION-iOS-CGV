@@ -44,7 +44,7 @@ final class MidTabBarCell: BaseCollectionViewCell {
             $0.height.equalTo(1)
             $0.width.equalTo(tabNameLabel.snp.width).offset(Screen.width(16))
             $0.top.equalTo(tabNameLabel.snp.bottom).offset(Screen.height(7))
-            $0.leading.equalToSuperview()
+            $0.centerX.equalTo(tabNameLabel.snp.centerX)
         }
     }
     

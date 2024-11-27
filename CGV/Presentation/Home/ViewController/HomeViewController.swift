@@ -754,7 +754,7 @@ extension HomeViewController {
         section.contentInsets = NSDirectionalEdgeInsets(
             top: Screen.height(24),
             leading: Screen.width(20),
-            bottom: Screen.height(24),
+            bottom: Screen.height(51),
             trailing: Screen.width(20)
         )
         
@@ -780,7 +780,7 @@ extension HomeViewController {
         let section = NSCollectionLayoutSection(group: group)
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: Screen.height(33),
+            top: 0,
             leading: 0,
             bottom: 0,
             trailing: 0
