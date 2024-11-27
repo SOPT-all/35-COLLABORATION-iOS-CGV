@@ -30,6 +30,7 @@ final class HomeView: BaseView {
         
         collectionView.do {
             $0.showsVerticalScrollIndicator = false
+            $0.backgroundColor = .cgvG100
         }
     }
     

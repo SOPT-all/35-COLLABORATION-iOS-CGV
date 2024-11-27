@@ -25,7 +25,7 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         homeView.collectionView.collectionViewLayout = createLayout()
         homeView.setRegister()
         configureDataSource()
@@ -303,34 +303,52 @@ extension HomeViewController {
     // MARK: - Layouts
     
     private func createLayout() -> UICollectionViewLayout {
-        UICollectionViewCompositionalLayout { sectionIndex, _ in
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             guard let sectionType = HomeSectionType(rawValue: sectionIndex) else { return nil }
+            
+            var section: NSCollectionLayoutSection?
             
             switch sectionType {
             case .topHeader:
-                return self.createTopViewSection()
+                section = self.createTopViewSection()
             case .topTabBar:
-                return self.createTopTabBarSection()
+                section = self.createTopTabBarSection()
             case .banner:
-                return self.createBannerSection()
+                section = self.createBannerSection()
             case .movieChart:
-                return self.createMovieChartSection()
+                section = self.createMovieChartSection()
             case .special:
-                return self.createSpecialSection()
+                section = self.createSpecialSection()
             case .myCGV:
-                return self.createMyCGVSection()
+                section = self.createMyCGVSection()
             case .todayCGV:
-                return self.createTodayCGVSection()
+                section = self.createTodayCGVSection()
             case .specialProgress, .todayProgress:
-                return self.createProgressShareSection()
+                section = self.createProgressShareSection()
             case .specialRate:
-                return self.createSpecialRateSection()
+                section = self.createSpecialRateSection()
             case .todayRate:
-                return self.createTodayRateSection()
+                section = self.createTodayRateSection()
             case .bottomfooter:
-                return self.createBottomFooter()
+                section = self.createBottomFooter()
             }
+            
+            let backgroundDecoration = NSCollectionLayoutDecorationItem.background(
+                elementKind: "SectionBackground"
+            )
+            backgroundDecoration.contentInsets = NSDirectionalEdgeInsets(
+                top: 0, leading: 0, bottom: 0, trailing: 0
+            )
+            section?.decorationItems = [backgroundDecoration]
+            
+            return section
         }
+        
+        layout.register(
+            SectionBackgroundView.self,
+            forDecorationViewOfKind: "SectionBackground"
+        )
+        return layout
     }
     
     private func createTopViewSection() -> NSCollectionLayoutSection {
