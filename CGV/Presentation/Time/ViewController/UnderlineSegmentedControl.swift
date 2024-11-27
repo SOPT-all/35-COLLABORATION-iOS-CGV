@@ -10,7 +10,12 @@ import UIKit
 import Then
 
 class UnderlineSegmentedControl: UISegmentedControl {
+    
+    // MARK: - UIComponent
+    
     private lazy var underlineView = UIView()
+    
+    // MARK: - LifeCycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +33,7 @@ class UnderlineSegmentedControl: UISegmentedControl {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -42,6 +48,8 @@ class UnderlineSegmentedControl: UISegmentedControl {
             height: underlineHeight
         )
     }
+    
+    // MARK: - UISetting
     
     private func setStyle() {
         underlineView.do {

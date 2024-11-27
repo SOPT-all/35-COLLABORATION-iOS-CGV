@@ -10,11 +10,13 @@ import UIKit
 import SnapKit
 
 final class TimeBottomSheetView: BaseView {
+    
+    // MARK: - Property
+    
     private let segmentControl = UnderlineSegmentedControl(items: ["지역별", "특별관"])
     private let buttonStackView = UIStackView()
     private let recentStackView = UIStackView()
     private let surroundingStackView = UIStackView()
-    let selectedTheaterStackView = UIStackView()
     private let noticeLabel = UILabel()
     private let recentLabel = UILabel()
     private let surroundingLabel = UILabel()
@@ -24,9 +26,13 @@ final class TimeBottomSheetView: BaseView {
     private var regionsCategoryButton: [UIButton] = []
     private var regionInfos = RegionInfo.initTheaters()
     
+    let selectedTheaterStackView = UIStackView()
     let selectButton = UIButton(type: .system)
-    var theatersButtons: [TheaterButton] = []    
+    
+    var theatersButtons: [TheaterButton] = []
         
+    // MARK: - LifeCycle
+    
     override func setStyle() {
         segmentControl.do {
             $0.selectedSegmentIndex = 0
@@ -267,6 +273,8 @@ final class TimeBottomSheetView: BaseView {
         }
     }
 }
+
+// MARK: - Function
 
 extension TimeBottomSheetView {
     func makeTheaterChipButton(theater: String) {
