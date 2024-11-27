@@ -60,6 +60,7 @@
 		A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */; };
 		A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */; };
 		A36349392CEC971B003B5322 /* GuestCountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349382CEC971B003B5322 /* GuestCountButton.swift */; };
+		A3ED0AC12CF74E610074B07A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A3ED0AC02CF74E610074B07A /* Moya */; };
 		AD1712462CF4A11500BEF3ED /* TimeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */; };
 		AD1712482CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */; };
 		AD17124A2CF4E1F700BEF3ED /* TheaterTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */; };
@@ -163,6 +164,7 @@
 			files = (
 				A36348D92CE8EB3F003B5322 /* SnapKit in Frameworks */,
 				A36348DC2CE8EB46003B5322 /* Then in Frameworks */,
+				A3ED0AC12CF74E610074B07A /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +476,7 @@
 			packageProductDependencies = (
 				A36348D82CE8EB3F003B5322 /* SnapKit */,
 				A36348DB2CE8EB46003B5322 /* Then */,
+				A3ED0AC02CF74E610074B07A /* Moya */,
 			);
 			productName = CGV;
 			productReference = A36348B42CE8E937003B5322 /* CGV.app */;
@@ -506,6 +509,7 @@
 			packageReferences = (
 				A36348D72CE8EB3F003B5322 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				A36348DA2CE8EB46003B5322 /* XCRemoteSwiftPackageReference "Then" */,
+				A3ED0ABF2CF74E610074B07A /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = A36348B52CE8E937003B5322 /* Products */;
 			projectDirPath = "";
@@ -829,6 +833,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		A3ED0ABF2CF74E610074B07A /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -841,6 +853,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A36348DA2CE8EB46003B5322 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		A3ED0AC02CF74E610074B07A /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3ED0ABF2CF74E610074B07A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
