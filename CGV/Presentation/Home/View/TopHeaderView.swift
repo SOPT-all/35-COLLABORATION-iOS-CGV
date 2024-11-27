@@ -19,6 +19,8 @@ final class TopHeaderView: BaseView {
     // MARK: - UISetting
     
     override func setStyle() {
+        self.backgroundColor = .white
+        
         ticketButton.do {
             $0.setImage(UIImage(resource: .icHomeTicket), for: .normal)
             $0.backgroundColor = .clear
@@ -44,28 +46,29 @@ final class TopHeaderView: BaseView {
     
     override func setLayout() {
         ticketButton.snp.makeConstraints{
-            $0.top.leading.equalToSuperview()
+            $0.centerY.equalTo(cgvLogo.snp.centerY)
+            $0.leading.equalToSuperview().inset(Screen.width(20))
             $0.width.equalTo(Screen.width(30))
             $0.height.equalTo(Screen.height(30))
         }
         
         cgvLogo.snp.makeConstraints{
-            $0.top.equalToSuperview()
+            $0.top.equalToSuperview().inset(Screen.height(8))
             $0.centerX.equalToSuperview()
             $0.height.equalTo(Screen.height(33))
             $0.width.equalTo(Screen.width(71))
         }
         
         searchButton.snp.makeConstraints{
-            $0.top.equalToSuperview()
+            $0.centerY.equalTo(cgvLogo.snp.centerY)
             $0.trailing.equalTo(menuButton.snp.leading)
             $0.width.equalTo(Screen.width(30))
             $0.height.equalTo(Screen.height(30))
         }
         
         menuButton.snp.makeConstraints{
-            $0.top.equalToSuperview()
-            $0.trailing.equalToSuperview()
+            $0.centerY.equalTo(cgvLogo.snp.centerY)
+            $0.trailing.equalToSuperview().inset(Screen.width(10))
             $0.width.equalTo(Screen.width(30))
             $0.height.equalTo(Screen.height(30))
         }

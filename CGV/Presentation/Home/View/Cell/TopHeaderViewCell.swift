@@ -24,9 +24,9 @@ final class TopHeaderViewCell: BaseCollectionViewCell {
     
     override func setLayout() {
         topView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(Screen.height(12))
-            $0.leading.equalToSuperview().inset(Screen.width(20))
-            $0.trailing.equalToSuperview().inset(Screen.width(10))
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
     }

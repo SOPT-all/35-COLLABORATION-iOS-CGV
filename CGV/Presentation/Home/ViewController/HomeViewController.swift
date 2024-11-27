@@ -336,7 +336,7 @@ extension HomeViewController {
     private func createTopViewSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .absolute(Screen.width(375)),
-            heightDimension: .absolute(Screen.height(53))
+            heightDimension: .absolute(Screen.height(49))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = itemSize
@@ -351,7 +351,7 @@ extension HomeViewController {
     private func createTopTabBarSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .absolute(Screen.width(375)),
-            heightDimension: .absolute(Screen.height(44))
+            heightDimension: .absolute(Screen.height(49))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = itemSize
