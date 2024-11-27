@@ -397,7 +397,7 @@ extension HomeViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(Screen.width(168)),
+            widthDimension: .absolute(Screen.width(160)),
             heightDimension: .absolute(Screen.height(332))
         )
         let group = NSCollectionLayoutGroup.horizontal(
@@ -407,6 +407,7 @@ extension HomeViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+        section.interGroupSpacing = Screen.width(8)
         
         section.contentInsets = NSDirectionalEdgeInsets(
             top: Screen.height(66),
