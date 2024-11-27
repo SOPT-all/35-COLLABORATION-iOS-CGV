@@ -18,7 +18,7 @@ final class MidTabBarView: UICollectionReusableView, ReuseIdentifiable {
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout().then {
             $0.scrollDirection = .horizontal
-            $0.minimumLineSpacing = 8
+            $0.minimumLineSpacing = Screen.width(8)
         }
     )
     
