@@ -107,4 +107,12 @@ extension MidTabBarViewController: UICollectionViewDelegateFlowLayout {
         let width = Screen.width(title.size(withAttributes: attributes).width + 19)
         return CGSize(width: ceil(width), height: Screen.height(26))
     }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
 }

@@ -20,9 +20,7 @@ final class HomeViewController: BaseViewController {
     // MARK: - LifeCycle
     
     override func loadView() {
-        let rootView = UIView()
-        rootView.addSubviews(homeView)
-        view = rootView
+        view = homeView
     }
     
     override func viewDidLoad() {
@@ -32,7 +30,6 @@ final class HomeViewController: BaseViewController {
         homeView.setRegister()
         configureDataSource()
         applyInitialSnapshots()
-        setLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,11 +42,9 @@ final class HomeViewController: BaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    private func setLayout() {
-        homeView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        homeView.collectionView.contentInsetAdjustmentBehavior = .never
     }
 }
 
@@ -442,12 +437,6 @@ extension HomeViewController {
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: Screen.width(55))
         )
-        tabBar.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: Screen.width(20),
-            bottom: 0,
-            trailing: 0
-        )
         
         let dividerSize = NSCollectionLayoutSize(
             widthDimension: .absolute(Screen.width(375)),
@@ -458,12 +447,6 @@ extension HomeViewController {
             elementKind: "MidGray",
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: Screen.height(424))
-        )
-        divider.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
         )
         
         section.boundarySupplementaryItems = [header, tabBar, divider]
@@ -533,12 +516,6 @@ extension HomeViewController {
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: Screen.height(55))
         )
-        tabBar.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: Screen.width(20),
-            bottom: 0,
-            trailing: 0
-        )
         
         section.boundarySupplementaryItems = [header, tabBar]
         
@@ -596,12 +573,6 @@ extension HomeViewController {
             elementKind: "MidGray",
             alignment: .top,
             absoluteOffset: CGPoint(x: Screen.width(0), y: Screen.height(234))
-        )
-        divider.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
         )
         
         section.boundarySupplementaryItems = [header, divider]
@@ -671,12 +642,6 @@ extension HomeViewController {
             alignment: .top,
             absoluteOffset: CGPoint(x: 0, y: Screen.height(55))
         )
-        tabBar.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: Screen.width(20),
-            bottom: 0,
-            trailing: 0
-        )
         
         section.boundarySupplementaryItems = [header, tabBar]
         
@@ -719,12 +684,6 @@ extension HomeViewController {
             elementKind: "MidGray",
             alignment: .top,
             absoluteOffset: CGPoint(x: Screen.width(0), y: Screen.height(253))
-        )
-        divider.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
         )
         
         section.boundarySupplementaryItems = [divider]
@@ -780,13 +739,6 @@ extension HomeViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
-        )
-        
         return section
     }
     
@@ -807,13 +759,6 @@ extension HomeViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
-        )
         
         return section
     }
