@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 class TheaterChipButton: UIButton {
-    static let defaultHeight: CGFloat = 36
+    static let defaultHeight: CGFloat = Screen.height(36)
 
     let theaterNameLabel = UILabel()
     private let closeImageView = UIImageView()
@@ -50,13 +50,18 @@ class TheaterChipButton: UIButton {
         
         stackView.do {
             $0.axis = .horizontal
-            $0.spacing = 4
+            $0.spacing = Screen.width(4)
             $0.backgroundColor = .cgvG300
             $0.layer.cornerRadius = 8
             $0.alignment = .center
             $0.distribution = .fill
             $0.isLayoutMarginsRelativeArrangement = true
-            $0.layoutMargins = UIEdgeInsets(top: 6, left: 12, bottom: 6, right: 6)
+            $0.layoutMargins = UIEdgeInsets(
+                top: Screen.height(6),
+                left: Screen.width(12),
+                bottom: Screen.height(6),
+                right: Screen.width(6)
+            )
         }
     }
     
@@ -68,7 +73,7 @@ class TheaterChipButton: UIButton {
     
     private func setLayout() {
         closeImageView.snp.makeConstraints {
-            $0.size.equalTo(16)
+            $0.size.equalTo(Screen.width(16))
         }
         
         stackView.snp.makeConstraints {
