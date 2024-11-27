@@ -50,18 +50,21 @@ final class TopHeaderView: BaseView {
         }
         
         cgvLogo.snp.makeConstraints{
+            $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
             $0.height.equalTo(Screen.height(33))
             $0.width.equalTo(Screen.width(71))
         }
         
         searchButton.snp.makeConstraints{
+            $0.top.equalToSuperview()
             $0.trailing.equalTo(menuButton.snp.leading)
             $0.width.equalTo(Screen.width(30))
             $0.height.equalTo(Screen.height(30))
         }
         
         menuButton.snp.makeConstraints{
+            $0.top.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.width.equalTo(Screen.width(30))
             $0.height.equalTo(Screen.height(30))
