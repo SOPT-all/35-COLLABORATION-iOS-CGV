@@ -31,9 +31,8 @@ final class BigImageCell: BaseCollectionViewCell {
     
     override func setLayout() {
         bigImageView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.width.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
     }
     

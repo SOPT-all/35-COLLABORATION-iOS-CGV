@@ -38,7 +38,7 @@ final class MovieChartCell: BaseCollectionViewCell {
         firstStackView.do {
             $0.axis = .horizontal
             $0.alignment = .center
-            $0.spacing = 2
+            $0.spacing = Screen.width(2)
             $0.distribution = .equalSpacing
         }
         
@@ -53,7 +53,7 @@ final class MovieChartCell: BaseCollectionViewCell {
         secondStackView.do {
             $0.axis = .horizontal
             $0.alignment = .center
-            $0.spacing = 6
+            $0.spacing = Screen.width(6)
             $0.distribution = .equalSpacing
         }
         
@@ -106,21 +106,22 @@ final class MovieChartCell: BaseCollectionViewCell {
         posterImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview()
-            $0.width.equalTo(160)
-            $0.height.equalTo(230)
+            $0.width.equalTo(Screen.width(160))
+            $0.height.equalTo(Screen.height(230))
         }
         
         firstStackView.snp.makeConstraints{
-            $0.top.equalTo(posterImageView.snp.bottom).offset(8)
+            $0.top.equalTo(posterImageView.snp.bottom).offset(Screen.height(8))
             $0.centerX.equalTo(posterImageView.snp.centerX)
         }
         
         titleLabel.snp.makeConstraints {
-            $0.width.lessThanOrEqualTo(119)
+            $0.width.lessThanOrEqualTo(Screen.width(119))
         }
         
         ageLimitImageView.snp.makeConstraints{
-            $0.size.equalTo(22)
+            $0.width.equalTo(Screen.width(22))
+            $0.height.equalTo(Screen.height(22))
         }
         
         secondStackView.snp.makeConstraints{
@@ -129,19 +130,20 @@ final class MovieChartCell: BaseCollectionViewCell {
         }
         
         preEggLogoImageView.snp.makeConstraints{
-            $0.size.equalTo(18)
+            $0.width.equalTo(Screen.width(18))
+            $0.height.equalTo(Screen.height(18))
         }
         
         divider.snp.makeConstraints{
-            $0.width.equalTo(1)
-            $0.height.equalTo(6)
+            $0.width.equalTo(Screen.width(1))
+            $0.height.equalTo(Screen.height(6))
         }
         
         reserveButton.snp.makeConstraints{
-            $0.top.equalTo(secondStackView.snp.bottom).offset(10)
+            $0.top.equalTo(secondStackView.snp.bottom).offset(Screen.height(10))
             $0.centerX.equalTo(posterImageView.snp.centerX)
-            $0.width.equalTo(160)
-            $0.height.equalTo(40)
+            $0.width.equalTo(Screen.width(160))
+            $0.height.equalTo(Screen.height(40))
         }
     }
     

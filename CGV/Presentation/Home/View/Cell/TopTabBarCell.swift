@@ -30,7 +30,7 @@ final class TopTabBarCell: BaseCollectionViewCell {
             $0.axis = .horizontal
             $0.alignment = .center
             $0.distribution = .equalSpacing
-            $0.spacing = 14
+            $0.spacing = Screen.width(14)
         }
         
         underlineView.do {
@@ -60,15 +60,15 @@ final class TopTabBarCell: BaseCollectionViewCell {
         }
         
         stackView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.leading.trailing.equalToSuperview().inset(Screen.width(16))
             $0.centerY.equalToSuperview()
         }
         
         underlineView.snp.makeConstraints {
-            $0.height.equalTo(2)
-            $0.width.equalTo(29)
+            $0.height.equalTo(Screen.height(2))
+            $0.width.equalTo(Screen.width(29))
             $0.bottom.equalTo(gradientView.snp.bottom)
-            $0.leading.equalToSuperview().inset(16)
+            $0.leading.equalToSuperview().inset(Screen.width(16))
         }
     }
     

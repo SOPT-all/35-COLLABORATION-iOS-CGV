@@ -61,27 +61,27 @@ final class MidHeaderView: UICollectionReusableView, ReuseIdentifiable {
     
     private func setLayout() {
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(22)
+            $0.top.equalToSuperview().inset(Screen.height(22))
             $0.leading.equalToSuperview()
         }
         
         allViewButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
             $0.trailing.equalToSuperview()
-            $0.width.equalTo(72)
-            $0.height.equalTo(18)
+            $0.width.equalTo(Screen.width(72))
+            $0.height.equalTo(Screen.height(18))
         }
         
         subtitleLabel.snp.makeConstraints{
             $0.top.equalToSuperview()
-            $0.trailing.equalTo(chevronImageView.snp.leading).offset(-5)
+            $0.trailing.equalTo(chevronImageView.snp.leading).offset(Screen.width(-5))
         }
         
         chevronImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(2)
+            $0.top.equalToSuperview().inset(Screen.height(2))
             $0.trailing.equalToSuperview()
-            $0.width.equalTo(11)
-            $0.height.equalTo(18)
+            $0.width.equalTo(Screen.width(11))
+            $0.height.equalTo(Screen.height(18))
         }
     }
     

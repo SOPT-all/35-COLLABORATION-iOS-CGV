@@ -39,15 +39,15 @@ final class BannerImageCell: BaseCollectionViewCell {
         bannerImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalToSuperview()
-            $0.width.equalTo(375)
-            $0.height.equalTo(100)
+            $0.width.equalTo(Screen.width(375))
+            $0.height.equalTo(Screen.height(100))
         }
         
         countLabel.snp.makeConstraints{
             $0.bottom.equalTo(bannerImageView.snp.bottom)
             $0.trailing.equalTo(bannerImageView.snp.trailing)
-            $0.width.equalTo(33)
-            $0.height.equalTo(18)
+            $0.width.equalTo(Screen.width(33))
+            $0.height.equalTo(Screen.height(18))
         }
     }
     
