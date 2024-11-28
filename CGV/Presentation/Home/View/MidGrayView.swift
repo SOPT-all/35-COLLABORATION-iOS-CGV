@@ -37,8 +37,7 @@ final class MidGrayView: UICollectionReusableView, ReuseIdentifiable {
     
     private func setLayout() {
         grayView.snp.makeConstraints{
-            $0.width.equalTo(375)
-            $0.height.equalTo(10)
+            $0.width.equalTo(Screen.width(375))
             $0.edges.equalToSuperview()
         }
     }

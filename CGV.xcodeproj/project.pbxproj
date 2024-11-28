@@ -13,6 +13,7 @@
 		0032F4BB2CEDDB4800F14451 /* TopHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032F4BA2CEDDB4800F14451 /* TopHeaderViewCell.swift */; };
 		003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */; };
 		0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060567E2CEC6C9000482BEC /* HomeView.swift */; };
+		0067A0572CF7780C0062FA42 /* SectionBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0067A0562CF7780C0062FA42 /* SectionBackgroundView.swift */; };
 		00805C6C2CEF242D0016C6F7 /* ReserveRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805C6B2CEF242D0016C6F7 /* ReserveRateCell.swift */; };
 		00805C702CEFAEC90016C6F7 /* MyCGVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00805C6F2CEFAEC90016C6F7 /* MyCGVCell.swift */; };
 		00AE2A862CEE3A530024CE6C /* MidTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */; };
@@ -88,6 +89,7 @@
 		0032F4BA2CEDDB4800F14451 /* TopHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderViewCell.swift; sourceTree = "<group>"; };
 		003919E52CEDE81C005B7C43 /* TopTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarCell.swift; sourceTree = "<group>"; };
 		0060567E2CEC6C9000482BEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0067A0562CF7780C0062FA42 /* SectionBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundView.swift; sourceTree = "<group>"; };
 		00805C6B2CEF242D0016C6F7 /* ReserveRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveRateCell.swift; sourceTree = "<group>"; };
 		00805C6F2CEFAEC90016C6F7 /* MyCGVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCGVCell.swift; sourceTree = "<group>"; };
 		00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidTabBarView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				00C774272CEB98830020F5BA /* MidHeaderView.swift */,
 				00AE2A852CEE3A530024CE6C /* MidTabBarView.swift */,
 				0030771C2CF4EF25008F7BDF /* MidGrayView.swift */,
+				0067A0562CF7780C0062FA42 /* SectionBackgroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				AD5DE9B72CF0DA1B00CA7F3E /* MoviePoster.swift in Sources */,
 				AD1712482CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift in Sources */,
 				AD9263F62CEC838600F63581 /* RegionType.swift in Sources */,
+				0067A0572CF7780C0062FA42 /* SectionBackgroundView.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
 				AD1712592CF5DD1B00BEF3ED /* TimeCellButton.swift in Sources */,

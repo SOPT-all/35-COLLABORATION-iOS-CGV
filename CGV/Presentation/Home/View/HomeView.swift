@@ -19,19 +19,34 @@ final class HomeView: BaseView {
         collectionViewLayout: UICollectionViewFlowLayout()
     )
     
+    private let safeAreaView = UIView()
+    
     // MARK: - UISetting
     
-    override func setUI() {
-        addSubview(collectionView)
+    override func setStyle() {
+        safeAreaView.do {
+            $0.backgroundColor = .white
+        }
         
         collectionView.do {
             $0.showsVerticalScrollIndicator = false
+            $0.backgroundColor = .cgvG100
         }
     }
     
+    override func setUI() {
+        addSubviews(collectionView, safeAreaView)
+    }
+    
     override func setLayout() {
+        safeAreaView.snp.makeConstraints{
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.top)
+        }
+        
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(safeAreaView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     
