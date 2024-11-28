@@ -15,6 +15,13 @@ protocol MovieServiceProtocol {
         request: EmptyModel,
         completion: @escaping(NetworkResult<MovieDetailResponseModel>) -> Void
     )
+    
+    typealias MovieBookingResponseModel = BaseResponseBody<MovieBookingResponse>
+    func bookingMovie(
+        movieID: Int,
+        request: MovieBookingRequest,
+        completion: @escaping(NetworkResult<MovieBookingResponseModel>) -> Void
+    )
 }
 
 final class MovieService: MovieServiceProtocol {
@@ -35,6 +42,24 @@ final class MovieService: MovieServiceProtocol {
                 let statusCode = response.statusCode
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data, MovieDetailResponseModel.self)
+                completion(networkResult)
+            case .failure:
+                completion(.networkFail)
+            }
+        }
+    }
+    
+    func bookingMovie(
+        movieID: Int,
+        request: MovieBookingRequest,
+        completion: @escaping (NetworkResult<MovieBookingResponseModel>) -> Void
+    ) {
+        provider.request(.bookingMovie(movieID: movieID, request: request)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, MovieBookingResponseModel.self)
                 completion(networkResult)
             case .failure:
                 completion(.networkFail)
