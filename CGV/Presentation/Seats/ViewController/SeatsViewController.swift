@@ -13,7 +13,9 @@ final class SeatsViewController: BaseViewController {
 
     private let rootView = SeatsView()
     
-    private let timeList = SeatsTimeModel.mockTimeData()
+    private let movieService = MovieService()
+    
+    private var movieDetailList: [MovieDetailResponse] = []
     
     final let cellWidth: CGFloat = Screen.width(90)
     final let cellHeight: CGFloat = Screen.height(63)
@@ -31,6 +33,7 @@ final class SeatsViewController: BaseViewController {
         
         view.backgroundColor = .cgvG850
         register()
+        requestMovieDetail()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,6 +67,25 @@ final class SeatsViewController: BaseViewController {
             SeatsCollectionViewCell.self,
             forCellWithReuseIdentifier: SeatsCollectionViewCell.reuseIdentifier
         )
+    }
+    
+    private func requestMovieDetail() {
+        movieService.fetchMovieDetail(movieID: 1, request: EmptyModel()) { [weak self] response in
+            switch response {
+            case .success(let data):
+                let data = data.data.compactMap{ $0 }
+                self?.movieDetailList = data
+                self?.rootView.seatsCollectionView.reloadData()
+                if let first = data.first {
+                    self?.setupNavigationBarTitle(
+                        with: "[\(first.theaterName)]",
+                        backgroundColor: .cgvG850
+                    )
+                }
+            default:
+                print(response.stateDescription)
+            }
+        }
     }
     
     @objc
@@ -113,7 +135,7 @@ extension SeatsViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return timeList.count
+        return movieDetailList.count
     }
     
     func collectionView(
@@ -124,11 +146,9 @@ extension SeatsViewController: UICollectionViewDataSource {
             withReuseIdentifier: SeatsCollectionViewCell.reuseIdentifier,
             for: indexPath
         ) as? SeatsCollectionViewCell else { return UICollectionViewCell() }
-        cell.dataBind(timeList[indexPath.row])
+        cell.dataBind(movieDetailList[indexPath.row])
         return cell
     }
-    
-    
 }
 
 // MARK: - UIAdaptivePresentationControllerDelegate

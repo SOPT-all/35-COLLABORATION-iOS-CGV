@@ -110,9 +110,34 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
 }
 
 extension SeatsCollectionViewCell {
+    func dataBind(_ data: MovieDetailResponse) {
+        let startTime = extractTime(from: data.startTime)
+        let endTime = extractTime(from: data.endTime)
+        
+        startTimeLabel.updateText(startTime)
+        endTimeLabel.updateText("~\(endTime ?? "")")
+        morningIcon.isHidden = !data.isMorning
+    }
+    
     func dataBind(_ mockData: SeatsTimeModel) {
         startTimeLabel.updateText(mockData.startTime)
         endTimeLabel.updateText(mockData.endTime)
         morningIcon.isHidden = !mockData.isMorning
+    }
+    
+    private func extractTime(from dateTime: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        
+        guard let date = dateFormatter.date(from: dateTime) else {
+            print("Invalid date format")
+            return nil
+        }
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        
+        return timeFormatter.string(from: date)
     }
 }
