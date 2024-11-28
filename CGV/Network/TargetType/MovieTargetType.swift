@@ -40,7 +40,7 @@ extension MovieTargetType: TargetType {
         switch self {
         case .fetchMovieDetail: 
             return .requestPlain
-        case .bookingMovie(let request, _):
+        case .bookingMovie(_, let request):
             return .requestJSONEncodable(request)
         }
     }

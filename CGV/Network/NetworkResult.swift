@@ -16,7 +16,7 @@ enum NetworkResult<T> {
     
     var stateDescription: String {
         switch self {
-        case .success(let data):
+        case .success:
             return "🎉성공!"
         case .failure(let message):
             return "🚨\(message)"

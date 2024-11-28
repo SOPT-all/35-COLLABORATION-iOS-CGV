@@ -21,7 +21,7 @@ extension TheaterTargetType: TargetType {
     var path: String {
         switch self {
         case .fetchMovieTime(let theaterID, _, _):
-            return "/theater/\(theaterID)/movie-list"
+            return "/theater/\(theaterID)/movie"
         case .fetchMovieTheater: 
             return "/theater"
         }
@@ -35,9 +35,9 @@ extension TheaterTargetType: TargetType {
         switch self {
         case .fetchMovieTheater: 
             return .requestPlain
-        case .fetchMovieTime(let auditorium, let auditoriumType, _):
+        case .fetchMovieTime(_, let auditorium, let auditoriumType):
             return .requestParameters(
-                parameters: ["auditorium": auditorium, "auditorumType": auditorium],
+                parameters: ["auditorium": auditorium, "auditoriumType": auditoriumType],
                 encoding: URLEncoding.queryString
             )
         }

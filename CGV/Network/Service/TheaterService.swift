@@ -12,6 +12,8 @@ protocol TheaterServiceProtocol {
     typealias MovieTimeResponseModel = BaseResponseBody<MovieTimeResponse>
     func fetchMovieTime(
         theaterID: Int,
+        auditorium: String,
+        auditoriumType: String,
         request: EmptyModel,
         completion: @escaping(NetworkResult<MovieTimeResponseModel>) -> Void
     )
@@ -32,10 +34,16 @@ final class TheaterService: TheaterServiceProtocol {
     
     func fetchMovieTime(
         theaterID: Int,
+        auditorium: String,
+        auditoriumType: String,
         request: EmptyModel,
         completion: @escaping (NetworkResult<MovieTimeResponseModel>) -> Void
     ) {
-        provider.request(.fetchMovieTime(theaterID: theaterID)) { result in
+        provider.request(.fetchMovieTime(
+            theaterID: theaterID,
+            auditorium: auditorium,
+            auditoriumType: auditoriumType
+        )) { result in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
