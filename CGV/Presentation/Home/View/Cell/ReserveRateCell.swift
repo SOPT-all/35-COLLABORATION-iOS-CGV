@@ -54,19 +54,17 @@ final class ReserveRateCell: BaseCollectionViewCell {
     override func setLayout() {
         underView.snp.makeConstraints{
             $0.edges.equalToSuperview()
-            $0.width.equalTo(335)
-            $0.height.equalTo(58)
         }
         
         posterImageView.snp.makeConstraints{
             $0.leading.top.equalToSuperview()
-            $0.width.equalTo(41)
-            $0.height.equalTo(58)
+            $0.width.equalTo(Screen.width(41))
+            $0.height.equalTo(Screen.height(58))
         }
         
         titleLabel.snp.makeConstraints{
-            $0.leading.equalTo(posterImageView.snp.trailing).offset(14)
-            $0.top.equalToSuperview().inset(11)
+            $0.leading.equalTo(posterImageView.snp.trailing).offset(Screen.width(14))
+            $0.top.equalToSuperview().inset(Screen.height(11))
         }
         
         rateLabel.snp.makeConstraints{
@@ -75,10 +73,10 @@ final class ReserveRateCell: BaseCollectionViewCell {
         }
         
         reserveButton.snp.makeConstraints{
-            $0.trailing.equalToSuperview().inset(8)
+            $0.trailing.equalToSuperview().inset(Screen.width(8))
             $0.centerY.equalTo(posterImageView.snp.centerY)
-            $0.width.equalTo(32)
-            $0.height.equalTo(24)
+            $0.width.equalTo(Screen.width(32))
+            $0.height.equalTo(Screen.height(24))
         }
     }
     

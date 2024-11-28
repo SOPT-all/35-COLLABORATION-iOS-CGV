@@ -44,23 +44,22 @@ final class MyCGVCell: BaseCollectionViewCell {
     override func setLayout() {
         underView.snp.makeConstraints{
             $0.edges.equalToSuperview()
-            $0.width.equalTo(335)
-            $0.height.equalTo(50)
         }
         
         iconView.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(11)
-            $0.leading.equalToSuperview().inset(13)
-            $0.size.equalTo(28)
+            $0.top.equalToSuperview().inset(Screen.height(11))
+            $0.leading.equalToSuperview().inset(Screen.width(13))
+            $0.width.equalTo(Screen.width(28))
+            $0.height.equalTo(Screen.height(28))
         }
         
         titleLabel.snp.makeConstraints{
             $0.centerY.equalTo(iconView.snp.centerY)
-            $0.leading.equalTo(iconView.snp.trailing).offset(8)
+            $0.leading.equalTo(iconView.snp.trailing).offset(Screen.width(8))
         }
         
         rateLabel.snp.makeConstraints{
-            $0.trailing.equalToSuperview().inset(11)
+            $0.trailing.equalToSuperview().inset(Screen.width(11))
             $0.centerY.equalTo(iconView.snp.centerY)
         }
     }

@@ -11,8 +11,8 @@ import SnapKit
 import Then
 
 final class TheaterButton: UIButton {
-    static let defaultWidth: CGFloat = 171
-    static let defaultHeight: CGFloat = 44
+    static let defaultWidth: CGFloat = Screen.width(171)
+    static let defaultHeight: CGFloat = Screen.height(44)
 
     private let theaterNameLabel = UILabel()
     private let clickImageView = UIImageView()
@@ -67,13 +67,13 @@ final class TheaterButton: UIButton {
     
     private func setLayout() {
         theaterNameLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(12)
-            $0.verticalEdges.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().inset(Screen.width(12))
+            $0.verticalEdges.equalToSuperview().inset(Screen.height(10))
         }
         
         clickImageView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(8)
-            $0.verticalEdges.equalToSuperview().inset(12)
+            $0.trailing.equalToSuperview().inset(Screen.width(8))
+            $0.verticalEdges.equalToSuperview().inset(Screen.height(12))
         }
     }
     

@@ -21,7 +21,7 @@ struct GradientBackgroundView: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
-            .frame(height: 221)
+            .frame(height: Screen.height(221))
             
             Color.cgvWhite
         }

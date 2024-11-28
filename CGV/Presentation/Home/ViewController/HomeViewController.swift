@@ -20,19 +20,16 @@ final class HomeViewController: BaseViewController {
     // MARK: - LifeCycle
     
     override func loadView() {
-        let rootView = UIView()
-        rootView.addSubviews(homeView)
-        view = rootView
+        view = homeView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         homeView.collectionView.collectionViewLayout = createLayout()
         homeView.setRegister()
         configureDataSource()
         applyInitialSnapshots()
-        setLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,11 +42,9 @@ final class HomeViewController: BaseViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    private func setLayout() {
-        homeView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            $0.leading.trailing.bottom.equalToSuperview()
-        }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        homeView.collectionView.contentInsetAdjustmentBehavior = .never
     }
 }
 
@@ -308,40 +303,58 @@ extension HomeViewController {
     // MARK: - Layouts
     
     private func createLayout() -> UICollectionViewLayout {
-        UICollectionViewCompositionalLayout { sectionIndex, _ in
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             guard let sectionType = HomeSectionType(rawValue: sectionIndex) else { return nil }
+            
+            var section: NSCollectionLayoutSection?
             
             switch sectionType {
             case .topHeader:
-                return self.createTopViewSection()
+                section = self.createTopViewSection()
             case .topTabBar:
-                return self.createTopTabBarSection()
+                section = self.createTopTabBarSection()
             case .banner:
-                return self.createBannerSection()
+                section = self.createBannerSection()
             case .movieChart:
-                return self.createMovieChartSection()
+                section = self.createMovieChartSection()
             case .special:
-                return self.createSpecialSection()
+                section = self.createSpecialSection()
             case .myCGV:
-                return self.createMyCGVSection()
+                section = self.createMyCGVSection()
             case .todayCGV:
-                return self.createTodayCGVSection()
+                section = self.createTodayCGVSection()
             case .specialProgress, .todayProgress:
-                return self.createProgressShareSection()
+                section = self.createProgressShareSection()
             case .specialRate:
-                return self.createSpecialRateSection()
+                section = self.createSpecialRateSection()
             case .todayRate:
-                return self.createTodayRateSection()
+                section = self.createTodayRateSection()
             case .bottomfooter:
-                return self.createBottomFooter()
+                section = self.createBottomFooter()
             }
+            
+            let backgroundDecoration = NSCollectionLayoutDecorationItem.background(
+                elementKind: "SectionBackground"
+            )
+            backgroundDecoration.contentInsets = NSDirectionalEdgeInsets(
+                top: 0, leading: 0, bottom: 0, trailing: 0
+            )
+            section?.decorationItems = [backgroundDecoration]
+            
+            return section
         }
+        
+        layout.register(
+            SectionBackgroundView.self,
+            forDecorationViewOfKind: "SectionBackground"
+        )
+        return layout
     }
     
     private func createTopViewSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(53)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(49))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = itemSize
@@ -355,8 +368,8 @@ extension HomeViewController {
     
     private func createTopTabBarSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(44)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(49))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = itemSize
@@ -370,16 +383,19 @@ extension HomeViewController {
     
     private func createBannerSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(375),
-            heightDimension: .absolute(100)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(100))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(375),
-            heightDimension: .absolute(100)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(100))
         )
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
@@ -388,14 +404,14 @@ extension HomeViewController {
     
     private func createMovieChartSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(160),
-            heightDimension: .absolute(332)
+            widthDimension: .absolute(Screen.width(160)),
+            heightDimension: .absolute(Screen.height(332))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(168),
-            heightDimension: .absolute(332)
+            widthDimension: .absolute(Screen.width(160)),
+            heightDimension: .absolute(Screen.height(332))
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -404,47 +420,52 @@ extension HomeViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+        section.interGroupSpacing = Screen.width(8)
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 66,
-            leading: 20,
-            bottom: 18,
-            trailing: 20
+            top: Screen.height(66),
+            leading: Screen.width(20),
+            bottom: Screen.height(18),
+            trailing: Screen.width(20)
         )
         
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(32)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(32))
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: "MidHeader",
             alignment: .top
         )
+        header.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: Screen.width(20),
+            bottom: 0,
+            trailing: Screen.width(20)
+        )
         
         let tabBarSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(44)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(44))
         )
         let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: tabBarSize,
             elementKind: "MidTabBar",
             alignment: .top,
-            absoluteOffset: CGPoint(x: 0, y: 55)
+            absoluteOffset: CGPoint(x: 0, y: Screen.width(55))
         )
-        tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
         let dividerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(10)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(10))
         )
         let divider = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: dividerSize,
             elementKind: "MidGray",
             alignment: .top,
-            absoluteOffset: CGPoint(x: -20, y: 424)
+            absoluteOffset: CGPoint(x: 0, y: Screen.height(424))
         )
-        divider.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -40)
         
         section.boundarySupplementaryItems = [header, tabBar, divider]
         
@@ -453,14 +474,14 @@ extension HomeViewController {
     
     private func createSpecialSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(335),
-            heightDimension: .absolute(335)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(335))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(343),
-            heightDimension: .absolute(335)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(335))
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -469,41 +490,50 @@ extension HomeViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
+        section.interGroupSpacing = Screen.width(8)
         
-        section.visibleItemsInvalidationHandler = { [weak self] visibleItems, point, environment in
-            let groupWidth = 343.0
+        section.visibleItemsInvalidationHandler = {
+            [weak self] visibleItems,
+            point,
+            environment in
+            let groupWidth = Screen.width(335)
             let pageIndex = Int((point.x + groupWidth / 2) / groupWidth)
             self?.updateSpecialProgress(for: pageIndex)
         }
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 66,
-            leading: 20,
-            bottom: 24,
-            trailing: 20
+            top: Screen.height(66),
+            leading: Screen.width(20),
+            bottom: Screen.height(24),
+            trailing: Screen.width(20)
         )
         
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(32)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(32))
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: "MidHeader",
             alignment: .top
         )
+        header.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: Screen.width(20),
+            bottom: 0,
+            trailing: Screen.width(20)
+        )
         
         let tabBarSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(44)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(44))
         )
         let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: tabBarSize,
             elementKind: "MidTabBar",
             alignment: .top,
-            absoluteOffset: CGPoint(x: 0, y: 55)
+            absoluteOffset: CGPoint(x: 0, y: Screen.height(55))
         )
-        tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
         section.boundarySupplementaryItems = [header, tabBar]
         
@@ -512,51 +542,56 @@ extension HomeViewController {
     
     private func createMyCGVSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(335),
-            heightDimension: .absolute(50)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(50))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(343),
-            heightDimension: .absolute(50 * 3 + 6 * 2)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(50 * 3 + 6 * 2))
         )
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: groupSize,
             repeatingSubitem: item,
             count: 3
         )
-        group.interItemSpacing = .fixed(6)
+        group.interItemSpacing = .fixed(Screen.height(6))
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 34,
-            leading: 20,
-            bottom: 26,
-            trailing: 20
+            top: Screen.height(34),
+            leading: Screen.width(20),
+            bottom: Screen.height(26),
+            trailing: Screen.width(20)
         )
         
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(32)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(32))
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: "MidHeader",
             alignment: .top
         )
+        header.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: Screen.width(20),
+            bottom: 0,
+            trailing: Screen.width(20)
+        )
         
         let dividerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(10)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(10))
         )
         let divider = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: dividerSize,
             elementKind: "MidGray",
             alignment: .top,
-            absoluteOffset: CGPoint(x: -20, y: 234)
+            absoluteOffset: CGPoint(x: Screen.width(0), y: Screen.height(234))
         )
-        divider.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -40)
         
         section.boundarySupplementaryItems = [header, divider]
         
@@ -565,14 +600,14 @@ extension HomeViewController {
     
     private func createTodayCGVSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(335),
-            heightDimension: .absolute(335)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(335))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(343),
-            heightDimension: .absolute(335)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(335))
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -581,41 +616,50 @@ extension HomeViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
+        section.interGroupSpacing = Screen.width(8)
         
-        section.visibleItemsInvalidationHandler = { [weak self] visibleItems, point, environment in
-            let groupWidth = 343.0
+        section.visibleItemsInvalidationHandler = {
+            [weak self] visibleItems,
+            point,
+            environment in
+            let groupWidth = Screen.width(335)
             let pageIndex = Int((point.x + groupWidth / 2) / groupWidth)
             self?.updateTodayCGVProgress(for: pageIndex)
         }
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 66,
-            leading: 20,
-            bottom: 18,
-            trailing: 20
+            top: Screen.height(66),
+            leading: Screen.width(20),
+            bottom: Screen.height(24),
+            trailing: Screen.width(20)
         )
         
         let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(32)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(32))
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: "MidHeader",
             alignment: .top
         )
+        header.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: Screen.width(20),
+            bottom: 0,
+            trailing: 20
+        )
         
         let tabBarSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(44)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(44))
         )
         let tabBar = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: tabBarSize,
             elementKind: "MidTabBar",
             alignment: .top,
-            absoluteOffset: CGPoint(x: 0, y: 55)
+            absoluteOffset: CGPoint(x: 0, y: Screen.height(55))
         )
-        tabBar.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -20)
         
         section.boundarySupplementaryItems = [header, tabBar]
         
@@ -624,42 +668,41 @@ extension HomeViewController {
     
     private func createSpecialRateSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(335),
-            heightDimension: .absolute(58)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(58))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(343),
-            heightDimension: .absolute(58 * 3 + 10 * 2)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(58 * 3 + 10 * 2))
         )
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: groupSize,
             repeatingSubitem: item,
             count: 3
         )
-        group.interItemSpacing = .fixed(10)
+        group.interItemSpacing = .fixed(Screen.height(10))
         
         let section = NSCollectionLayoutSection(group: group)
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 24,
-            leading: 20,
-            bottom: 14,
-            trailing: 20
+            top: Screen.height(24),
+            leading: Screen.width(20),
+            bottom: Screen.height(24),
+            trailing: Screen.width(20)
         )
         
         let dividerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(10)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(10))
         )
         let divider = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: dividerSize,
             elementKind: "MidGray",
             alignment: .top,
-            absoluteOffset: CGPoint(x: -20, y: 253)
+            absoluteOffset: CGPoint(x: Screen.width(0), y: Screen.height(253))
         )
-        divider.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -40)
         
         section.boundarySupplementaryItems = [divider]
         
@@ -668,29 +711,29 @@ extension HomeViewController {
     
     private func createTodayRateSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(335),
-            heightDimension: .absolute(58)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(58))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(343),
-            heightDimension: .absolute(58 * 3 + 10 * 2)
+            widthDimension: .absolute(Screen.width(335)),
+            heightDimension: .absolute(Screen.height(58 * 3 + 10 * 2))
         )
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: groupSize,
             repeatingSubitem: item,
             count: 3
         )
-        group.interItemSpacing = .fixed(10)
+        group.interItemSpacing = .fixed(Screen.height(10))
         
         let section = NSCollectionLayoutSection(group: group)
         
         section.contentInsets = NSDirectionalEdgeInsets(
-            top: 24,
-            leading: 20,
-            bottom: 14,
-            trailing: 20
+            top: Screen.height(24),
+            leading: Screen.width(20),
+            bottom: Screen.height(51),
+            trailing: Screen.width(20)
         )
         
         return section
@@ -698,14 +741,14 @@ extension HomeViewController {
     
     private func createBottomFooter() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(375),
-            heightDimension: .absolute(166)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(166))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(375),
-            heightDimension: .absolute(166)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(166))
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -713,27 +756,20 @@ extension HomeViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 33,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
-        )
         
         return section
     }
     
     private func createProgressShareSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(375),
-            heightDimension: .absolute(40)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(30))
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(375),
-            heightDimension: .absolute(40)
+            widthDimension: .absolute(Screen.width(375)),
+            heightDimension: .absolute(Screen.height(30))
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -741,13 +777,6 @@ extension HomeViewController {
         )
         
         let section = NSCollectionLayoutSection(group: group)
-        
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
-        )
         
         return section
     }

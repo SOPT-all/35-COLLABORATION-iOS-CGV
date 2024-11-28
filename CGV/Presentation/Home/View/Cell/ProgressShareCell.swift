@@ -32,7 +32,7 @@ final class ProgressShareCell: BaseCollectionViewCell {
         
         progressStackView.do {
             $0.axis = .horizontal
-            $0.spacing = 8
+            $0.spacing = Screen.width(8)
             $0.alignment = .center
         }
         
@@ -54,8 +54,9 @@ final class ProgressShareCell: BaseCollectionViewCell {
         }
         
         shareButton.snp.makeConstraints{
-            $0.size.equalTo(30)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(Screen.height(30))
+            $0.width.equalTo(Screen.width(30))
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
             $0.centerY.equalToSuperview()
         }
     }

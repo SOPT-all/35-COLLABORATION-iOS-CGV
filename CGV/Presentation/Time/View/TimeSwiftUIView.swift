@@ -39,13 +39,13 @@ private struct CustomHeaderView: View {
     }
     
     fileprivate var body: some View {
-        HStack(spacing: 19) {
+        HStack(spacing: Screen.width(19)) {
             VStack {
                 Text("영화별예매")
-                    .padding(.vertical, 5)
+                    .padding(.vertical, Screen.height(5))
                     .overlay(alignment: .bottom) {
                         Rectangle()
-                            .frame(height: 2)
+                            .frame(height: Screen.height(2))
                             .foregroundColor(.cgvWhite)
                     }
             }
@@ -64,9 +64,9 @@ private struct CustomHeaderView: View {
         }
         .font(Font(uiFont: .kopub(.body4)))
         .foregroundStyle(.cgvWhite)
-        .padding(.leading, 20)
-        .padding(.trailing, 9)
-        .padding(.top, 57)
+        .padding(.leading, Screen.width(20))
+        .padding(.trailing, Screen.width(9))
+        .padding(.top, Screen.height(57))
     }
 }
 
@@ -78,12 +78,12 @@ private struct MovieHeaderView: View {
             Text("글래디에이터 II")
                 .font(Font(uiFont: .kopub(.head7)))
                 .foregroundStyle(.cgvWhite)
-                .padding(.trailing, 2)
+                .padding(.trailing, Screen.width(2))
             
             Image(.icHomeAge1922)
                 .resizable()
-                .frame(width: 30, height: 30)
-                .padding(.trailing, 4)
+                .frame(width: Screen.width(30), height: Screen.height(30))
+                .padding(.trailing, Screen.width(4))
             
             Text("2시간 28분")
                 .font(Font(uiFont: .kopub(.body3)))
@@ -99,16 +99,16 @@ private struct MovieHeaderView: View {
                     .foregroundStyle(.cgvR400)
                 
             }
-            .padding(.vertical, 4)
-            .padding(.horizontal, 10)
+            .padding(.vertical, Screen.height(4))
+            .padding(.horizontal, Screen.width(10))
             .background {
                 RoundedRectangle(cornerRadius: 6)
                     .fill(.cgvWhite)
             }
         }
-        .padding(.leading, 20)
-        .padding(.trailing, 17)
-        .padding(.top, 17)
+        .padding(.leading, Screen.width(20))
+        .padding(.trailing, Screen.width(17))
+        .padding(.top, Screen.height(17))
     }
 }
 
@@ -127,12 +127,12 @@ private struct MovieChartView: View {
                 ForEach(viewModel.moviePosters) { poster in
                     poster.image
                         .resizable()
-                        .frame(width: 77, height: 103)
+                        .frame(width: Screen.width(77), height: Screen.height(103))
                 }
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, Screen.width(20))
         }
-        .padding(.top, 13)
+        .padding(.top, Screen.height(13))
     }
 }
 
@@ -146,18 +146,18 @@ private struct DateView: View {
     }
     
     fileprivate var body: some View {
-        VStack(alignment: .leading, spacing: 9) {
+        VStack(alignment: .leading, spacing: Screen.height(9)) {
             Text("2024.11.05 (월)")
                 .font(Font(uiFont: .kopub(.head4)))
                 .foregroundStyle(.cgvBlack)
-            HStack(spacing: 9) {
+            HStack(spacing: Screen.width(9)) {
                 ForEach(viewModel.dateInfo, id: \.self) { date in
                     DateCell(date: date)
                 }
             }
         }
-        .padding(.horizontal, 20)
-        .padding(.top, 31)
+        .padding(.horizontal, Screen.width(20))
+        .padding(.top, Screen.height(31))
     }
 }
 
@@ -175,11 +175,11 @@ private struct SelectedTheaterBarView: View {
             Text("선택된 극장")
                 .font(Font(uiFont: .kopub(.body3)))
                 .foregroundStyle(.cgvBlack)
-                .padding(.trailing, 6)
+                .padding(.trailing, Screen.width(6))
             Text("\(viewModel.theaterTimeTables.count)")
                 .font(Font(uiFont: .kopub(.head4)))
                 .foregroundStyle(.cgvR400)
-                .padding(.trailing, 10)
+                .padding(.trailing, Screen.width(10))
             Button {
                 viewModel.theaterChangeButtonAction()
             } label: {
@@ -187,8 +187,8 @@ private struct SelectedTheaterBarView: View {
                     .font(Font(uiFont: .kopub(.body3)))
                     .foregroundStyle(viewModel.theaterTimeTables.isEmpty ? Color.cgvR400 : Color.cgvG600)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 2)
+            .padding(.horizontal, Screen.width(10))
+            .padding(.vertical, Screen.height(2))
             .background {
                 RoundedRectangle(cornerRadius: 6)
                     .stroke(viewModel.theaterTimeTables.isEmpty ? Color.cgvR400 : Color.cgvG500, lineWidth: 1)
@@ -202,10 +202,10 @@ private struct SelectedTheaterBarView: View {
                 .font(Font(uiFont: .kopub(.body4)))
                 .foregroundStyle(.cgvBlack)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 12)
+        .padding(.horizontal, Screen.width(20))
+        .padding(.vertical, Screen.height(12))
         .background(Color.cgvG100)
-        .padding(.top, 25)
+        .padding(.top, Screen.height(25))
     }
 }
 
@@ -224,10 +224,10 @@ private struct TheaterInfoView: View {
         } else {
             ForEach(viewModel.theaterTimeTables) { theaterTimeTable in
                 TimeTableView(theaterTimeTable: theaterTimeTable)
-                    .padding(.top, 24)
+                    .padding(.top, Screen.height(24))
                 
                 Color.cgvG100
-                    .frame(height: 10)
+                    .frame(height: Screen.height(10))
             }
         }
     }
@@ -240,7 +240,7 @@ private struct NotSelectedTheaterView: View {
         Text("극장 위치를 선택해주세요")
             .font(Font(uiFont: .kopub(.body4)))
             .foregroundStyle(.cgvG600)
-            .padding(.top, 138)
+            .padding(.top, Screen.height(138))
     }
 }
 
@@ -255,10 +255,10 @@ private struct TimeTableView: View {
     
     fileprivate var body: some View {
         LazyVStack(spacing: 0) {
-            HStack(spacing: 2) {
+            HStack(spacing: Screen.width(2)) {
                 Image(.icTimeLocation)
                     .resizable()
-                    .frame(width: 24, height: 24)
+                    .frame(width: Screen.width(24), height: Screen.height(24))
                 
                 Text(theaterTimeTable.theaterName)
                     .font(Font(uiFont: .kopub(.head6)))
@@ -266,11 +266,11 @@ private struct TimeTableView: View {
                 
                 Spacer()
             }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 20)
+            .padding(.horizontal, Screen.width(20))
+            .padding(.bottom, Screen.height(20))
             
             ForEach(theaterTimeTable.movieTimeTables) { times in
-                LazyVStack(spacing: 8) {
+                LazyVStack(spacing: Screen.height(8)) {
                     HStack {
                         Text(times.auditoriumType)
                             .font(Font(uiFont: .kopub(.head2)))
@@ -280,22 +280,22 @@ private struct TimeTableView: View {
                         Text(times.auditorium)
                             .font(Font(uiFont: .kopub(.body3)))
                     }
-                    .padding(.horizontal, 20)
+                    .padding(.horizontal, Screen.width(20))
                     .foregroundStyle(.cgvG600)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 4) {
+                        LazyHStack(spacing: Screen.width(4)) {
                             ForEach(times.timeInfos) { timeInfo in
                                 TimeCell(timeInfo: timeInfo) {
                                     // TODO: - TimeCell 클릭시 이벤트 추가
                                 }
                             }
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, Screen.width(20))
                     }
                 }
             }
-            .padding(.bottom, 24)
+            .padding(.bottom, Screen.height(24))
         }
     }
 }

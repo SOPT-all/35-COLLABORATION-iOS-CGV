@@ -38,7 +38,7 @@ final class BottomFooterCell: BaseCollectionViewCell {
         buttonStackView.do {
             $0.axis = .horizontal
             $0.distribution = .equalSpacing
-            $0.spacing = 7
+            $0.spacing = Screen.width(7)
             $0.alignment = .top
         }
         
@@ -90,53 +90,54 @@ final class BottomFooterCell: BaseCollectionViewCell {
     
     override func setLayout() {
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(33)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().inset(Screen.height(33))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
         }
         
         iconImageView.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.top).offset(7)
-            $0.leading.equalTo(titleLabel.snp.trailing).offset(8)
-            $0.size.equalTo(18)
+            $0.top.equalTo(titleLabel.snp.top).offset(Screen.height(7))
+            $0.leading.equalTo(titleLabel.snp.trailing).offset(Screen.width(8))
+            $0.height.equalTo(Screen.height(18))
+            $0.width.equalTo(Screen.width(18))
         }
         
         buttonStackView.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(11)
-            $0.leading.equalToSuperview().inset(20)
-            $0.height.equalTo(16)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Screen.height(11))
+            $0.leading.equalToSuperview().inset(Screen.width(20))
         }
         
         firstDivider.snp.makeConstraints{
-            $0.width.equalTo(1)
-            $0.height.equalTo(8)
-            $0.top.equalToSuperview().inset(3)
-            $0.bottom.equalToSuperview().inset(5)
+            $0.width.equalTo(Screen.width(1))
+            $0.height.equalTo(Screen.height(8))
+            $0.centerY.equalToSuperview().offset(Screen.height(-1))
         }
         
         secondDivider.snp.makeConstraints{
-            $0.width.equalTo(1)
-            $0.height.equalTo(8)
+            $0.width.equalTo(Screen.width(1))
+            $0.height.equalTo(Screen.height(8))
+            $0.centerY.equalToSuperview().offset(Screen.height(-1))
         }
         
         thirdDivider.snp.makeConstraints{
-            $0.width.equalTo(1)
-            $0.height.equalTo(8)
+            $0.width.equalTo(Screen.width(1))
+            $0.height.equalTo(Screen.height(8))
+            $0.centerY.equalToSuperview().offset(Screen.height(-1))
         }
         
         userRuleButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview().offset(-1)
+            $0.centerY.equalToSuperview().offset(Screen.height(-1))
         }
         
         dataRuleButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview().offset(-2)
+            $0.centerY.equalToSuperview().offset(Screen.height(-2))
         }
         
         locationRuleButton.snp.makeConstraints{
-            $0.centerY.equalToSuperview().offset(-1)
+            $0.centerY.equalToSuperview().offset(Screen.height(-1))
         }
         
         lawRuleButton.snp.makeConstraints{
-            $0.centerY.equalToSuperview().offset(-1)
+            $0.centerY.equalToSuperview().offset(Screen.height(-1))
         }
     }
     

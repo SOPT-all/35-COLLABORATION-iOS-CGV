@@ -30,11 +30,12 @@ final class TimeViewController: BaseViewController {
             }
         )
         setupHostingController()
-        presentTimeBottomSheet()
     }
+        
 
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        presentTimeBottomSheet()
         timeViewModel?.theaterTimeTables = TheaterTimeTable.makeMockData()
     }
     
@@ -64,7 +65,7 @@ extension TimeViewController: UIAdaptivePresentationControllerDelegate {
         let timeBottomSheetViewController = TimeBottomSheetViewController()
         
         let fraction = UISheetPresentationController.Detent.custom {
-            _ in self.view.frame.height * ((686-32)/812)
+            _ in self.view.frame.height * ((Screen.height(683) - Screen.height(32)) / Screen.height(812))
         }
         if let sheet = timeBottomSheetViewController.sheetPresentationController {
             sheet.detents = [fraction]

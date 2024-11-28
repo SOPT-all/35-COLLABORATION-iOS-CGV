@@ -23,6 +23,7 @@ final class TimeBottomSheetView: BaseView {
     private let emptyView = UIView()
     private let gradientView = UIView()
     private let seperatorView = UIView()
+    private let placeholderView = UIView()
     private var regionsCategoryButton: [UIButton] = []
     private var regionInfos = RegionInfo.initTheaters()
     
@@ -32,6 +33,12 @@ final class TimeBottomSheetView: BaseView {
     var theatersButtons: [TheaterButton] = []
         
     // MARK: - LifeCycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        gradientView.layer.shadowPath = UIBezierPath(rect: gradientView.bounds).cgPath
+    }
     
     override func setStyle() {
         segmentControl.do {
@@ -59,6 +66,10 @@ final class TimeBottomSheetView: BaseView {
         
         seperatorView.do {
             $0.backgroundColor = .cgvG200
+        }
+        
+        placeholderView.do {
+            $0.isHidden = true
         }
         
         for regionInfo in regionInfos {
@@ -101,7 +112,12 @@ final class TimeBottomSheetView: BaseView {
             
             
             var config = UIButton.Configuration.plain()
-            config.contentInsets = .init(top: 11, leading: 30, bottom: 11, trailing: 0)
+            config.contentInsets = .init(
+                top: Screen.height(11),
+                leading: Screen.width(30),
+                bottom: Screen.height(11),
+                trailing: 0
+            )
             button.configuration = config
             button.configuration?.baseBackgroundColor = .clear
             button.isEnabled = false
@@ -155,14 +171,14 @@ final class TimeBottomSheetView: BaseView {
         gradientView.do {
             $0.backgroundColor = .cgvWhite
             $0.layer.borderColor = UIColor.cgvG100.cgColor
-            $0.layer.shadowOffset = CGSize(width: 0, height: -10)
+            $0.layer.shadowOffset = CGSize(width: 0, height: Screen.height(-10))
             $0.layer.shadowRadius = 4
             $0.layer.shadowOpacity = 0.1
         }
         
         selectedTheaterStackView.do {
             $0.axis = .horizontal
-            $0.spacing = 8
+            $0.spacing = Screen.width(8)
             $0.alignment = .fill
             $0.distribution = .equalSpacing
         }
@@ -184,6 +200,8 @@ final class TimeBottomSheetView: BaseView {
         
         surroundingStackView.addArrangedSubview(theatersButtons[2])
         
+        selectedTheaterStackView.addArrangedSubview(placeholderView)
+        
         addSubviews(
             segmentControl,
             buttonStackView,
@@ -202,74 +220,75 @@ final class TimeBottomSheetView: BaseView {
     
     override func setLayout() {
         segmentControl.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(30)
-            $0.top.equalToSuperview().inset(9)
-            $0.height.equalTo(42)
+            $0.horizontalEdges.equalToSuperview().inset(Screen.width(30))
+            $0.top.equalToSuperview().inset(Screen.height(9))
+            $0.height.equalTo(Screen.height(42))
         }
         
         buttonStackView.snp.makeConstraints {
             $0.leading.equalToSuperview()
-            $0.top.equalTo(segmentControl.snp.bottom).offset(13)
-            $0.trailing.equalTo(segmentControl.snp.centerX).offset(-28)
+            $0.top.equalTo(segmentControl.snp.bottom).offset(Screen.height(13))
+            $0.trailing.equalTo(segmentControl.snp.centerX).offset(Screen.width(-28))
         }
         
         emptyView.snp.makeConstraints {
             $0.horizontalEdges.equalTo(buttonStackView.snp.horizontalEdges)
             $0.top.equalTo(buttonStackView.snp.bottom)
-            $0.height.greaterThanOrEqualTo(26)
+            $0.height.greaterThanOrEqualTo(Screen.height(26))
             $0.bottom.equalTo(gradientView.snp.top)
         }
         
         noticeLabel.snp.makeConstraints {
-            $0.leading.equalTo(buttonStackView.snp.trailing).offset(24)
-            $0.top.equalTo(segmentControl.snp.bottom).offset(19)
+            $0.leading.equalTo(buttonStackView.snp.trailing).offset(Screen.width(24))
+            $0.top.equalTo(segmentControl.snp.bottom).offset(Screen.height(19))
         }
         
         recentLabel.snp.makeConstraints {
             $0.leading.equalTo(noticeLabel.snp.leading)
-            $0.trailing.equalToSuperview().inset(20)
-            $0.top.equalTo(noticeLabel.snp.bottom).offset(16)
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
+            $0.top.equalTo(noticeLabel.snp.bottom).offset(Screen.height(16))
         }
         
         recentStackView.snp.makeConstraints {
-            $0.leading.equalTo(noticeLabel.snp.leading)
-            $0.top.equalTo(recentLabel.snp.bottom).offset(16)
-            $0.trailing.equalTo(recentLabel.snp.trailing)
-            $0.width.equalTo(TheaterButton.defaultWidth)
+            $0.leading.equalTo(recentLabel.snp.leading)
+            $0.trailing.equalToSuperview().inset(Screen.width(20))
+            $0.top.equalTo(recentLabel.snp.bottom).offset(Screen.height(16))
         }
         
         seperatorView.snp.makeConstraints {
             $0.horizontalEdges.equalTo(recentStackView.snp.horizontalEdges)
             $0.bottom.equalTo(recentStackView.snp.bottom)
-            $0.height.equalTo(1)
+            $0.height.equalTo(Screen.height(1))
         }
         
         surroundingLabel.snp.makeConstraints {
-            $0.top.equalTo(recentStackView.snp.bottom).offset(25.93)
+            $0.top.equalTo(recentStackView.snp.bottom).offset(Screen.height(26))
             $0.leading.equalTo(noticeLabel.snp.leading)
         }
         
         surroundingStackView.snp.makeConstraints {
             $0.horizontalEdges.equalTo(seperatorView.snp.horizontalEdges)
-            $0.top.equalTo(surroundingLabel.snp.bottom).offset(16)
+            $0.top.equalTo(surroundingLabel.snp.bottom).offset(Screen.height(16))
         }
         
         gradientView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
-            $0.height.equalTo(156)
+            $0.height.equalTo(Screen.height(156))
         }
         
         selectedTheaterStackView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(26)
-            $0.top.equalTo(gradientView.snp.top).offset(9)
+            $0.leading.equalToSuperview().inset(Screen.width(26))
+            $0.trailing.lessThanOrEqualToSuperview().inset(Screen.width(20))
+            $0.top.equalTo(gradientView.snp.top).offset(Screen.height(9))
             $0.height.equalTo(TheaterChipButton.defaultHeight)
+            $0.width.greaterThanOrEqualTo(Screen.width(10))
         }
         
         selectButton.snp.makeConstraints {
-            $0.top.equalTo(gradientView.snp.top).offset(60)
-            $0.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(60)
+            $0.top.equalTo(gradientView.snp.top).offset(Screen.height(60))
+            $0.horizontalEdges.equalToSuperview().inset(Screen.width(20))
+            $0.height.equalTo(Screen.height(60))
         }
     }
 }
@@ -280,6 +299,7 @@ extension TimeBottomSheetView {
     func makeTheaterChipButton(theater: String) {
         let button = TheaterChipButton(title: theater)
         selectedTheaterStackView.addArrangedSubview(button)
+        selectedTheaterStackView.layoutIfNeeded()
     }
     
     func deleteTheaterChipButton(theater: String) {
@@ -289,7 +309,7 @@ extension TimeBottomSheetView {
                title == theater {
                 selectedTheaterStackView.removeArrangedSubview(button)
                 button.removeFromSuperview()
-                break
+                selectedTheaterStackView.layoutIfNeeded()
             }
         }
     }

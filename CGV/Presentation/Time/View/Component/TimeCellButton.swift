@@ -35,8 +35,8 @@ struct TimeCell: View {
                         .font(Font(uiFont: .malgun(.body1)))
                         .foregroundStyle(.cgvG600)
                 }
-                .padding(.horizontal, 8)
-                .padding(.vertical, 10)
+                .padding(.horizontal, Screen.width(8))
+                .padding(.vertical, Screen.height(10))
                 
                 HStack(spacing: 0) {
                     Spacer()
@@ -44,7 +44,7 @@ struct TimeCell: View {
                     if timeInfo.isMorning {
                         Image(.icTimeSun)
                             .resizable()
-                            .frame(width: 16)
+                            .frame(width: Screen.width(16), height: Screen.height(16))
                     }
                     
                     Text(timeInfo.remainingSeats)
@@ -57,7 +57,7 @@ struct TimeCell: View {
                     
                     Spacer()
                 }
-                .frame(width: 90, height: 16)
+                .frame(width: Screen.width(90), height: Screen.height(23))
                 .background(Color.cgvG100)
             }
         }
