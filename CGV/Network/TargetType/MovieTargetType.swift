@@ -10,7 +10,7 @@ import Moya
 
 enum MovieTargetType {
     case fetchMovieDetail(movieID: Int)
-    case bookingMovie(userID: Int, request: MovieBookingRequest)
+    case bookingMovie(movieID: Int, request: MovieBookingRequest)
 }
 
 extension MovieTargetType: TargetType {
@@ -22,8 +22,8 @@ extension MovieTargetType: TargetType {
         switch self {
         case .fetchMovieDetail(let movieID): 
             return "/movie/\(movieID)"
-        case .bookingMovie(let userID, _):
-            return "/movie/booking/\(userID)"
+        case .bookingMovie(let movieID, _):
+            return "/movie/booking/\(movieID)"
         }
     }
     
