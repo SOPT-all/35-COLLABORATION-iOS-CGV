@@ -32,11 +32,11 @@ struct DateCell: View {
     // MARK: - View
     
     var body: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: Screen.height(4)) {
             Text(date.dateNum)
                 .font(Font(uiFont: .kopub(.head5)))
                 .foregroundStyle(isSelected ? .cgvWhite : .cgvBlack)
-                .frame(width: 40, height: 40)
+                .frame(width: Screen.width(40), height: Screen.height(40))
                 .background {
                     RoundedRectangle(cornerRadius: 6)
                         .fill(isSelected ? .cgvR400 : .cgvWhite)
