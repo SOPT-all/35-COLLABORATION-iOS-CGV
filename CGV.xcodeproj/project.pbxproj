@@ -61,6 +61,24 @@
 		A36349342CEC2D9F003B5322 /* GuestCountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */; };
 		A36349362CEC2DAF003B5322 /* GuestCountSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */; };
 		A36349392CEC971B003B5322 /* GuestCountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36349382CEC971B003B5322 /* GuestCountButton.swift */; };
+		A3ED0AC12CF74E610074B07A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A3ED0AC02CF74E610074B07A /* Moya */; };
+		A3ED0AC52CF74F460074B07A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AC42CF74F460074B07A /* Environment.swift */; };
+		A3ED0AC72CF74FC00074B07A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AC62CF74FC00074B07A /* NetworkResult.swift */; };
+		A3ED0AC92CF750170074B07A /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AC82CF750160074B07A /* MoyaLoggingPlugin.swift */; };
+		A3ED0ACB2CF7506B0074B07A /* TheaterTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0ACA2CF7506B0074B07A /* TheaterTargetType.swift */; };
+		A3ED0ACE2CF750D70074B07A /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0ACD2CF750D70074B07A /* ModelType.swift */; };
+		A3ED0AD32CF751FA0074B07A /* BaseResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AD22CF751FA0074B07A /* BaseResponseBody.swift */; };
+		A3ED0AD82CF754C00074B07A /* MovieTimeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AD72CF754C00074B07A /* MovieTimeResponse.swift */; };
+		A3ED0ADA2CF755D10074B07A /* MovieTheaterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AD92CF755D10074B07A /* MovieTheaterResponse.swift */; };
+		A3ED0ADE2CF756F40074B07A /* MovieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0ADD2CF756F40074B07A /* MovieDetailResponse.swift */; };
+		A3ED0AE02CF757E10074B07A /* MovieBookingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0ADF2CF757E10074B07A /* MovieBookingRequest.swift */; };
+		A3ED0AE22CF7585D0074B07A /* MovieBookingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AE12CF7585D0074B07A /* MovieBookingResponse.swift */; };
+		A3ED0AE72CF75C830074B07A /* MovieTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AE62CF75C830074B07A /* MovieTargetType.swift */; };
+		A3ED0AEB2CF75FC20074B07A /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AEA2CF75FC20074B07A /* MovieService.swift */; };
+		A3ED0AED2CF75FD30074B07A /* TheaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AEC2CF75FD30074B07A /* TheaterService.swift */; };
+		A3ED0AEF2CF7610F0074B07A /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AEE2CF7610F0074B07A /* EmptyModel.swift */; };
+		A3ED0AF42CF763A00074B07A /* ErrorResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AF32CF763A00074B07A /* ErrorResponseBody.swift */; };
+		A3ED0AFF2CF8A02D0074B07A /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A3ED0AFE2CF8A02D0074B07A /* Config.xcconfig */; };
 		AD1712462CF4A11500BEF3ED /* TimeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */; };
 		AD1712482CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */; };
 		AD17124A2CF4E1F700BEF3ED /* TheaterTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */; };
@@ -137,6 +155,23 @@
 		A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetView.swift; sourceTree = "<group>"; };
 		A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetViewController.swift; sourceTree = "<group>"; };
 		A36349382CEC971B003B5322 /* GuestCountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountButton.swift; sourceTree = "<group>"; };
+		A3ED0AC42CF74F460074B07A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		A3ED0AC62CF74FC00074B07A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		A3ED0AC82CF750160074B07A /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		A3ED0ACA2CF7506B0074B07A /* TheaterTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterTargetType.swift; sourceTree = "<group>"; };
+		A3ED0ACD2CF750D70074B07A /* ModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
+		A3ED0AD22CF751FA0074B07A /* BaseResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseBody.swift; sourceTree = "<group>"; };
+		A3ED0AD72CF754C00074B07A /* MovieTimeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTimeResponse.swift; sourceTree = "<group>"; };
+		A3ED0AD92CF755D10074B07A /* MovieTheaterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTheaterResponse.swift; sourceTree = "<group>"; };
+		A3ED0ADD2CF756F40074B07A /* MovieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponse.swift; sourceTree = "<group>"; };
+		A3ED0ADF2CF757E10074B07A /* MovieBookingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBookingRequest.swift; sourceTree = "<group>"; };
+		A3ED0AE12CF7585D0074B07A /* MovieBookingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBookingResponse.swift; sourceTree = "<group>"; };
+		A3ED0AE62CF75C830074B07A /* MovieTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTargetType.swift; sourceTree = "<group>"; };
+		A3ED0AEA2CF75FC20074B07A /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		A3ED0AEC2CF75FD30074B07A /* TheaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterService.swift; sourceTree = "<group>"; };
+		A3ED0AEE2CF7610F0074B07A /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
+		A3ED0AF32CF763A00074B07A /* ErrorResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseBody.swift; sourceTree = "<group>"; };
+		A3ED0AFE2CF8A02D0074B07A /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSwiftUIView.swift; sourceTree = "<group>"; };
 		AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSwiftUIViewModel.swift; sourceTree = "<group>"; };
 		AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterTimeTable.swift; sourceTree = "<group>"; };
@@ -165,6 +200,7 @@
 			files = (
 				A36348D92CE8EB3F003B5322 /* SnapKit in Frameworks */,
 				A36348DC2CE8EB46003B5322 /* Then in Frameworks */,
+				A3ED0AC12CF74E610074B07A /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +328,7 @@
 				A36348CB2CE8E9C8003B5322 /* Application */,
 				A36348CC2CE8E9DC003B5322 /* Resource */,
 				A36348CF2CE8E9FD003B5322 /* Presentation */,
+				A3ED0AC32CF74F180074B07A /* Network */,
 			);
 			path = CGV;
 			sourceTree = "<group>";
@@ -317,6 +354,7 @@
 				ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */,
 				A36348C52CE8E938003B5322 /* Info.plist */,
 				A36348C22CE8E938003B5322 /* LaunchScreen.storyboard */,
+				A3ED0AFE2CF8A02D0074B07A /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -439,6 +477,93 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A3ED0AC32CF74F180074B07A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0ACC2CF750BE0074B07A /* DTO */,
+				A3ED0AE82CF75F6E0074B07A /* TargetType */,
+				A3ED0AE92CF75FA30074B07A /* Service */,
+				A3ED0AC42CF74F460074B07A /* Environment.swift */,
+				A3ED0AC62CF74FC00074B07A /* NetworkResult.swift */,
+				A3ED0AC82CF750160074B07A /* MoyaLoggingPlugin.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A3ED0ACC2CF750BE0074B07A /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0AF22CF761C10074B07A /* Protocol */,
+				A3ED0AF02CF761AA0074B07A /* Base */,
+				A3ED0AF12CF761B10074B07A /* Empty */,
+				A3ED0AE42CF758EB0074B07A /* Time */,
+				A3ED0AE52CF758F40074B07A /* Seats */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		A3ED0AE42CF758EB0074B07A /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0AD72CF754C00074B07A /* MovieTimeResponse.swift */,
+				A3ED0AD92CF755D10074B07A /* MovieTheaterResponse.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
+		A3ED0AE52CF758F40074B07A /* Seats */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0ADD2CF756F40074B07A /* MovieDetailResponse.swift */,
+				A3ED0ADF2CF757E10074B07A /* MovieBookingRequest.swift */,
+				A3ED0AE12CF7585D0074B07A /* MovieBookingResponse.swift */,
+			);
+			path = Seats;
+			sourceTree = "<group>";
+		};
+		A3ED0AE82CF75F6E0074B07A /* TargetType */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0ACA2CF7506B0074B07A /* TheaterTargetType.swift */,
+				A3ED0AE62CF75C830074B07A /* MovieTargetType.swift */,
+			);
+			path = TargetType;
+			sourceTree = "<group>";
+		};
+		A3ED0AE92CF75FA30074B07A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0AEC2CF75FD30074B07A /* TheaterService.swift */,
+				A3ED0AEA2CF75FC20074B07A /* MovieService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A3ED0AF02CF761AA0074B07A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0AD22CF751FA0074B07A /* BaseResponseBody.swift */,
+				A3ED0AF32CF763A00074B07A /* ErrorResponseBody.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A3ED0AF12CF761B10074B07A /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0AEE2CF7610F0074B07A /* EmptyModel.swift */,
+			);
+			path = Empty;
+			sourceTree = "<group>";
+		};
+		A3ED0AF22CF761C10074B07A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A3ED0ACD2CF750D70074B07A /* ModelType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		AD17124F2CF5B92300BEF3ED /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +602,7 @@
 			packageProductDependencies = (
 				A36348D82CE8EB3F003B5322 /* SnapKit */,
 				A36348DB2CE8EB46003B5322 /* Then */,
+				A3ED0AC02CF74E610074B07A /* Moya */,
 			);
 			productName = CGV;
 			productReference = A36348B42CE8E937003B5322 /* CGV.app */;
@@ -509,6 +635,7 @@
 			packageReferences = (
 				A36348D72CE8EB3F003B5322 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				A36348DA2CE8EB46003B5322 /* XCRemoteSwiftPackageReference "Then" */,
+				A3ED0ABF2CF74E610074B07A /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = A36348B52CE8E937003B5322 /* Products */;
 			projectDirPath = "";
@@ -528,6 +655,7 @@
 				A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */,
 				A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */,
 				00ED4AF12CE9E67900E562FA /* .gitignore in Resources */,
+				A3ED0AFF2CF8A02D0074B07A /* Config.xcconfig in Resources */,
 				A36348C42CE8E938003B5322 /* Base in Resources */,
 				A363490F2CEA6608003B5322 /* KoPubWorldDotumBold.ttf in Resources */,
 				A36349102CEA6608003B5322 /* KoPubWorldDotumMedium.ttf in Resources */,
@@ -545,18 +673,25 @@
 				A36349082CEA4AA0003B5322 /* UIFont+.swift in Sources */,
 				A300A4792CEF3EF90063DFF4 /* SeatsTimeModel.swift in Sources */,
 				003919E62CEDE81C005B7C43 /* TopTabBarCell.swift in Sources */,
+				A3ED0ACB2CF7506B0074B07A /* TheaterTargetType.swift in Sources */,
 				A300A4CA2CF58C6C0063DFF4 /* Screen.swift in Sources */,
+				A3ED0AED2CF75FD30074B07A /* TheaterService.swift in Sources */,
 				0032F4B92CEDC4D500F14451 /* TopHeaderView.swift in Sources */,
 				A36349062CEA4A70003B5322 /* UIStackView+.swift in Sources */,
+				A3ED0AE22CF7585D0074B07A /* MovieBookingResponse.swift in Sources */,
 				00C7742C2CEB9A5E0020F5BA /* BigImageCell.swift in Sources */,
 				0030771D2CF4EF25008F7BDF /* MidGrayView.swift in Sources */,
+				A3ED0AEB2CF75FC20074B07A /* MovieService.swift in Sources */,
+				A3ED0ADA2CF755D10074B07A /* MovieTheaterResponse.swift in Sources */,
 				00AE2A882CEE3D5A0024CE6C /* MidTabBarCell.swift in Sources */,
 				00C7742A2CEB99C40020F5BA /* BannerImageCell.swift in Sources */,
 				A36349042CEA49D4003B5322 /* UIView+.swift in Sources */,
 				00BF992A2CF05311000920A8 /* BottomFooterCell.swift in Sources */,
 				00AE2A862CEE3A530024CE6C /* MidTabBarView.swift in Sources */,
 				A36348B82CE8E937003B5322 /* AppDelegate.swift in Sources */,
+				A3ED0AF42CF763A00074B07A /* ErrorResponseBody.swift in Sources */,
 				AD9263F42CEC588200F63581 /* UnderlineSegmentedControl.swift in Sources */,
+				A3ED0ACE2CF750D70074B07A /* ModelType.swift in Sources */,
 				AD9263FA2CEC86CA00F63581 /* TheaterInfo.swift in Sources */,
 				AD17124A2CF4E1F700BEF3ED /* TheaterTimeTable.swift in Sources */,
 				A363490C2CEA4FFF003B5322 /* UIButton+.swift in Sources */,
@@ -565,6 +700,7 @@
 				A36349282CEA7D89003B5322 /* ReuseIdentifable.swift in Sources */,
 				A36349162CEA6936003B5322 /* NSAttributedString+.swift in Sources */,
 				00805C702CEFAEC90016C6F7 /* MyCGVCell.swift in Sources */,
+				A3ED0AC72CF74FC00074B07A /* NetworkResult.swift in Sources */,
 				AD5DE9B52CF0D9FB00CA7F3E /* DateInfo.swift in Sources */,
 				00805C6C2CEF242D0016C6F7 /* ReserveRateCell.swift in Sources */,
 				00C774302CEBAF7F0020F5BA /* HomeItem.swift in Sources */,
@@ -573,6 +709,8 @@
 				A36348BA2CE8E937003B5322 /* SceneDelegate.swift in Sources */,
 				AD9263F22CEC331800F63581 /* TimeBottomSheetViewController.swift in Sources */,
 				A36349322CEC2D6B003B5322 /* SeatsView.swift in Sources */,
+				A3ED0AC52CF74F460074B07A /* Environment.swift in Sources */,
+				A3ED0AD32CF751FA0074B07A /* BaseResponseBody.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
 				00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */,
 				0030771B2CF4CB5B008F7BDF /* MidTabBarViewController.swift in Sources */,
@@ -581,13 +719,18 @@
 				AD1712482CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift in Sources */,
 				AD9263F62CEC838600F63581 /* RegionType.swift in Sources */,
 				0067A0572CF7780C0062FA42 /* SectionBackgroundView.swift in Sources */,
+				A3ED0AC92CF750170074B07A /* MoyaLoggingPlugin.swift in Sources */,
+				A3ED0AE72CF75C830074B07A /* MovieTargetType.swift in Sources */,
+				A3ED0AEF2CF7610F0074B07A /* EmptyModel.swift in Sources */,
 				A36349182CEA6E87003B5322 /* UILabel+.swift in Sources */,
 				A36348E02CE8EB85003B5322 /* HomeViewController.swift in Sources */,
 				AD1712592CF5DD1B00BEF3ED /* TimeCellButton.swift in Sources */,
 				AD1712532CF5B94100BEF3ED /* Font+.swift in Sources */,
 				AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */,
 				AD17124E2CF5B8D600BEF3ED /* DateCell.swift in Sources */,
+				A3ED0ADE2CF756F40074B07A /* MovieDetailResponse.swift in Sources */,
 				A36349252CEA7D34003B5322 /* BaseTableViewCell.swift in Sources */,
+				A3ED0AD82CF754C00074B07A /* MovieTimeResponse.swift in Sources */,
 				A363491C2CEA75E2003B5322 /* UIColor+.swift in Sources */,
 				AD9263F82CEC868D00F63581 /* RegionInfo.swift in Sources */,
 				AD1712462CF4A11500BEF3ED /* TimeSwiftUIView.swift in Sources */,
@@ -599,6 +742,7 @@
 				0060567F2CEC6C9000482BEC /* HomeView.swift in Sources */,
 				A300A4802CF021360063DFF4 /* BookingSheetViewController.swift in Sources */,
 				0032F4BB2CEDDB4800F14451 /* TopHeaderViewCell.swift in Sources */,
+				A3ED0AE02CF757E10074B07A /* MovieBookingRequest.swift in Sources */,
 				A300A4822CF021410063DFF4 /* BookingSheetView.swift in Sources */,
 				00C774282CEB98830020F5BA /* MidHeaderView.swift in Sources */,
 				AD9BE8122CEDBC1C00650769 /* TheaterButton.swift in Sources */,
@@ -833,6 +977,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		A3ED0ABF2CF74E610074B07A /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -845,6 +997,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A36348DA2CE8EB46003B5322 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		A3ED0AC02CF74E610074B07A /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3ED0ABF2CF74E610074B07A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
