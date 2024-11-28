@@ -78,6 +78,7 @@
 		A3ED0AED2CF75FD30074B07A /* TheaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AEC2CF75FD30074B07A /* TheaterService.swift */; };
 		A3ED0AEF2CF7610F0074B07A /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AEE2CF7610F0074B07A /* EmptyModel.swift */; };
 		A3ED0AF42CF763A00074B07A /* ErrorResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ED0AF32CF763A00074B07A /* ErrorResponseBody.swift */; };
+		A3ED0AFF2CF8A02D0074B07A /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A3ED0AFE2CF8A02D0074B07A /* Config.xcconfig */; };
 		AD1712462CF4A11500BEF3ED /* TimeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */; };
 		AD1712482CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */; };
 		AD17124A2CF4E1F700BEF3ED /* TheaterTimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */; };
@@ -154,7 +155,6 @@
 		A36349332CEC2D9F003B5322 /* GuestCountSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetView.swift; sourceTree = "<group>"; };
 		A36349352CEC2DAF003B5322 /* GuestCountSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountSheetViewController.swift; sourceTree = "<group>"; };
 		A36349382CEC971B003B5322 /* GuestCountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCountButton.swift; sourceTree = "<group>"; };
-		A3ED0AC22CF74EA50074B07A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A3ED0AC42CF74F460074B07A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		A3ED0AC62CF74FC00074B07A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		A3ED0AC82CF750160074B07A /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
@@ -171,6 +171,7 @@
 		A3ED0AEC2CF75FD30074B07A /* TheaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterService.swift; sourceTree = "<group>"; };
 		A3ED0AEE2CF7610F0074B07A /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
 		A3ED0AF32CF763A00074B07A /* ErrorResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseBody.swift; sourceTree = "<group>"; };
+		A3ED0AFE2CF8A02D0074B07A /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		AD1712452CF4A11500BEF3ED /* TimeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSwiftUIView.swift; sourceTree = "<group>"; };
 		AD1712472CF4BA0D00BEF3ED /* TimeSwiftUIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSwiftUIViewModel.swift; sourceTree = "<group>"; };
 		AD1712492CF4E1F700BEF3ED /* TheaterTimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterTimeTable.swift; sourceTree = "<group>"; };
@@ -353,7 +354,7 @@
 				ADB60EE22CEA1A8B005C6EAC /* Colors.xcassets */,
 				A36348C52CE8E938003B5322 /* Info.plist */,
 				A36348C22CE8E938003B5322 /* LaunchScreen.storyboard */,
-				A3ED0AC22CF74EA50074B07A /* Config.xcconfig */,
+				A3ED0AFE2CF8A02D0074B07A /* Config.xcconfig */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -654,6 +655,7 @@
 				A36349142CEA6612003B5322 /* MalgunGothicRegular.ttf in Resources */,
 				A36348C12CE8E938003B5322 /* Assets.xcassets in Resources */,
 				00ED4AF12CE9E67900E562FA /* .gitignore in Resources */,
+				A3ED0AFF2CF8A02D0074B07A /* Config.xcconfig in Resources */,
 				A36348C42CE8E938003B5322 /* Base in Resources */,
 				A363490F2CEA6608003B5322 /* KoPubWorldDotumBold.ttf in Resources */,
 				A36349102CEA6608003B5322 /* KoPubWorldDotumMedium.ttf in Resources */,
@@ -766,7 +768,6 @@
 /* Begin XCBuildConfiguration section */
 		A36348C62CE8E938003B5322 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3ED0AC22CF74EA50074B07A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -830,7 +831,6 @@
 		};
 		A36348C72CE8E938003B5322 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3ED0AC22CF74EA50074B07A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
