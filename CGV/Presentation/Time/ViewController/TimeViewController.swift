@@ -26,15 +26,25 @@ final class TimeViewController: BaseViewController {
             theaterChangeButtonAction: {
                 self.presentTimeBottomSheet()
             }, closeButtonAction: {
-                print("closeButtonAction")
+                self.closeButtonDidTap()
             }
         )
         setupHostingController()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.isNavigationBarHidden = false
+    }
 
     override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
         presentTimeBottomSheet()
         timeViewModel?.theaterTimeTables = TheaterTimeTable.makeMockData()
     }
@@ -55,6 +65,10 @@ final class TimeViewController: BaseViewController {
         view.addSubview(hostingController.view)
                 
         hostingController.didMove(toParent: self)
+    }
+    
+    private func closeButtonDidTap() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
