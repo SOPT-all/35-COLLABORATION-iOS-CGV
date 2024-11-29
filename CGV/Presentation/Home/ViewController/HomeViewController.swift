@@ -105,6 +105,10 @@ extension HomeViewController {
                         preEgg: item.preEgg ?? "",
                         dDay: item.dDay ?? ""
                     )
+                    cell.didTapReserveButton = { [weak self] in
+                        let timeViewController = TimeViewController()
+                        self?.navigationController?.pushViewController(timeViewController, animated: true)
+                    }
                     return cell
                 } else {
                     return UICollectionViewCell()
