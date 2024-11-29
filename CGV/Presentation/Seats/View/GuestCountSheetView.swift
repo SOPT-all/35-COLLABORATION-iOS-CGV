@@ -14,13 +14,13 @@ final class GuestCountSheetView: BaseView {
     
     // MARK: - UIComponent
     
-    private let titleLabel = UILabel()
+    let titleLabel = UILabel()
     
-    private let dateLabel = UILabel()
+    let dateLabel = UILabel()
     
-    private let theaterLabel = UILabel()
+    let theaterLabel = UILabel()
     
-    private let timeLabel = UILabel()
+    let timeLabel = UILabel()
     
     private let infoStackView = UIStackView()
     

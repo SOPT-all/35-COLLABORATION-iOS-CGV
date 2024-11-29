@@ -13,6 +13,8 @@ final class GuestCountSheetViewController: BaseViewController {
     
     private let rootView = GuestCountSheetView()
     
+    private let movieService = MovieService()
+    
     private var totalGuestCount: Int = 0
     
     private var isValid: Bool = false
@@ -21,6 +23,12 @@ final class GuestCountSheetViewController: BaseViewController {
     
     override func loadView() {
         view = rootView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        requestMovieDetail()
     }
     
     // MARK: - Action
@@ -97,6 +105,44 @@ final class GuestCountSheetViewController: BaseViewController {
         
         rootView.selectButton.backgroundColor = isValid ? .cgvR400 : .cgvG500
         rootView.selectButton.isEnabled = isValid ? true : false
+    }
+    
+    private func requestMovieDetail() {
+        movieService.fetchMovieDetail(movieID: 1, request: EmptyModel()) { [weak self] response in
+            switch response {
+            case .success(let data):
+                let data = data.data.compactMap{ $0 }
+                if let first = data.first {
+                    self?.rootView.titleLabel.updateText(first.movieName)
+                    self?.rootView.dateLabel.updateText(first.releaseDate)
+                    self?.rootView.theaterLabel.updateText(first.theaterName)
+                    
+                    let startTime = self?.extractTime(from: first.startTime)
+                    let endTime = self?.extractTime(from: first.endTime)
+                    if let startTime, let endTime {
+                        self?.rootView.timeLabel.updateText("\(startTime)~\(endTime)")
+                    }
+                }
+            default:
+                print(response.stateDescription)
+            }
+        }
+    }
+    
+    private func extractTime(from dateTime: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        
+        guard let date = dateFormatter.date(from: dateTime) else {
+            print("Invalid date format")
+            return nil
+        }
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        
+        return timeFormatter.string(from: date)
     }
     
     @objc
