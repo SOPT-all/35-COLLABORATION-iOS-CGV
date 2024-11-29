@@ -14,11 +14,14 @@ final class TimeSwiftUIViewModel: ObservableObject {
     
     var theaterChangeButtonAction: () -> Void
     var closeButtonAction: () -> Void
+    var timeTableCellButtonAction: () -> Void
     
     init(theaterChangeButtonAction: @escaping () -> Void,
-         closeButtonAction: @escaping () -> Void
+         closeButtonAction: @escaping () -> Void,
+         timeTableCellButtonAction: @escaping () -> Void
     ) {
         self.theaterChangeButtonAction = theaterChangeButtonAction
         self.closeButtonAction = closeButtonAction
+        self.timeTableCellButtonAction = timeTableCellButtonAction
     }
 }

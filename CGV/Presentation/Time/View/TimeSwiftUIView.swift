@@ -223,7 +223,7 @@ private struct TheaterInfoView: View {
             NotSelectedTheaterView()
         } else {
             ForEach(viewModel.theaterTimeTables) { theaterTimeTable in
-                TimeTableView(theaterTimeTable: theaterTimeTable)
+                TimeTableView(viewModel: viewModel, theaterTimeTable: theaterTimeTable)
                     .padding(.top, Screen.height(24))
                 
                 Color.cgvG100
@@ -247,9 +247,11 @@ private struct NotSelectedTheaterView: View {
 // MARK: - 극장 정보와 상영관에 따른 시간표를 담은 View
 
 private struct TimeTableView: View {
+    @ObservedObject private var viewModel: TimeSwiftUIViewModel
     private let theaterTimeTable: TheaterTimeTable
     
-    fileprivate init(theaterTimeTable: TheaterTimeTable) {
+    fileprivate init(viewModel: TimeSwiftUIViewModel, theaterTimeTable: TheaterTimeTable) {
+        self.viewModel = viewModel
         self.theaterTimeTable = theaterTimeTable
     }
     
@@ -287,7 +289,7 @@ private struct TimeTableView: View {
                         LazyHStack(spacing: Screen.width(4)) {
                             ForEach(times.timeInfos) { timeInfo in
                                 TimeCell(timeInfo: timeInfo) {
-                                    // TODO: - TimeCell 클릭시 이벤트 추가
+                                    viewModel.timeTableCellButtonAction()
                                 }
                             }
                         }
@@ -301,5 +303,5 @@ private struct TimeTableView: View {
 }
 
 #Preview {
-    TimeSwiftUIView(viewModel: .init(theaterChangeButtonAction: {}, closeButtonAction: {}))
+    TimeSwiftUIView(viewModel: .init(theaterChangeButtonAction: {}, closeButtonAction: {}, timeTableCellButtonAction: {}))
 }

@@ -27,6 +27,8 @@ final class TimeViewController: BaseViewController {
                 self.presentTimeBottomSheet()
             }, closeButtonAction: {
                 self.closeButtonDidTap()
+            }, timeTableCellButtonAction: {
+                self.pushSeatsViewController()
             }
         )
         setupHostingController()
@@ -69,6 +71,11 @@ final class TimeViewController: BaseViewController {
     
     private func closeButtonDidTap() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func pushSeatsViewController() {
+        let seatsViewController = SeatsViewController()
+        navigationController?.pushViewController(seatsViewController, animated: true)
     }
 }
 
