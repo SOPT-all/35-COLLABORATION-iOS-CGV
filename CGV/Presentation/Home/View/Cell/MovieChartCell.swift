@@ -14,6 +14,8 @@ final class MovieChartCell: BaseCollectionViewCell {
     
     // MARK: - Property
     
+    var didTapReserveButton: (() ->  Void)?
+    
     private let posterImageView = UIImageView()
     
     private let firstStackView = UIStackView()
@@ -27,6 +29,11 @@ final class MovieChartCell: BaseCollectionViewCell {
     private let dDayLabel = UILabel()
     
     private let reserveButton = UIButton()
+    
+    @objc
+    private func reserveButtonDidTap() {
+        didTapReserveButton?()
+    }
     
     // MARK: - UISetting
     
@@ -79,6 +86,7 @@ final class MovieChartCell: BaseCollectionViewCell {
             $0.backgroundColor = UIColor(resource: .cgvR400)
             $0.layer.cornerRadius = 8
             $0.clipsToBounds = true
+            $0.addTarget(self, action: #selector(reserveButtonDidTap), for: .touchUpInside)
         }
     }
     
