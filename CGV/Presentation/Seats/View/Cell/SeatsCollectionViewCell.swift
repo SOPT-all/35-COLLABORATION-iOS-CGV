@@ -14,9 +14,9 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - Property
     
-    private let timeView = UIView()
+    let timeView = UIView()
     
-    private let seatsView = UIView()
+    let seatsView = UIView()
 
     private let timeStackView = UIStackView()
     
@@ -24,11 +24,11 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
     
     private let startTimeLabel = UILabel()
     
-    private let endTimeLabel = UILabel()
+    let endTimeLabel = UILabel()
     
     private let morningIcon = UIImageView()
     
-    private let remainSeatsLabel = UILabel()
+    let remainSeatsLabel = UILabel()
     
     // MARK: - UISetting
     
@@ -37,11 +37,11 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         layer.masksToBounds = true
         
         timeView.do {
-            $0.backgroundColor = .cgvWhite
+            $0.backgroundColor = .cgvG600
         }
 
         seatsView.do {
-            $0.backgroundColor = .cgvG100
+            $0.backgroundColor = .cgvG600
         }
         
         timeStackView.do {
@@ -63,7 +63,7 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         }
         
         endTimeLabel.do {
-            $0.setText(style: Malgun.body1, color: .cgvG600, isSingleLine: true)
+            $0.setText(style: Malgun.body1, color: .cgvG700, isSingleLine: true)
         }
         
         morningIcon.do {
@@ -72,6 +72,7 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         
         remainSeatsLabel.do {
             $0.setText("183/185석", style: Malgun.body3, color: .cgvBlack)
+            $0.setHighlightText("183", style: Malgun.body3, color: .cgvGreen)
         }
     }
     
@@ -110,9 +111,34 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
 }
 
 extension SeatsCollectionViewCell {
+    func dataBind(_ data: MovieDetailResponse) {
+        let startTime = extractTime(from: data.startTime)
+        let endTime = extractTime(from: data.endTime)
+        
+        startTimeLabel.updateText(startTime)
+        endTimeLabel.updateText("~\(endTime ?? "")")
+        morningIcon.isHidden = !data.isMorning
+    }
+    
     func dataBind(_ mockData: SeatsTimeModel) {
         startTimeLabel.updateText(mockData.startTime)
         endTimeLabel.updateText(mockData.endTime)
         morningIcon.isHidden = !mockData.isMorning
+    }
+    
+    private func extractTime(from dateTime: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        
+        guard let date = dateFormatter.date(from: dateTime) else {
+            print("Invalid date format")
+            return nil
+        }
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        
+        return timeFormatter.string(from: date)
     }
 }
