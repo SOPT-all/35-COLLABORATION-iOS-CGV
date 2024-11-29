@@ -31,4 +31,26 @@ extension UILabel {
         }
         attributedText = NSAttributedString(string: text ?? " ", attributes: currentAttributes)
     }
+    
+    func setHighlightText<T: FontStyle>(_ words: String..., style: T, color: UIColor? = nil) {
+        guard let currentAttributedText = attributedText else { return }
+        
+        let mutableAttributedString = NSMutableAttributedString(
+            attributedString: currentAttributedText
+        )
+        let textColor = textColor ?? .black
+        
+        for word in words {
+            let range = (currentAttributedText.string as NSString).range(of: word)
+            
+            if range.location != NSNotFound {
+                let highlightedAttributes: [NSAttributedString.Key: Any] = [
+                    .font: UIFont.setupFont(of: style),
+                    .foregroundColor: color ?? textColor
+                ]
+                mutableAttributedString.addAttributes(highlightedAttributes, range: range)
+                attributedText = mutableAttributedString
+            }
+        }
+    }
 }

@@ -151,6 +151,13 @@ extension SeatsViewController: UICollectionViewDataSource {
             for: indexPath
         ) as? SeatsCollectionViewCell else { return UICollectionViewCell() }
         cell.dataBind(movieDetailList[indexPath.row])
+        if indexPath.row == 0 {
+            cell.timeView.backgroundColor = .cgvWhite
+            cell.seatsView.backgroundColor = .cgvG100
+            cell.endTimeLabel.textColor = .cgvG600
+            cell.remainSeatsLabel.setHighlightText("183", style: Malgun.body3, color: .cgvR400)
+        }
+        
         return cell
     }
 }

@@ -14,9 +14,9 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
     
     // MARK: - Property
     
-    private let timeView = UIView()
+    let timeView = UIView()
     
-    private let seatsView = UIView()
+    let seatsView = UIView()
 
     private let timeStackView = UIStackView()
     
@@ -24,11 +24,11 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
     
     private let startTimeLabel = UILabel()
     
-    private let endTimeLabel = UILabel()
+    let endTimeLabel = UILabel()
     
     private let morningIcon = UIImageView()
     
-    private let remainSeatsLabel = UILabel()
+    let remainSeatsLabel = UILabel()
     
     // MARK: - UISetting
     
@@ -37,11 +37,11 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         layer.masksToBounds = true
         
         timeView.do {
-            $0.backgroundColor = .cgvWhite
+            $0.backgroundColor = .cgvG600
         }
 
         seatsView.do {
-            $0.backgroundColor = .cgvG100
+            $0.backgroundColor = .cgvG600
         }
         
         timeStackView.do {
@@ -63,7 +63,7 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         }
         
         endTimeLabel.do {
-            $0.setText(style: Malgun.body1, color: .cgvG600, isSingleLine: true)
+            $0.setText(style: Malgun.body1, color: .cgvG700, isSingleLine: true)
         }
         
         morningIcon.do {
@@ -72,6 +72,7 @@ final class SeatsCollectionViewCell: BaseCollectionViewCell {
         
         remainSeatsLabel.do {
             $0.setText("183/185석", style: Malgun.body3, color: .cgvBlack)
+            $0.setHighlightText("183", style: Malgun.body3, color: .cgvGreen)
         }
     }
     
