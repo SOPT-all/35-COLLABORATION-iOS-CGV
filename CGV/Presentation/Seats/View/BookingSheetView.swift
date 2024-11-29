@@ -179,4 +179,51 @@ final class BookingSheetView: BaseView {
             $0.height.equalTo(Screen.height(60))
         }
     }
+    
+    func movieName() -> String {
+        return titleLabel.text ?? ""
+    }
+    
+    func theaterName() -> String {
+        return theaterLabel.text ?? ""
+    }
+    
+    func startTime() -> String {
+        guard let formatedDate = formatDate(from: dateLabel.text),
+              let start = extractTimeRange(from: timeLabel.text)?.start else {
+            return ""
+        }
+        return "\(formatedDate)T\(start)"
+    }
+    
+    func endTime() -> String {
+        guard let formatedDate = formatDate(from: dateLabel.text),
+              let end = extractTimeRange(from: timeLabel.text)?.end else {
+            return ""
+        }
+        return "\(formatedDate)T\(end)"
+    }
+    
+    private func formatDate(from text: String?) -> String? {
+        // "2024.11.05 (월)" -> "2024-11-05"
+        guard let text = text else { return nil }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd (E)"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        
+        if let date = dateFormatter.date(from: text) {
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
+
+    private func extractTimeRange(from text: String?) -> (start: String, end: String)? {
+        // "10:40 ~ 12:39" -> ("10:40", "12:39")
+        guard let text = text else { return nil }
+        let times = text.split(separator: "~").map { $0.trimmingCharacters(in: .whitespaces) }
+        guard times.count == 2 else { return nil }
+        return (start: times[0], end: times[1])
+    }
+    
 }

@@ -16,6 +16,7 @@ final class BookingSheetViewController: BaseViewController {
     // MARK: - Property
     
     private let rootView = BookingSheetView()
+    private let movieService = MovieService()
     
     weak var delegate: BookingSheetDelegate?
     
@@ -33,12 +34,40 @@ final class BookingSheetViewController: BaseViewController {
             action: #selector(editCountButtonDidTap),
             for: .touchUpInside
         )
+        
+        rootView.bookingButton.addTarget(
+            self,
+            action: #selector(bookingButtonDidTap),
+            for: .touchUpInside
+        )
     }
     
     @objc
     private func editCountButtonDidTap() {
         dismiss(animated: true) { [weak self] in
             self?.delegate?.presentGuestCountSheet()
+        }
+    }
+    
+    @objc
+    private func bookingButtonDidTap() {
+        
+        let request = MovieBookingRequest(
+            movieName: rootView.movieName(),
+            theaterName: rootView.theaterName(),
+            startTime: rootView.startTime(),
+            endTime: rootView.endTime(),
+            ticketCount: 1
+        )
+            
+        movieService.bookingMovie(movieID: 1, request: request) { [weak self] result in
+            switch result {
+            case .success(let response):
+                print("예매 성공: \(response)")
+                self?.dismiss(animated: true, completion: nil)
+            case .failure, .decodedError, .serverError, .networkFail:
+                    print(result.stateDescription)
+            }
         }
     }
 }
