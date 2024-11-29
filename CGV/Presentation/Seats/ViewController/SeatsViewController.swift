@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 final class SeatsViewController: BaseViewController {
     
     // MARK: - Property
@@ -50,7 +52,7 @@ final class SeatsViewController: BaseViewController {
     }
     
     override func setupAction() {
-        rootView.seatsImage.addTarget(
+        rootView.seatsButton.addTarget(
             self,
             action: #selector(seatsImageDidTap),
             for: .touchUpInside
@@ -82,6 +84,9 @@ final class SeatsViewController: BaseViewController {
                         backgroundColor: .cgvG850
                     )
                 }
+                if let urlString = data.first?.seatiOS, let url = URL(string: urlString) {
+                    self?.rootView.seatsImage.kf.setImage(with: url)
+                }
             default:
                 print(response.stateDescription)
             }
@@ -90,11 +95,10 @@ final class SeatsViewController: BaseViewController {
     
     @objc
     private func seatsImageDidTap() {
-        rootView.seatsImage.isSelected.toggle()
-        let image = rootView.seatsImage.isSelected ? UIImage.imgSeatsSelected : UIImage.imgSeatsUnselected
-        rootView.seatsImage.setImage(image, for: .normal)
+        rootView.seatsButton.isSelected.toggle()
+        rootView.seatsImage.image = rootView.seatsButton.isSelected ? .imgSeatsSelected : .imgSeatsUnselected
         
-        if rootView.seatsImage.isSelected {
+        if rootView.seatsButton.isSelected {
             presentBookingSheet()
         }
     }
