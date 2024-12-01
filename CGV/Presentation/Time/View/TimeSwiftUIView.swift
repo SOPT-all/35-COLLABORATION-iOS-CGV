@@ -301,7 +301,3 @@ private struct TimeTableView: View {
         }
     }
 }
-
-#Preview {
-    TimeSwiftUIView(viewModel: .init(theaterChangeButtonAction: {}, closeButtonAction: {}, timeTableCellButtonAction: {}))
-}
