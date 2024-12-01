@@ -12,3 +12,9 @@ struct BaseResponseBody<T: ResponseModelType>: Codable {
     let message: String
     let data: [T?]
 }
+
+struct TestResponseBody<T: ResponseModelType>: Codable {
+    let status: Int
+    let message: String
+    let data: T
+}
