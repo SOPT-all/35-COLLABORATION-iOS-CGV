@@ -16,6 +16,7 @@ final class TimeViewController: BaseViewController {
     
     private var dateInfoData = DateInfo.mockData()
     private var timeViewModel: TimeSwiftUIViewModel?
+    private let theaterService = TheaterService()
     
     // MARK: - LifeCycle
     
@@ -23,15 +24,18 @@ final class TimeViewController: BaseViewController {
         super.viewDidLoad()
         
         self.timeViewModel = .init(
+            theaterService: theaterService,
             theaterChangeButtonAction: {
                 self.presentTimeBottomSheet()
             }, closeButtonAction: {
                 self.closeButtonDidTap()
+            }, timeTableCellButtonAction: {
+                self.pushSeatsViewController()
             }
         )
         setupHostingController()
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -46,7 +50,6 @@ final class TimeViewController: BaseViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         presentTimeBottomSheet()
-        timeViewModel?.theaterTimeTables = TheaterTimeTable.makeMockData()
     }
     
     // MARK: - Function
@@ -70,6 +73,10 @@ final class TimeViewController: BaseViewController {
     private func closeButtonDidTap() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    private func pushSeatsViewController() {
+        self.navigationController?.pushViewController(SeatsViewController(), animated: true)
+    }
 }
 
 // MARK: - UIAdaptivePresentationControllerDelegate
@@ -77,6 +84,8 @@ final class TimeViewController: BaseViewController {
 extension TimeViewController: UIAdaptivePresentationControllerDelegate {
     func presentTimeBottomSheet() {
         let timeBottomSheetViewController = TimeBottomSheetViewController()
+        timeBottomSheetViewController.theaterService = theaterService
+        timeBottomSheetViewController.delegate = self
         
         let fraction = UISheetPresentationController.Detent.custom {
             _ in self.view.frame.height * ((Screen.height(683) - Screen.height(32)) / Screen.height(812))
@@ -86,5 +95,14 @@ extension TimeViewController: UIAdaptivePresentationControllerDelegate {
             sheet.preferredCornerRadius = 16
         }
         self.present(timeBottomSheetViewController, animated: true)
+        self.timeViewModel?.theaterTimeTables = []
     }
+}
+
+extension TimeViewController: TimeBottomSheetViewControllerDelegate {
+    func didTappedSelect(_ theaters: [TheaterInfo]) {
+        timeViewModel?.theaterInfo = theaters
+        timeViewModel?.fetchTheaterInfo()
+    }
+    
 }

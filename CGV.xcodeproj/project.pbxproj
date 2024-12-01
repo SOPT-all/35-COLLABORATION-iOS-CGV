@@ -88,6 +88,7 @@
 		AD1712512CF5B92D00BEF3ED /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712502CF5B92D00BEF3ED /* Color+.swift */; };
 		AD1712532CF5B94100BEF3ED /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712522CF5B94100BEF3ED /* Font+.swift */; };
 		AD1712592CF5DD1B00BEF3ED /* TimeCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1712582CF5DD1B00BEF3ED /* TimeCellButton.swift */; };
+		AD5C1D9B2CFC15D5004FBDDB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5C1D9A2CFC15D5004FBDDB /* String+.swift */; };
 		AD5DE9B52CF0D9FB00CA7F3E /* DateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5DE9B42CF0D9FB00CA7F3E /* DateInfo.swift */; };
 		AD5DE9B72CF0DA1B00CA7F3E /* MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5DE9B62CF0DA1B00CA7F3E /* MoviePoster.swift */; };
 		AD9263F02CEB747900F63581 /* TimeBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */; };
@@ -181,6 +182,7 @@
 		AD1712502CF5B92D00BEF3ED /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		AD1712522CF5B94100BEF3ED /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		AD1712582CF5DD1B00BEF3ED /* TimeCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCellButton.swift; sourceTree = "<group>"; };
+		AD5C1D9A2CFC15D5004FBDDB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		AD5DE9B42CF0D9FB00CA7F3E /* DateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfo.swift; sourceTree = "<group>"; };
 		AD5DE9B62CF0DA1B00CA7F3E /* MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePoster.swift; sourceTree = "<group>"; };
 		AD9263EF2CEB747900F63581 /* TimeBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBottomSheetView.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 			children = (
 				AD1712522CF5B94100BEF3ED /* Font+.swift */,
 				AD1712502CF5B92D00BEF3ED /* Color+.swift */,
+				AD5C1D9A2CFC15D5004FBDDB /* String+.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				A3ED0AC52CF74F460074B07A /* Environment.swift in Sources */,
 				A3ED0AD32CF751FA0074B07A /* BaseResponseBody.swift in Sources */,
 				A36349232CEA7D06003B5322 /* BaseCollectionViewCell.swift in Sources */,
+				AD5C1D9B2CFC15D5004FBDDB /* String+.swift in Sources */,
 				00C7742E2CEB9BA10020F5BA /* MovieChartCell.swift in Sources */,
 				0030771B2CF4CB5B008F7BDF /* MidTabBarViewController.swift in Sources */,
 				00BF992C2CF0B69D000920A8 /* ProgressShareCell.swift in Sources */,
