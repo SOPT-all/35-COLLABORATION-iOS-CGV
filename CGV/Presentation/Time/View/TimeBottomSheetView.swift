@@ -15,8 +15,6 @@ final class TimeBottomSheetView: BaseView {
     
     private let segmentControl = UnderlineSegmentedControl(items: ["지역별", "특별관"])
     private let buttonStackView = UIStackView()
-    private let recentStackView = UIStackView()
-    private let surroundingStackView = UIStackView()
     private let noticeLabel = UILabel()
     private let recentLabel = UILabel()
     private let surroundingLabel = UILabel()
@@ -27,10 +25,10 @@ final class TimeBottomSheetView: BaseView {
     private var regionsCategoryButton: [UIButton] = []
     private var regionInfos = RegionInfo.initTheaters()
     
+    let recentStackView = UIStackView()
+    let surroundingStackView = UIStackView()
     let selectedTheaterStackView = UIStackView()
     let selectButton = UIButton(type: .system)
-    
-    var theatersButtons: [TheaterButton] = []
         
     // MARK: - LifeCycle
     
@@ -130,12 +128,7 @@ final class TimeBottomSheetView: BaseView {
             
             regionsCategoryButton.append(button)
         }
-        
-        for theater in regionInfos[0].theaters {
-            let button = TheaterButton(theater: theater)
-            theatersButtons.append(button)
-        }
-        
+
         noticeLabel.do {
             $0.setText("CGV를 선택해주세요\n최대 5개까지 선택 가능합니다.",
                        style: Kopub.body2,
@@ -195,10 +188,6 @@ final class TimeBottomSheetView: BaseView {
         regionsCategoryButton.forEach { button in
             buttonStackView.addArrangedSubview(button)
         }
-        
-        recentStackView.addArrangedSubviews(theatersButtons[0], theatersButtons[1])
-        
-        surroundingStackView.addArrangedSubview(theatersButtons[2])
         
         selectedTheaterStackView.addArrangedSubview(placeholderView)
         
@@ -296,21 +285,53 @@ final class TimeBottomSheetView: BaseView {
 // MARK: - Function
 
 extension TimeBottomSheetView {
-    func makeTheaterChipButton(theater: String) {
-        let button = TheaterChipButton(title: theater)
+    func makeTheaterChipButton(
+        theater: TheaterInfo,
+        target: Any?,
+        action: Selector
+    ) {
+        let button = TheaterChipButton(theater: theater)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        button.isEnabled = true
         selectedTheaterStackView.addArrangedSubview(button)
         selectedTheaterStackView.layoutIfNeeded()
     }
     
-    func deleteTheaterChipButton(theater: String) {
+    func deleteTheaterChipButton(theater: TheaterInfo) {
         for subview in selectedTheaterStackView.arrangedSubviews {
             if let button = subview as? TheaterChipButton,
-               let title = button.theaterNameLabel.text,
-               title == theater {
+               let id = button.theater?.theaterId,
+               id == theater.theaterId {
                 selectedTheaterStackView.removeArrangedSubview(button)
                 button.removeFromSuperview()
                 selectedTheaterStackView.layoutIfNeeded()
             }
         }
+    }
+    
+    func makeTheaterButton(
+        theaters: [MovieTheaterResponse?],
+        target: Any?,
+        action: Selector
+    ) {
+        for i in 0..<theaters.count - 1 {
+            guard let theater = theaters[i] else { return }
+            let theaterInfo = TheaterInfo(theaterName: theater.theaterName, theaterId: theater.id)
+            
+            let button = TheaterButton(theater: theaterInfo)
+            button.addTarget(target, action: action, for: .touchUpInside)
+            recentStackView.addArrangedSubview(button)
+            recentStackView.layoutIfNeeded()
+        }
+        
+        guard let lastTheater = theaters.last,
+              let theater = lastTheater else { return }
+        let theaterInfo = TheaterInfo(theaterName: theater.theaterName, theaterId: theater.id)
+        
+        let button = TheaterButton(theater: theaterInfo)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        
+        surroundingStackView.addArrangedSubview(button)
+        surroundingStackView.layoutIfNeeded()
     }
 }
