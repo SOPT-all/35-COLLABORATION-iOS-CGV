@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 protocol TheaterServiceProtocol {
-    typealias MovieTimeResponseModel = BaseResponseBody<MovieTimeResponse>
+    typealias MovieTimeResponseModel = TestResponseBody<MovieTimeResponse>
     func fetchMovieTime(
         theaterID: Int,
         auditorium: String,
