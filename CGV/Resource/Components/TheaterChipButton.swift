@@ -13,14 +13,17 @@ import Then
 class TheaterChipButton: UIButton {
     static let defaultHeight: CGFloat = Screen.height(36)
 
+    var theater: TheaterInfo?
     let theaterNameLabel = UILabel()
+    
     private let closeImageView = UIImageView()
     private let stackView = UIStackView()
     
-    init(title: String) {
+    init(theater: TheaterInfo) {
         super.init(frame: .zero)
         
-        setTheaterNameLabel(title: title)
+        self.theater = theater
+        setTheaterNameLabel(title: theater.theaterName)
         setStyle()
         setUI()
         setLayout()
@@ -45,7 +48,8 @@ class TheaterChipButton: UIButton {
     private func setStyle() {
         closeImageView.do {
             $0.image = .icXBlack
-            $0.contentMode = .scaleAspectFit            
+            $0.contentMode = .scaleAspectFit
+            $0.isUserInteractionEnabled = false
         }
         
         stackView.do {
@@ -62,6 +66,7 @@ class TheaterChipButton: UIButton {
                 bottom: Screen.height(6),
                 right: Screen.width(6)
             )
+            $0.isUserInteractionEnabled = false
         }
     }
     
@@ -78,10 +83,16 @@ class TheaterChipButton: UIButton {
         
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+            $0.height.equalTo(TheaterChipButton.defaultHeight)
         }
     }
     
     private func setTheaterNameLabel(title: String) {
-        theaterNameLabel.setText(title, style: Kopub.head4, color: .cgvG850, isSingleLine: true)
+        theaterNameLabel.setText(
+            title,
+            style: Kopub.head4,
+            color: .cgvG850,
+            isSingleLine: true
+        )
     }
 }
