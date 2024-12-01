@@ -70,14 +70,8 @@ final class TimeSwiftUIViewModel: ObservableObject {
                         }
                                                 
                         theaterTimeTable.movieTimeTables.append(timeTable)
-                    case .failure(let error):
-                        print(error)
-                    case .decodedError:
-                        print("디코딩 에러")
-                    case .serverError:
-                        print("서버 에러")
-                    case .networkFail:
-                        print("네트워크 에러")
+                    case .failure, .decodedError, .serverError, .networkFail:
+                        print(response.stateDescription)
                     }
                     dispatchGroup.leave()
                 }

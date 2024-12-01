@@ -65,7 +65,7 @@ extension TimeBottomSheetViewController {
                     action: #selector(self?.theaterButtonDidTap(_:))
                 )
             case .failure, .decodedError, .serverError, .networkFail:
-                print("실패")
+                print(result.stateDescription)
             }
         }
     }
